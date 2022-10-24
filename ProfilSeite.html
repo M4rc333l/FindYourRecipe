@@ -10,6 +10,41 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+  <!-- Flexboxen-->
+  <style>
+.flexbox1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexbox2
+{
+  display: flex;
+  flex-direction: row;
+  margin-left: 150px;
+
+}
+.bild2
+{
+  margin: 50px;
+  margin-left: 50px;
+  width: 100px;
+  height: 100px;
+}
+
+#überschrift
+{
+  font-size: 50px;
+  font-weight: bold;
+  margin: 50px;
+}
+
+#einrücken
+{
+  margin-left: 30%;
+}
+  </style>
+
 </head>
 <body>
 
@@ -31,6 +66,36 @@
 
 <!-- JS Datei für NavBar -->
 <script  src="NavBar.js" ></script>
+
+
+<!-- Profil Flexbox 1-->
+<p id="überschrift"> Die beliebtesten Rezepte</p>
+<div id="einrücken">
+<div class="flexbox1">
+  <div>
+    <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034091044679196732/unknown.png" alt="Platzhalter"  title="Rezept hinzufügen" >
+  </div>
+  <div>
+    <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034093377169391707/unknown.png" alt="Platzhalter" title="Rezept bearbeiten" >
+  </div>
+  <div>
+    <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034091190917804052/unknown.png" alt="Platzhalter" title="Rezept löschen" width="50px" height="50px" >
+  </div>
+</div>
+
+<!-- Profil Flexbox2-->
+<div class="flexbox2">
+  <div>
+    <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034093652483510282/unknown.png" alt="Platzhalter"  title="Rezeptbild" >
+
+  </div>
+  <div >
+    <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034093822227005491/unknown.png" alt="Platzhalter" title="Rezeptbild" >
+
+  </div>
+</div>
+</div>
+
 
 </body>
 </html>
