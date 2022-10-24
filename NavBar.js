@@ -9,7 +9,7 @@ document.write(`
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="http://localhost:63342/untitled1/test.html?_ijt=u7ju1ge8oeioasdl7d372n2v44"><img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home"  height="30" width="30" title="Home">
+          <a class="nav-link" href="HomeSeite.html"><img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home"  height="30" width="30" title="Home">
             <span class="sr-only">(current)</span></a>
         </li>
 
@@ -21,7 +21,7 @@ document.write(`
 
         <!-- Kategorien -->
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost:63342/untitled1/linktest.html?_ijt=is5pgi1l2orii2j62frbn0pnbn"><img src="https://cdn-icons-png.flaticon.com/512/3502/3502685.png" alt="Kategorien"  height="30" width="30" title="Kategorien"></a>
+          <a class="nav-link" href="KategorieSeite.html"><img src="https://cdn-icons-png.flaticon.com/512/3502/3502685.png" alt="Kategorien"  height="30" width="30" title="Kategorien"></a>
         </li>
 
         <!-- Profil -->
@@ -47,7 +47,7 @@ document.write(`
 
               </a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="http://localhost:63342/untitled1/ProfilSeite.html?_ijt=usskqnp8idigi9n2k6uh67di2">Profil</a>
+              <a class="dropdown-item" href="ProfilSeite.html">Profil</a>
             </div>
           </div>
         </li>
