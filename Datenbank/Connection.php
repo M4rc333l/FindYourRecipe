@@ -1,6 +1,6 @@
 <?php
 function connect(){
-    $pdo = new PDO('mysql:host=193.175.248.182;dbname=robert.darminow', 'robert.darminow', 'z06QkjHa');
+    $con = new PDO("mysql:host=localhost;dbname=hshl","php","12345678");
 
     $sql = "SELECT Benutzername FROM user";
     if($sql->execute()){
