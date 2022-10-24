@@ -11,7 +11,10 @@
     <title>Hello, world!</title>
 </head>
 <body>
-<h1>Hello, world!</h1>
+<?php
+    include 'Connection.php';
+    connect();
+?>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
