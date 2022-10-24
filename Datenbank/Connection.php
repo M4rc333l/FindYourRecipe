@@ -1,5 +1,5 @@
 <?php
-function check(){
+function connect(){
     $pdo = new PDO('mysql:host=193.175.248.182;dbname=robert.darminow', 'robert.darminow', 'z06QkjHa');
 
     $sql = "SELECT Benutzername FROM user";
@@ -12,8 +12,11 @@ function check(){
             return "NOTOK";
         }
     }
-    foreach ($pdo->query($sql) as $row) {
+    /*foreach ($pdo->query($sql) as $row) {
         echo $row['Benutzername']." "."<br />";
-    }
+    }*/
+}
+function close(){
+
 }
 

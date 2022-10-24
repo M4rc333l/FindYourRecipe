@@ -12,7 +12,8 @@
 </head>
 <body>
 <?php
-    echo "ASDD";
+    include 'Connection.php';
+    connect();
 ?>
 
 <!-- Optional JavaScript -->
