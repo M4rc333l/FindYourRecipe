@@ -1,73 +1,81 @@
 <!doctype html>
 <html>
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <title> FindYourRecipe - Home </title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <style>
-    .flex-rezeptvorschlaege
-    {
-      display: inline-flex;
-    }
-    .bild
-    {
-      margin:50px;
-      max-width: 100%;
-      height: auto;
-    }
-    .rezepttext
-    {
-      font-size: 20px;
-      font-weight: bold;
-    }
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    .überschrift1
-    {
-      margin: 20px;
-      margin-left: 50px;
-      font-size: 50px;
-      font-weight: bold;
-    }
-  </style>
+    <!-- Flexboxen -->
+    <style>
+      .flex-rezeptvorschlaege
+      {
+        display: inline-flex;
+      }
 
-  <title>FindYourRecipe</title>
-</head>
-<body>
-<!-- JS Datei für NavBar -->
-<script  src="NavBar.js" ></script>
-<!-- Flexbox rezept Vorschläge-->
-<p class="überschrift1"> Rezeptvorschläge</p>
-<div class="flex-rezeptvorschlaege">
-  <div class="bild">
-    <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Platzhalter"  title="Rezeptbild" >
-    <p class="rezepttext"> Rezept 1</p>
-  </div>
-  <div class="bild">
-    <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Platzhalter" title="Rezeptbild" >
-    <p class="rezepttext"> Rezept 2</p>
-  </div>
-</div>
+      .bild
+      {
+        margin:50px;
+        max-width: 100%;
+        height: auto;
+      }
 
-<!-- Flexbox beliebtesten rezepte-->
-<p class="überschrift1"> Die beliebtesten Rezepte</p>
-<div class="flex-rezeptvorschlaege">
-  <div class="bild">
-    <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Platzhalter"  title="Rezeptbild" >
-    <p class="rezepttext"> Rezept 1</p>
-  </div>
-  <div class="bild">
-    <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Platzhalter" title="Rezeptbild" >
-    <p class="rezepttext"> Rezept 2</p>
-  </div>
-  <div class="bild">
-    <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Platzhalter" title="Rezeptbild" >
-    <p class="rezepttext"> Rezept 3</p>
-  </div>
-</div>
+      .rezepttext
+      {
+        font-size: 20px;
+        font-weight: bold;
+      }
 
-</body>
+      .überschrift1
+      {
+        margin: 20px;
+        margin-left: 50px;
+        font-size: 50px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- JS Datei für NavBar -->
+    <script  src="NavBar.js" > </script>
+
+    <!-- Flexbox - Rezeptvorschläge -->
+    <p class="überschrift1"> Rezeptvorschläge</p>
+
+    <div class="flex-rezeptvorschlaege">
+      <div class="bild">
+        <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild"  title="Rezeptbild" >
+        <p class="rezepttext"> Rezept 1 </p>
+      </div>
+
+      <div class="bild">
+        <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild" title="Rezeptbild" >
+        <p class="rezepttext"> Rezept 2 </p>
+      </div>
+    </div>
+
+    <!-- Flexbox - Die beliebtesten Rezepte -->
+    <p class="überschrift1"> Die beliebtesten Rezepte</p>
+
+    <div class="flex-rezeptvorschlaege">
+      <div class="bild">
+        <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild"  title="Rezeptbild" >
+        <p class="rezepttext"> Rezept 1 </p>
+      </div>
+
+      <div class="bild">
+        <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild" title="Rezeptbild" >
+        <p class="rezepttext"> Rezept 2 </p>
+      </div>
+
+      <div class="bild">
+        <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild" title="Rezeptbild" >
+        <p class="rezepttext"> Rezept 3 </p>
+      </div>
+    </div>
+  </body>
 </html>

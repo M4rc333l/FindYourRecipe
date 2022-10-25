@@ -1,109 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
+    <title> Profil </title>
 
-  <title>Profil Seite</title>
-  <!-- Required meta tags -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-  <!-- Flexboxen-->
-  <style>
-.flexbox1 {
-  display: flex;
-  flex-direction: row;
-}
+    <!-- Flexboxen -->
+    <style>
+      .flexbox1
+      {
+        display: flex;
+        flex-direction: row;
+      }
 
-.flexbox2
-{
-  display: flex;
-  flex-direction: row;
-  margin-left: 150px;
+      .flexbox2
+      {
+        display: flex;
+        flex-direction: row;
+        margin-left: 150px;
+      }
 
-}
-.bild2
-{
-  margin: 50px;
-  margin-left: 50px;
-  width: 100px;
-  height: 100px;
-}
+      .bild2
+      {
+        margin: 50px;
+        margin-left: 50px;
+        width: 100px;
+        height: 100px;
+      }
 
-#überschrift
-{
-  font-size: 50px;
-  font-weight: bold;
-  margin: 50px;
-}
+      #überschrift
+      {
+        font-size: 50px;
+        font-weight: bold;
+        margin: 50px;
+      }
 
-#einrücken
-{
-  margin-left: 30%;
-}
-  </style>
-
-</head>
-<body>
-
-<!-- Einloggen
- <div class="form-group">
-   <label for="exampleInputEmail1">Email address</label>
-   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
- </div>
- <div class="form-group">
-   <label for="exampleInputPassword1">Password</label>
-   <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
- </div>
- <div class="form-check">
-   <input type="checkbox" class="form-check-input" id="exampleCheck1">
-   <label class="form-check-label" for="exampleCheck1">Check me out</label>
- </div>
- <button type="submit" class="btn btn-primary">Submit</button> -->
-
-<!-- JS Datei für NavBar -->
-<script  src="NavBar.js" ></script>
+      #einrücken
+      {
+        margin-left: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- JS Datei für NavBar -->
+    <script  src="NavBar.js" > </script>
 
 
-<!-- Profil Flexbox 1-->
-<p id="überschrift"> Nutzername </p>
-<div id="einrücken">
-<div class="flexbox1">
-  <div>
-    <a href="RezeptErstellen.html">
-      <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034091044679196732/unknown.png" alt="Rezept hinzufügen"  title="Rezept hinzufügen" >
-    </a>
-  </div>
-  <div>
-    <a href="RezeptBearbeiten.html">
-      <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034093377169391707/unknown.png" alt="Rezept bearbeiten" title="Rezept bearbeiten" >
-    </a>
-  </div>
-  <div>
-    <a href="RezeptLöschen.html">
-      <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034091190917804052/unknown.png" alt="Rezept löschen" title="Rezept löschen" width="50px" height="50px" >
-    </a>
-  </div>
-</div>
+    <p id="überschrift"> Nutzername </p>
 
-<!-- Profil Flexbox2-->
-<div class="flexbox2">
-  <div>
-    <a href="Favoriten.html">
-      <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034093652483510282/unknown.png" alt="Favoriten"  title="Favoriten" >
-    </a>
-  </div>
-  <div >
-    <a href="">
-      <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034093822227005491/unknown.png" alt="Abmelden" title="Abmelden" >
-    </a>
-  </div>
-</div>
-</div>
+    <div id="einrücken">
+      <!-- Profil - Flexbox 1 -->
+      <div class="flexbox1">
+          <!-- Rezept erstellen -->
+          <a href="RezeptErstellen.html">
+            <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034091044679196732/unknown.png" alt="Rezept hinzufügen"  title="Rezept hinzufügen" >
+          </a>
+          <!-- Rezept bearbeiten -->
+          <a href="RezeptBearbeiten.html">
+            <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034093377169391707/unknown.png" alt="Rezept bearbeiten" title="Rezept bearbeiten" >
+          </a>
+          <!-- Rezept löschen -->
+          <a href="RezeptLöschen.html">
+            <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034091190917804052/unknown.png" alt="Rezept löschen" title="Rezept löschen" width="50px" height="50px" >
+          </a>
+      </div>
 
-
-</body>
+      <!-- Profil - Flexbox 2 -->
+      <div class="flexbox2">
+          <!-- Favoriten -->
+          <a href="Favoriten.html">
+            <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034093652483510282/unknown.png" alt="Favoriten"  title="Favoriten" >
+          </a>
+          <!-- Abmelden -->
+          <a href="#">
+            <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034093822227005491/unknown.png" alt="Abmelden" title="Abmelden" >
+          </a>
+      </div>
+    </div>
+  </body>
 </html>
