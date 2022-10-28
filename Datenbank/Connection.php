@@ -1,5 +1,7 @@
+
 <?php
     function OpenCon()
+    //www.phpmyadmin.co
      {
      $dbhost = "sql7.freesqldatabase.com";
      $dbuser = "sql7529981";
