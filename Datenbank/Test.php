@@ -1,3 +1,12 @@
+<?php
+include 'Connection.php';
+$conn = OpenCon();
+
+echo "Connected Successfully";
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,9 +20,18 @@
     <title>Hello, world!</title>
 </head>
 <body>
+
 <?php
-    include 'Connection.php';
-    connect();
+    $resultAll = mysqli_query($conn , "SELECT * FROM rezept");
+    if(!$resultAll){
+        die(mysqli_error($conn));
+    }
+
+    if (mysqli_num_rows($resultAll) > 0) {
+        while($rowData = mysqli_fetch_array($resultAll)){
+            echo $rowData["Zubereitung"].'<br>';
+        }
+    }
 ?>
 
 <!-- Optional JavaScript -->

@@ -1,22 +1,20 @@
 <?php
-function connect(){
-    $con = new PDO("mysql:host=localhost;dbname=hshl","php","12345678");
+    function OpenCon()
+     {
+     $dbhost = "sql7.freesqldatabase.com";
+     $dbuser = "sql7529981";
+     $dbpass = "qIjeRMjKrU";
+     $db = "sql7529981";
+     $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
 
-    $sql = "SELECT Benutzername FROM user";
-    if($sql->execute()){
-        $result = $sql->fetchAll(PDO::FETCH_ASSOC);
-        if(count($result)>0){
-            return "OK";
-        }
-        else{
-            return "NOTOK";
-        }
-    }
-    /*foreach ($pdo->query($sql) as $row) {
-        echo $row['Benutzername']." "."<br />";
-    }*/
-}
-function close(){
+     return $conn;
+     }
 
-}
+    function CloseCon($conn)
+     {
+     $conn -> close();
+     }
+
+?>
+
 
