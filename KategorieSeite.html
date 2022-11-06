@@ -9,9 +9,96 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <style>
+            #überschrift
+            {
+                font-size: 50px;
+                font-weight: bold;
+                margin: 50px;
+            }
+
+            #einrücken
+            {
+                margin-left: 40%;
+            }
+
+            #kategorie1, #kategorie2, #kategorie3
+            {
+                margin-top: 40px;
+            }
+
+            #kategorie4, #kategorie5, #kategorie6
+            {
+                margin-top: 40px;
+            }
+
+            label
+            {
+                font-size: 25px;
+            }
+
+            #linkeSpalte
+            {
+                position: absolute;
+                left: 35%;
+                top: 45%;
+            }
+
+            #rechteSpalte
+            {
+                position: absolute;
+                left: 55%;
+                top: 45%;
+            }
+        </style>
     </head>
     <body>
         <!-- JS Datei für NavBar -->
         <script  src="NavBar.js" > </script>
+
+        <p id="überschrift"> Kategorien </p>
+
+        <div id="einrücken">
+            <!-- Suchleiste -->
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pizza, Burger, ..." aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> Search </button>
+            </form>
+        </div>
+
+
+        <!-- Checkboxen für Kategorien -->
+        <div>
+            <div id="linkeSpalte">
+                <input type="checkbox" id="kategorie1" name="vegan" value="Kategorie">
+                <label for="kategorie1"> Vegan </label>
+
+                <br>
+
+                <input type="checkbox" id="kategorie2" name="vegetarisch" value="Kategorie">
+                <label for="kategorie2"> Vegetarisch </label>
+
+                <br>
+
+                <input type="checkbox" id="kategorie3" name="fisch" value="Kategorie">
+                <label for="kategorie3"> Fisch </label>
+            </div>
+
+            <div id="rechteSpalte">
+                <input type="checkbox" id="kategorie4" name="fleisch" value="Kategorie">
+                <label for="kategorie4"> Fleisch </label>
+
+                <br>
+
+                <input type="checkbox" id="kategorie5" name="glutenfrei" value="Kategorie">
+                <label for="kategorie5"> Glutenfrei </label>
+
+                <br>
+
+                <input type="checkbox" id="kategorie6" name="kalorienarm" value="Kategorie">
+                <label for="kategorie6"> Kalorienarm </label>
+            </div>
+        </div>
     </body>
 </html>
