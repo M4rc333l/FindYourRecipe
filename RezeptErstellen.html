@@ -9,9 +9,88 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+      #rezeptbildUpload
+      {
+        opacity: 0.5;
+        margin-left: 20px;
+      }
+
+      #einrücken
+      {
+        margin-left: 40%;
+      }
+
+      .überschrift
+      {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .rezepttext
+      {
+        font-size: 18px;
+        margin-left: 30px;
+      }
+    </style>
   </head>
   <body>
     <!-- JS Datei für NavBar -->
     <script  src="NavBar.js" > </script>
+
+    <div id="einrücken">
+      <!-- Rezeptbild -->
+      <input type="image" id="rezeptbildUpload" src="https://uxwing.com/wp-content/themes/uxwing/download/video-photography-multimedia/upload-image-icon.png" alt="Rezeptbild hochladen" width="200px" height="190px">
+
+      <!-- Rezeptname -->
+      <div class="überschrift">
+        <br>
+        <label for="rezeptname"> Rezeptname </label>
+        <input type="text" id="rezeptname" name="rezeptname">
+        <br>
+        <br>
+      </div>
+
+      <!-- Dauer -->
+      <div class="überschrift">
+        <label for="dauer"> Dauer </label>
+        <input type="text" id="dauer" name="dauer">
+        <br>
+        <br>
+      </div>
+
+      <!-- Zutaten -->
+      <div class="überschrift">
+        <label for="zutaten"> Zutaten </label>
+        <input type="text" id="zutaten" name="zutaten">
+        <br>
+        <br>
+      </div>
+
+      <!-- Zubereitung -->
+      <div class="überschrift">
+        <label for="zubereitung"> Zubereitung </label>
+        <input type="text" id="zubereitung" name="zubereitung">
+        <br>
+        <br>
+      </div>
+
+      <!-- Kategorien -->
+      <div class="überschrift">
+        <label for="kategorien"> Kategorien </label>
+        <select id="kategorien" name="zubereitung" size="6" multiple>
+          <option value="vegan"> Vegan </option>
+          <option value="vegetarisch"> Vegetarisch </option>
+          <option value="fleisch"> Fleisch </option>
+          <option value="fisch"> Fisch </option>
+          <option value="glutenfrei"> Glutenfrei </option>
+          <option value="kalorienarm"> Kalorienarm </option>
+        </select>
+        <br>
+        <br>
+      </div>
+      </div>
+    </div>
   </body>
 </html>

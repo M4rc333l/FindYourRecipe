@@ -17,11 +17,13 @@
         display: inline-flex;
       }
 
-      .bild
+      .bild, .bild:hover
       {
         margin:50px;
         max-width: 100%;
         height: auto;
+        color: black;
+        opacity: 0.5;
       }
 
       .rezepttext
@@ -44,38 +46,38 @@
     <script  src="NavBar.js" > </script>
 
     <!-- Flexbox - Rezeptvorschläge -->
-    <p class="überschrift1"> Rezeptvorschläge</p>
+    <p class="überschrift1"> Rezeptvorschläge </p>
 
     <div class="flex-rezeptvorschlaege">
-      <div class="bild">
-        <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild"  title="Rezeptbild" >
+      <a class="bild" href="RezeptSeite.html">
+        <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild"  title="Rezeptbild">
         <p class="rezepttext"> Rezept 1 </p>
-      </div>
+      </a>
 
-      <div class="bild">
-        <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild" title="Rezeptbild" >
+      <a class="bild" href="RezeptSeite.html">
+        <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild" title="Rezeptbild">
         <p class="rezepttext"> Rezept 2 </p>
-      </div>
+      </a>
     </div>
 
     <!-- Flexbox - Die beliebtesten Rezepte -->
     <p class="überschrift1"> Die beliebtesten Rezepte </p>
 
     <div class="flex-rezeptvorschlaege">
-      <div class="bild">
-        <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild"  title="Rezeptbild" >
+      <a class="bild" href="RezeptSeite.html">
+        <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild"  title="Rezeptbild">
         <p class="rezepttext"> Rezept 1 </p>
-      </div>
+      </a>
 
-      <div class="bild">
-        <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild" title="Rezeptbild" >
+      <a class="bild" href="RezeptSeite.html">
+        <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild" title="Rezeptbild">
         <p class="rezepttext"> Rezept 2 </p>
-      </div>
+      </a>
 
-      <div class="bild">
-        <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild" title="Rezeptbild" >
+      <a class="bild" href="RezeptSeite.html">
+        <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild" title="Rezeptbild">
         <p class="rezepttext"> Rezept 3 </p>
-      </div>
+      </a>
     </div>
   </body>
 </html>
