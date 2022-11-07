@@ -3,10 +3,10 @@
     function OpenCon()
     //www.phpmyadmin.co
      {
-     $dbhost = "sql7.freesqldatabase.com";
-     $dbuser = "sql7529981";
-     $dbpass = "qIjeRMjKrU";
-     $db = "sql7529981";
+     $dbhost = "database-1.cn1qejqxue78.eu-central-1.rds.amazonaws.com";
+     $dbuser = "admin";
+     $dbpass = "RI7lnd2VfajM";
+     $db = "FindYourRecipe";
      $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
 
      return $conn;
