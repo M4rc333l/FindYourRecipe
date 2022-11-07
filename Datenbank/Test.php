@@ -22,14 +22,14 @@ echo "Connected Successfully";
 <body>
 
 <?php
-    $resultAll = mysqli_query($conn , "SELECT * FROM rezept");
+    $resultAll = mysqli_query($conn , "SELECT * FROM Kategorie");
     if(!$resultAll){
         die(mysqli_error($conn));
     }
 
     if (mysqli_num_rows($resultAll) > 0) {
         while($rowData = mysqli_fetch_array($resultAll)){
-            echo $rowData["Zubereitung"].'<br>';
+            echo $rowData["Name"].'<br>';
         }
     }
 ?>
