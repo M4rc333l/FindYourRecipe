@@ -26,33 +26,33 @@ document.write(`
         </li>
 
         <!-- Profil -->
-        <li>
-          <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src="https://bethanychurch.org.uk/wp-content/uploads/2018/09/profile-icon-png-black-6.png" alt="Konto"  height="30" width="30" title="Konto">
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">
-
-                <div class="form-group">
-                  <label for="exampleDropdownFormEmail2">Email address</label>
-                  <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+        <form action="SignIn.php" method="post">
+            <li>
+              <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <img src="https://bethanychurch.org.uk/wp-content/uploads/2018/09/profile-icon-png-black-6.png" alt="Konto"  height="30" width="30" title="Konto">
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">
+    
+                    <div class="form-group">
+                      <label for="exampleDropdownFormUsername">Benutzername</label>
+                      <input type="text" class="form-control" id="exampleDropdownFormUsername" placeholder="Name" name="username2">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleDropdownFormPassword2">Passwort</label>
+                      <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Passwort" name="password2">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Anmelden</button>
+                    <br>Sie haben noch keinen Account!
+                    <a class="dropdown-item" href="RegistrierSeite.html" style="color: #0d6efd"> Registrieren  </a>
+                  </a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="ProfilSeite.html">Profil</a>
                 </div>
-                <div class="form-group">
-                  <label for="exampleDropdownFormPassword2">Password</label>
-                  <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
-                </div>
-                <button type="submit" class="btn btn-primary">anmelden</button>
-                <br>Sie haben noch kein Account!
-                <a class="dropdown-item" href="RegestrierSeite.html" style="color: #0d6efd"> registrieren  </a>
-
-              </a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="ProfilSeite.html">Profil</a>
-            </div>
-          </div>
-        </li>
-
+              </div>
+            </li>
+        </form>
       </ul>
 
     </div>
