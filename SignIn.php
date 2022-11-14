@@ -7,7 +7,7 @@ $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n".
 if (isset($_POST["username"])) {
     $benutzername = $_POST["username"];
     $passwort = $_POST["password"];
-    $sql = "SELECT Name, Passwort FROM User WHERE Name='$benutzername' AND Passwort='$passwort'";
+    $sql = "SELECT Name, Passwort FROM User WHERE Name='$benutzername'";
     $result = $conn->query($sql);    if ($result->num_rows > 0) {
         echo "Dieser Benutzername existiert bereits";
     }
