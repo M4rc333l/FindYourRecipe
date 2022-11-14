@@ -10,6 +10,7 @@
 </head>
 <body>
 <?php
+//PHP Skript für alle Rezepte hinzu zufügen
  $dbh = new PDO("mysql:host=database-1.cn1qejqxue78.eu-central-1.rds.amazonaws.com;dbname=FindYourRecipe","admin","RI7lnd2VfajM");
  if(isset($_POST['test'])){
      $data = null;
@@ -42,13 +43,17 @@
     </div>
     <button type="submit" class="btn btn-primary" name="test"></button>
 </form>
+<ol>
 
 <?php
+//PHP Skript für alle Rezepte zu sehen
  $stmt = $dbh->prepare("Select * From Rezept");
  $stmt->execute();
  while ($row = $stmt->fetch()){
-     echo "<li>a target='_blank' href=view.php?id=".$row['RezeptID']."'>".$row['Name']."</a></li>";
+     echo "<li><a target='_blank' href='view.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>
+         <embed src='data:".$row['Bildtyp'].";base64,".base64_encode($row['Bilddata'])."'width='200'/></li>";
  }
 ?>
+</ol>
 </body>
 </html>
