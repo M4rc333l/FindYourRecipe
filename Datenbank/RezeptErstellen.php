@@ -1,6 +1,6 @@
 <!-- Required meta tagss -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,7 +10,7 @@
 </head>
 <body>
 <?php
-//PHP Skript für alle Rezepte hinzu zufügen
+//PHP Skript für alle Rezepte hinzufügen
  $dbh = new PDO("mysql:host=database-1.cn1qejqxue78.eu-central-1.rds.amazonaws.com;dbname=FindYourRecipe","admin","RI7lnd2VfajM");
  if(isset($_POST['test'])){
      $data = null;
