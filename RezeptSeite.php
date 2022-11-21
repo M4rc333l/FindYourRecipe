@@ -1,3 +1,15 @@
+<?php
+
+$dbh = new PDO("mysql:host=database-1.cn1qejqxue78.eu-central-1.rds.amazonaws.com;dbname=FindYourRecipe","admin","RI7lnd2VfajM");
+$ID = $_GET['id'];
+echo $ID;
+$stmt = $dbh->prepare("Select * From Rezept where RezeptID = ?");
+$stmt->bindParam(1,$ID);
+$stmt->execute();
+$row = $stmt->fetch();
+
+?>
+
 <!-- Required meta tagss -->
 
 <!DOCTYPE html>
@@ -54,35 +66,48 @@
 
 <div id="einrücken">
     <!-- Rezeptname -->
-    <p id="rezeptname"> Rezeptname </p>
+    <p id="rezeptname">
+        <?php
+        echo  $row['Name']
+        ?>
+    </p>
 
     <!-- Rezeptbild -->
-    <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild"  title="Rezeptbild" width="300px" height="180px" id="rezeptbild">
+    <?php
+    echo "<embed src ='data:".$row['Bildtyp'].";base64,".base64_encode($row['Bilddata'])."'/>";
+    ?>
+    <!-- <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild"  title="Rezeptbild" width="300px" height="180px" id="rezeptbild"> -->
 
     <!-- Dauer -->
-    <p class="überschrift"> Dauer </p>
-    <p class="rezepttext"> 3h </p>
+    <p class="überschrift"> </p>
+    <p class="rezepttext">
+        <?php
+        echo  $row['Dauer']
+        ?>
+    </p>
 
     <!-- Zutaten -->
     <p class="überschrift"> Zutaten </p>
     <p class="rezepttext">
-        100g Zucker <br>
-        300g Mehl <br>
+        <?php
+        echo  $row['Zutaten']
+        ?>
     </p>
 
     <!-- Zubereitung -->
     <p class="überschrift"> Zubereitung </p>
     <p class="rezepttext">
-        1. Zucker & Mehl abwiegen. <br>
-        2. Zutaten vermischen. <br>
-        3. Guten Appetit! :) <br>
+        <?php
+        echo  $row['Zubereitung']
+        ?>
     </p>
 
     <!-- Kategorien -->
     <p class="überschrift"> Kategorien </p>
     <p class="rezepttext">
-        Vegan <br>
-        Vegetarisch <br>
+        <?php
+        echo  $row['Kategorien']
+        ?>
     </p>
 </div>
 
