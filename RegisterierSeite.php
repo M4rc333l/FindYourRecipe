@@ -35,22 +35,22 @@
             border-bottom: 1px solid darkorange;
             color: white;
         }
-       /* input:not(.send-button){
-            border-bottom: 1px dashed rgb(36, 36, 41);
-            border-top-left-radius: 3px;
-            border-top-right-radius: 3px;
-            color: black;
-            padding-left: 3px;
-            background-color: red;
-        }
+        /* input:not(.send-button){
+             border-bottom: 1px dashed rgb(36, 36, 41);
+             border-top-left-radius: 3px;
+             border-top-right-radius: 3px;
+             color: black;
+             padding-left: 3px;
+             background-color: red;
+         }
 
-        */
+         */
 
-      /*  input:focus{
-            outline-color: red;
-        }
+        /*  input:focus{
+              outline-color: red;
+          }
 
-       */
+         */
 
         .send-button{
             background-color: darkorange;

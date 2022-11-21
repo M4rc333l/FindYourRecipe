@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title> Rezept bearbeiten </title>
 
     <!-- Required meta tags -->
@@ -11,9 +11,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  </head>
-  <body>
-    <!-- JS Datei für NavBar -->
-    <script  src="NavBar.js" > </script>
-  </body>
+</head>
+<body>
+<!-- JS Datei für NavBar -->
+<script  src="NavBar.js" > </script>
+</body>
 </html>

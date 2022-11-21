@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title> Profil </title>
 
     <!-- Required meta tags -->
@@ -14,75 +14,75 @@
 
     <!-- Flexboxen -->
     <style>
-      .flexbox1
-      {
-        display: flex;
-        flex-direction: row;
-      }
+        .flexbox1
+        {
+            display: flex;
+            flex-direction: row;
+        }
 
-      .flexbox2
-      {
-        display: flex;
-        flex-direction: row;
-        margin-left: 150px;
-      }
+        .flexbox2
+        {
+            display: flex;
+            flex-direction: row;
+            margin-left: 150px;
+        }
 
-      .bild2
-      {
-        margin: 50px;
-        margin-left: 50px;
-        width: 100px;
-        height: 100px;
-      }
+        .bild2
+        {
+            margin: 50px;
+            margin-left: 50px;
+            width: 100px;
+            height: 100px;
+        }
 
-      #überschrift
-      {
-        font-size: 50px;
-        font-weight: bold;
-        margin: 50px;
-      }
+        #überschrift
+        {
+            font-size: 50px;
+            font-weight: bold;
+            margin: 50px;
+        }
 
-      #einrücken
-      {
-        margin-left: 30%;
-      }
+        #einrücken
+        {
+            margin-left: 30%;
+        }
     </style>
-  </head>
-  <body>
-    <!-- JS Datei für NavBar -->
-    <script  src="NavBar.js" > </script>
+</head>
+<body>
+<!-- JS Datei für NavBar -->
+<script  src="NavBar.js" > </script>
 
 
-    <p id="überschrift"> Nutzername </p>
+<p id="überschrift"> Nutzername </p>
 
-    <div id="einrücken">
-      <!-- Profil - Flexbox 1 -->
-      <div class="flexbox1">
-          <!-- Rezept erstellen -->
-          <a href="RezeptErstellen.html">
+<div id="einrücken">
+    <!-- Profil - Flexbox 1 -->
+    <div class="flexbox1">
+        <!-- Rezept erstellen -->
+        <a href="RezeptErstellen.html">
             <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034091044679196732/unknown.png" alt="Rezept hinzufügen"  title="Rezept hinzufügen" >
-          </a>
-          <!-- Rezept bearbeiten -->
-          <a href="RezeptBearbeiten.html">
+        </a>
+        <!-- Rezept bearbeiten -->
+        <a href="RezeptBearbeiten.php">
             <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034093377169391707/unknown.png" alt="Rezept bearbeiten" title="Rezept bearbeiten" >
-          </a>
-          <!-- Rezept löschen -->
-          <a href="RezeptLöschen.html">
+        </a>
+        <!-- Rezept löschen -->
+        <a href="RezeptLöschen.php">
             <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034091190917804052/unknown.png" alt="Rezept löschen" title="Rezept löschen" width="50px" height="50px" >
-          </a>
-      </div>
-
-      <!-- Profil - Flexbox 2 -->
-      <div class="flexbox2">
-          <!-- Favoriten -->
-          <a href="Favoriten.html">
-            <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034093652483510282/unknown.png" alt="Favoriten"  title="Favoriten" >
-          </a>
-          <!-- Abmelden -->
-          <a href="#">
-            <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034093822227005491/unknown.png" alt="Abmelden" title="Abmelden" >
-          </a>
-      </div>
+        </a>
     </div>
-  </body>
+
+    <!-- Profil - Flexbox 2 -->
+    <div class="flexbox2">
+        <!-- Favoriten -->
+        <a href="Favoriten.php">
+            <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034093652483510282/unknown.png" alt="Favoriten"  title="Favoriten" >
+        </a>
+        <!-- Abmelden -->
+        <a href="#">
+            <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034093822227005491/unknown.png" alt="Abmelden" title="Abmelden" >
+        </a>
+    </div>
+</div>
+</body>
 </html>

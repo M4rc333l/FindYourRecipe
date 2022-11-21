@@ -1,4 +1,7 @@
 <?php
+$lifetime=600;
+session_set_cookie_params($lifetime);
+session_start();
 $dbhost = "database-1.cn1qejqxue78.eu-central-1.rds.amazonaws.com";
 $dbuser = "admin";
 $dbpass = "RI7lnd2VfajM";
@@ -23,11 +26,13 @@ if (isset($_POST["username"])) {
 if (isset($_POST["username2"])) {
     $benutzername = $_POST["username2"];
     $passwort = $_POST["password2"];
-    $sql = "SELECT Name, Passwort FROM User WHERE Name='$benutzername' AND Passwort='$passwort'";
+    $sql = "SELECT * FROM User WHERE Name='$benutzername' AND Passwort='$passwort'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             echo "Du hast dich erfolgreich angemeldet " . $row["Name"]. "!". "<br>";
+            $_SESSION['id'] = $row['UserID'];
+            header("Location: HomeSeite.html");
         }
     } else {
         echo "Fehler bei der Anmeldung";

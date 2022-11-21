@@ -10,7 +10,7 @@ document.write(`
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="HomeSeite.html"><img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home"  height="30" width="30" title="Home">
+          <a class="nav-link" href="HomeSeite.php"><img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home"  height="30" width="30" title="Home">
             <span class="sr-only">(current)</span></a>
         </li>
 
@@ -22,7 +22,7 @@ document.write(`
 
         <!-- Kategorien -->
         <li class="nav-item">
-          <a class="nav-link" href="KategorieSeite.html"><img src="https://cdn-icons-png.flaticon.com/512/3502/3502685.png" alt="Kategorien"  height="30" width="30" title="Kategorien"></a>
+          <a class="nav-link" href="KategorieSeite.php"><img src="https://cdn-icons-png.flaticon.com/512/3502/3502685.png" alt="Kategorien"  height="30" width="30" title="Kategorien"></a>
         </li>
 
         <!-- Profil -->
@@ -45,10 +45,10 @@ document.write(`
                     </div>
                     <button type="submit" class="btn btn-primary">Anmelden</button>
                     <br>Sie haben noch keinen Account!
-                    <a class="dropdown-item" href="RegistrierSeite.html" style="color: #0d6efd"> Registrieren  </a>
+                    <a class="dropdown-item" href="RegistrierSeite.php" style="color: #0d6efd"> Registrieren  </a>
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="ProfilSeite.html">Profil</a>
+                  <a class="dropdown-item" href="ProfilSeite.php">Profil</a>
                 </div>
               </div>
             </li>
