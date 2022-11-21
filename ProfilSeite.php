@@ -2,7 +2,6 @@
 <?php
 session_set_cookie_params(1000000000);
 session_start();
-$User_ID = $_SESSION['id'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,7 +56,13 @@ $User_ID = $_SESSION['id'];
 <script  src="NavBar.php" > </script>
 
 
-<p id="überschrift"> Nutzername </p>
+<p id="überschrift">
+    <?php
+    if(isset($_SESSION['id'])){
+        echo $_SESSION['id'];
+    }
+    ?>
+</p>
 
 <div id="einrücken">
     <!-- Profil - Flexbox 1 -->
