@@ -64,7 +64,7 @@
 </head>
 <body>
 <!-- JS Datei für NavBar -->
-<script  src="NavBar.js" > </script>
+<script  src="NavBar.php" > </script>
 
 <p id="überschrift"> Kategorien </p>
 

@@ -50,7 +50,7 @@
 </head>
 <body>
 <!-- JS Datei für NavBar -->
-<script  src="NavBar.js" > </script>
+<script  src="NavBar.php" > </script>
 
 <div id="einrücken">
     <!-- Rezeptname -->

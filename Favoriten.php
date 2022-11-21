@@ -14,7 +14,7 @@
 <body>
 
 <!-- JS Datei für NavBar -->
-<script  src="NavBar.js" ></script>
+<script  src="NavBar.php" ></script>
 </body>
 </html><html lang="en">
 <head>

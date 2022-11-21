@@ -8,7 +8,7 @@ document.write(`
   <nav class="navbar navbar-expand-lg navbar-light bg-light" >FindYourRecipe
     <!-- Home -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav nav-fill">
         <li class="nav-item active">
           <a class="nav-link" href="HomeSeite.php"><img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home"  height="30" width="30" title="Home">
             <span class="sr-only">(current)</span></a>
@@ -33,18 +33,19 @@ document.write(`
                   <img src="https://bethanychurch.org.uk/wp-content/uploads/2018/09/profile-icon-png-black-6.png" alt="Konto"  height="30" width="30" title="Konto">
                 </a>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">
     
-                    <div class="form-group">
+                    <div class="dropdown-item-text">
                       <label for="exampleDropdownFormUsername">Benutzername</label>
                       <input type="text" class="form-control" id="exampleDropdownFormUsername" placeholder="Name" name="username2">
                     </div>
-                    <div class="form-group">
+                    <div class="dropdown-item-text">
                       <label for="exampleDropdownFormPassword2">Passwort</label>
                       <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Passwort" name="password2">
                     </div>
-                    <button type="submit" class="btn btn-primary">Anmelden</button>
-                    <br>Sie haben noch keinen Account!
+                    <div class="dropdown-item-text">
+                        <button type="submit" class="btn btn-primary">Anmelden</button>
+                        <br>Sie haben noch keinen Account!
+                    </div>
                     <a class="dropdown-item" href="RegistrierSeite.php" style="color: #0d6efd"> Registrieren  </a>
                   </a>
                   <div class="dropdown-divider"></div>
@@ -66,9 +67,11 @@ document.write(`
 
 `);
 
-document.getElementsByTagName('li')[0].style.marginLeft = "80px";
-document.getElementsByTagName('li')[1].style.marginLeft = "50px";
-document.getElementsByTagName('input')[0].style.marginLeft = "300px";
-document.getElementsByTagName('input')[0].style.width = "400px";
-document.getElementsByTagName('li')[2].style.marginLeft = "80px";
-document.getElementsByTagName('li')[3].style.marginLeft = "80px";
+/*
+document.getElementsByTagName('li')[0].style.marginLeft = "8%";
+document.getElementsByTagName('li')[1].style.marginLeft = "5%";
+document.getElementsByTagName('input')[0].style.marginLeft = "30%";
+document.getElementsByTagName('input')[0].style.width = "10%";
+document.getElementsByTagName('li')[2].style.marginLeft = "8%";
+document.getElementsByTagName('li')[3].style.marginLeft = "10%";
+*/

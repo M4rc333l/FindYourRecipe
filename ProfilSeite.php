@@ -1,5 +1,9 @@
 <!-- Required meta tagss -->
-
+<?php
+session_set_cookie_params(1000000000);
+session_start();
+$User_ID = $_SESSION['id'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +54,7 @@
 </head>
 <body>
 <!-- JS Datei für NavBar -->
-<script  src="NavBar.js" > </script>
+<script  src="NavBar.php" > </script>
 
 
 <p id="überschrift"> Nutzername </p>
