@@ -18,6 +18,7 @@ if (isset($_POST["username"])) {
         $sql2 = "INSERT INTO User (Name, Passwort) VALUES ('$benutzername', '$passwort')";
         if ($conn->query($sql2) === TRUE) {
             echo "Benutzerkonto erfolgreich angelegt";
+            header("Location: HomeSeite.php");
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
@@ -32,7 +33,7 @@ if (isset($_POST["username2"])) {
         while($row = $result->fetch_assoc()) {
             echo "Du hast dich erfolgreich angemeldet " . $row["Name"]. "!". "<br>";
             $_SESSION['id'] = $row['UserID'];
-            header("Location: HomeSeite.html");
+            header("Location: HomeSeite.php");
         }
     } else {
         echo "Fehler bei der Anmeldung";
