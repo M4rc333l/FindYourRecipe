@@ -1,4 +1,4 @@
-<!-- Required meta tagss -->
+<!-- Required meta tags -->
 <?php
 session_set_cookie_params(1000000000);
 session_start();

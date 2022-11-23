@@ -10,7 +10,7 @@ $row = $stmt->fetch();
 
 ?>
 
-<!-- Required meta tagss -->
+<!-- Required meta tags -->
 
 <!DOCTYPE html>
 <html>
