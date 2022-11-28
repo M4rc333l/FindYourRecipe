@@ -16,23 +16,23 @@
 
         form
         {
-            width: 300px;
             border: 2px solid rgb(0, 0, 0);
             box-shadow: 1px 1px 1px rgb(114, 114, 114), 2px 2px 3px rgba(0, 0, 128, 0.52);
             border-radius: 5px;
             margin: 3em;
             padding: 2em;
-            background-color: rgb(152, 152, 155);
-            width: 80%;
+            background-color: rgb(135, 206, 235, 0.5);
+            width: 60%;
+            background-image: linear-gradient(to bottom right, #5d7ad0, #90acc7);
         }
 
         input
         {
             border-style: solid;
             border-width: 1px;
-            font-size: 180%;
-            padding-top: 2%;
-            padding-bottom: 3%;
+            font-size: 180%; /* Schriftgröße in Box */
+            padding-top: 2%; /* Höhe der Box + Text weiter unten */
+            padding-bottom: 3%; /* Auch Höhe der Box + Text weiter oben */
             font-family: Verdana;
             display: flex;
             width: 100%;
@@ -50,14 +50,16 @@
         {
             background-color: rgb(19, 19, 115);
             color: rgb(255, 250, 240);
-            padding: 3%;
             font-family: Tahoma, sans-serif;
             border-radius: 3%;
             margin-top: 1%;
             margin-left: 40%;
             font-size: 170%;
             border: 2px inset rgba(128, 128, 128, 0.4);
-            width: 15%;
+            width: 16%;
+            padding: 1% 2%;
+            display: inline-block;
+            text-align: center;
         }
 
         .send-button:hover
@@ -87,6 +89,8 @@
 
 </head>
 <body>
+<!-- TODO: oben Zeile 26! -->
+
 <h1 id="überschrift"> Registrierformular </h1>
 <div id="box">
     <form action ="" method="post" id="RegisterForm">

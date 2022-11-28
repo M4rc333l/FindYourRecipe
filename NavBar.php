@@ -5,7 +5,7 @@ session_start();
 echo '
 document.write(`
 
-<nav class="navbar bg-light">
+<nav class="navbar" style="background-color: rgba(0,191,255,0.2);">
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1"> FindYourRecipe </span>
     
