@@ -53,7 +53,7 @@ session_start();
             font-weight: bold;
         }
         img {
-            width: 50%;
+            width: 100%;
         }
     </style>
 </head>
