@@ -53,7 +53,7 @@ session_start();
             font-weight: bold;
         }
         img {
-            width: 100%;
+            width: 50%;
         }
     </style>
 </head>
@@ -97,6 +97,8 @@ session_start();
         <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild" title="Rezeptbild">
         <p class="rezepttext"> Rezept 3 </p>
     </a>
+
+
 </div>
 <?php
 
@@ -105,7 +107,9 @@ $stmt = $dbh->prepare("Select * from Rezept");
 $stmt->execute();
 while ($row = $stmt->fetch()){
     echo "<li><a target='_blank' href='RezeptSeite.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>
-    <embed src='data:".$row['Bildtyp'].";base64,".base64_encode($row['Bilddata'])."'width='200'/></li>";
+    <embed src='data:".$row['Bildtyp'].";base64,".base64_encode($row['Bilddata'])."'width='100'/></li>";
+
+
 }
 ?>
 </body>

@@ -70,9 +70,7 @@ $row = $stmt->fetch();
     </p>
 
     <!-- Rezeptbild -->
-    <?php
-    echo "<embed src ='data:".$row['Bildtyp'].";base64,".base64_encode($row['Bilddata'])."'/>";
-    ?>
+
     <!-- <img src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild"  title="Rezeptbild" width="300px" height="180px" id="rezeptbild"> -->
 
     <!-- Dauer -->
@@ -106,6 +104,10 @@ $row = $stmt->fetch();
         echo  $row['Kategorien']
         ?>
     </p>
+
+    <?php
+    echo "<embed src ='data:".$row['Bildtyp'].";base64,".base64_encode($row['Bilddata'])."'/>";
+    ?>
 </div>
 
 <a id="favorit">
