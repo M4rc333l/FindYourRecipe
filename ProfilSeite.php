@@ -92,7 +92,7 @@ session_start();
             <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034093652483510282/unknown.png" alt="Favoriten"  title="Favoriten" >
         </a>
         <!-- Abmelden -->
-        <a href="#">
+        <a href="SignOut.php">
             <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034093822227005491/unknown.png" alt="Abmelden" title="Abmelden" >
         </a>
     </div>

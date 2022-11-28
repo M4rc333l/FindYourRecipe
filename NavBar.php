@@ -1,5 +1,4 @@
 <?php
-
 session_set_cookie_params(1000000000);
 session_start();
 echo '
@@ -51,9 +50,6 @@ document.write(`
             </li>
             <li>
                 <hr class="dropdown-divider">
-            </li>
-            <li>
-                <a class="dropdown-item" href="ProfilSeite.php">Profil</a>
             </li>
           </ul>
         </form>
