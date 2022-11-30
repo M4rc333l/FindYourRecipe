@@ -56,8 +56,17 @@
 
 <div id="einrücken">
     <!-- Rezeptbild -->
-    <input type="image" id="rezeptbildUpload" src="https://uxwing.com/wp-content/themes/uxwing/download/video-photography-multimedia/upload-image-icon.png" alt="Rezeptbild hochladen" width="200px" height="190px">
-
+ <!--   <input type="image" id="rezeptbildUpload" src="https://uxwing.com/wp-content/themes/uxwing/download/video-photography-multimedia/upload-image-icon.png" alt="Rezeptbild hochladen" width="200px" height="190px"> -->
+    <img id="preview" width="300" height="300">
+    <div>
+        <input
+                type="file"
+                id="file"
+                name="file"
+                accept=".jpg, .jpeg, .png, .jfif"
+                onchange="prieviewImage();"
+        />
+    </div>
     <!-- Rezeptname -->
     <div class="überschrift">
         <label> Rezeptname </label>
@@ -121,4 +130,17 @@
 </div>
 </div>
 </body>
+<script>
+    function prieviewImage(){
+        var file = document.getElementById("file").files;
+        if(file.length > 0){
+            var fileReader = new FileReader();
+            fileReader.onload = function (event){
+                document.getElementById("preview").setAttribute("src", event.target.result);
+            };
+            fileReader.readAsDataURL(file[0]);
+        }
+
+    }
+</script>
 </html>
