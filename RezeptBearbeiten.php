@@ -18,7 +18,7 @@
 <?php
 session_set_cookie_params(1000000000);
 session_start();
-$dbh = new PDO("mysql:host=database-1.cn1qejqxue78.eu-central-1.rds.amazonaws.com;dbname=FindYourRecipe","admin","RI7lnd2VfajM");
+$dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
 $id = $_SESSION['id'];
 $stmt = $dbh->prepare("Select * from Rezept as R
     Where R.Rezept_User_ID =  '$id'");
@@ -28,6 +28,7 @@ while ($row = $stmt->fetch()){
           <embed src='data:".$row['Bildtyp'].";base64,".base64_encode($row['Bilddata'])."'width='200'/><br>";
     $_SESSION['rezept_id'] = $row['RezeptID'];
     echo "<a id='delete' target='_blank' href='RezeptLoeschen.php'>Rezept löschen</a></li>";
+    echo "<a id='update' target='_blank' href='RezeptUpdate.php'>Rezept bearbeiten</a></li>";
 }
 ?>
 </body>

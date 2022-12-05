@@ -102,7 +102,7 @@ session_start();
 </div>
 <?php
 
-$dbh = new PDO("mysql:host=database-1.cn1qejqxue78.eu-central-1.rds.amazonaws.com;dbname=FindYourRecipe","admin","RI7lnd2VfajM");
+$dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
 $stmt = $dbh->prepare("Select * from Rezept");
 $stmt->execute();
 while ($row = $stmt->fetch()){

@@ -1,3 +1,12 @@
+<?php
+session_start();
+$dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
+$rezept_ID = $_SESSION['rezept_id'];
+$stmt = $dbh->prepare("Select * From Rezept where RezeptID = ?");
+$stmt->bindParam(1,$rezept_ID);
+$stmt->execute();
+$row = $stmt->fetch();
+?>
 <!-- Required meta tags -->
 <!DOCTYPE html>
 <html>
@@ -53,41 +62,41 @@
 <body>
 <!-- JS Datei für NavBar -->
 <script  src="NavBar.php" > </script>
-    <div id="einrücken">
-        <!-- Rezeptbild -->
-        <!--   <input type="image" id="rezeptbildUpload" src="https://uxwing.com/wp-content/themes/uxwing/download/video-photography-multimedia/upload-image-icon.png" alt="Rezeptbild hochladen" width="200px" height="190px"> -->
-        <img id="preview" width="300" height="300">
+<div id="einrücken">
+    <!-- Rezeptbild -->
+    <!--   <input type="image" id="rezeptbildUpload" src="https://uxwing.com/wp-content/themes/uxwing/download/video-photography-multimedia/upload-image-icon.png" alt="Rezeptbild hochladen" width="200px" height="190px"> -->
+    <img id="preview" width="300" height="300" src="<?php  echo "data:".$row['Bildtyp'].";base64,".base64_encode($row['Bilddata'])?>">
     <form action="RezeptErstellen.php" method="post" id="rezepterstellen" enctype="multipart/form-data">
 
-            <input
-                    type="file" id="bild" name="bild" accept=".jpg, .jpeg, .png, .jfif"
-                    onchange="prieviewImage();"
-            />
+        <input
+            type="file" id="bild" name="bild" accept=".jpg, .jpeg, .png, .jfif"
+            onchange="prieviewImage();"
+        />
 
 
         <!-- Rezeptname -->
         <div class="überschrift">
             <label> Rezeptname </label>
-            <input type="text" class="unten" name="rezeptname" size="30%">
+            <input type="text" class="unten" name="rezeptname" size="30%" value=<?php echo $row["Name"] ?>>
         </div>
 
         <!-- Dauer -->
         <div class="überschrift">
             <label> Dauer </label>
-            <input type="text" class="unten" name="dauer" size="30%">
+            <input type="text" class="unten" name="dauer" size="30%" value=<?php echo $row["Dauer"] ?>>
         </div>
 
         <!-- Zutaten -->
         <!-- TODO: Schöneres Feld (bei Enter => neues Eingabefeld) -->
         <div class="überschrift">
             <label> Zutaten </label>
-            <textarea name="zutaten" class="unten" rows="5" cols="40"> </textarea>
+            <textarea name="zutaten" class="unten" rows="5" cols="40"> <?php echo $row["Zutaten"] ?></textarea>
         </div>
 
         <!-- Zubereitung -->
         <div class="überschrift">
             <label> Zubereitung </label>
-            <textarea name="zubereitung" class="unten" rows="5" cols="40"> </textarea>
+            <textarea name="zubereitung" class="unten" rows="5" cols="40" > <?php echo $row["Zubereitung"] ?></textarea>
         </div>
 
         <!-- Kategorien -->
@@ -95,8 +104,16 @@
             <label class="überschrift"> Kategorien </label>
             <ul style="list-style-type:none;">
                 <li>
-                    <input type="checkbox" value="" id="firstCheckbox" name="Vegan">
-                    <label for="firstCheckbox" > Vegan </label>
+                    <?php if($row["Kategorien"] == "Vegan"){
+                        echo    '<input type="checkbox" value="" id="firstCheckbox" name="Vegan" checked>
+                                <label for="firstCheckbox" > Vegan </label>';
+                    }
+                    else{
+                        echo   '<input type="checkbox" value="" id="firstCheckbox" name="Vegan">
+                              <label for="firstCheckbox" > Vegan </label>';
+                    }
+                        ?>
+
                 </li>
                 <li>
                     <input type="checkbox" value="" id="secondCheckbox" name="Vegetarisch">
@@ -126,8 +143,8 @@
             <input type="submit" id="button" name="button" value="Fertig">
         </div>
     </form>
-    </div>
-    </div>
+</div>
+</div>
 
 
 </body>

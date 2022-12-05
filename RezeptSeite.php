@@ -1,5 +1,5 @@
 <?php
-$dbh = new PDO("mysql:host=database-1.cn1qejqxue78.eu-central-1.rds.amazonaws.com;dbname=FindYourRecipe","admin","RI7lnd2VfajM");
+$dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
 $ID = $_GET['id'];
 $stmt = $dbh->prepare("Select * From Rezept where RezeptID = ?");
 $stmt->bindParam(1,$ID);
@@ -63,6 +63,11 @@ $row = $stmt->fetch();
 
 <div id="einrücken">
     <!-- Rezeptname -->
+
+    <?php
+    echo "<embed src ='data:".$row['Bildtyp'].";base64,".base64_encode($row['Bilddata'])."'/>";
+    ?>
+
     <p id="rezeptname">
         <?php
         echo  $row['Name']
@@ -105,9 +110,6 @@ $row = $stmt->fetch();
         ?>
     </p>
 
-    <?php
-    echo "<embed src ='data:".$row['Bildtyp'].";base64,".base64_encode($row['Bilddata'])."'/>";
-    ?>
 </div>
 
 <a id="favorit">

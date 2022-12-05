@@ -1,9 +1,10 @@
+
 <?php
 $lifetime=600;
 session_set_cookie_params($lifetime);
 session_start();
-$dbhost = "database-1.cn1qejqxue78.eu-central-1.rds.amazonaws.com";
-$dbuser = "admin";
+$dbhost = "34.65.206.124";
+$dbuser = "root";
 $dbpass = "RI7lnd2VfajM";
 $db = "FindYourRecipe";
 $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);

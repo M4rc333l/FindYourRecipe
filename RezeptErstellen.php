@@ -6,19 +6,36 @@ session_start();
 $Rezept_User_ID = $_SESSION['id'];
 echo $Rezept_User_ID;
 //PHP Skript für alle Rezepte hinzufügen
-$dbh = new PDO("mysql:host=database-1.cn1qejqxue78.eu-central-1.rds.amazonaws.com;dbname=FindYourRecipe","admin","RI7lnd2VfajM");
-    //$data = null;
-    $data = file_get_contents($_FILES['file']['tmp_name']);
+$dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
+    $data = file_get_contents($_FILES["bild"]['tmp_name']);
+
     $rezeptname = $_POST['rezeptname'];
     $zubereitung = $_POST['zubereitung'];
     $zutaten = $_POST['zutaten'];
     $dauer= $_POST['dauer'];
     $rezeptname = $_POST['rezeptname'];
-    $bildname = $_FILES['file']['name'];
-    $bildtyp = $_FILES['file']['type'];
-    $kategorie = $_POST['kategorien'];
-
-    $stmt = $dbh->prepare("insert into Rezept values ('',?,?,?,0,?,?,?,?,?,?)");
+    $bildname = $_FILES['bild']['name'];
+    $bildtyp = $_FILES['bild']['type'];
+    if (isset($_POST["Vegan"])){
+        $kategorie = 'Vegan';
+    }
+    if (isset($_POST["Vegetarisch"])){
+        $kategorie = 'Vegetarisch';
+    }
+    if (isset($_POST["Fisch"])){
+        $kategorie = 'Fisch';
+    }
+    if (isset($_POST["Fleisch"])){
+        $kategorie = 'Fleisch';
+    }
+    if (isset($_POST["Glutenfrei"])){
+        $kategorie = 'Glutenfrei';
+    }
+    if (isset($_POST["Kalorienarm"])){
+        $kategorie = 'Kalorienarm';
+    }
+    echo $kategorie;
+    $stmt = $dbh->prepare("insert into Rezept(Rezept_User_ID,Bildname,Kategorien,Beliebtheit,Zubereitung,Name,Zutaten,Bildtyp,Bilddata,Dauer) values (?,?,?,0,?,?,?,?,?,?)");
     $stmt->bindParam(1,$Rezept_User_ID);
     $stmt->bindParam(2,$bildname);
     $stmt->bindParam(3,$kategorie);
@@ -40,8 +57,8 @@ $dbh = new PDO("mysql:host=database-1.cn1qejqxue78.eu-central-1.rds.amazonaws.co
     while ($row = $stmt->fetch()){
         $RezeptID = $row['MAX(RezeptID)'];
     }
+    echo $kategorie;
     echo $KategorieID;
-    echo $RezeptID;
     $stmt = $dbh->prepare("insert into RezeptKategorie(RezeptKategorie_KategorieID, RezeptKategorie_RezeptID) values ('$KategorieID','$RezeptID')");
     $stmt->execute();
 

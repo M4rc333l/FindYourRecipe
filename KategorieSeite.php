@@ -120,7 +120,7 @@
 </form>
 <!-- Unterer Suchbutton -->
 <?php
-$dbh = new PDO("mysql:host=database-1.cn1qejqxue78.eu-central-1.rds.amazonaws.com;dbname=FindYourRecipe","admin","RI7lnd2VfajM");
+$dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
 if(isset($_POST['suchen'])){
     if (isset($_POST['Vegetarisch'])){
         $Kategorie = $_POST['Vegetarisch'];

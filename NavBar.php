@@ -26,7 +26,7 @@ document.write(`
         <div class="btn-group dropstart">
         <form class="d-flex" action = "SignIn.php" method = "post">
           <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://bethanychurch.org.uk/wp-content/uploads/2018/09/profile-icon-png-black-6.png" alt="Konto" height="30" width="25" title="Konto">
+            <img src="https://cdn-icons-png.flaticon.com/512/1250/1250689.png" alt="Konto" height="30" width="25" title="Konto">
           </button>
           <ul class="dropdown-menu">
             <li>
@@ -61,7 +61,7 @@ document.write(`
         <div class="btn-group dropstart">
         <form class="d-flex" action = "SignOut.php" method = "post">
           <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://bethanychurch.org.uk/wp-content/uploads/2018/09/profile-icon-png-black-6.png" alt="Konto" height="30" width="25" title="Konto">
+            <img src="https://cdn-icons-png.flaticon.com/512/1250/1250689.png" alt="Konto" height="30" width="25" title="Konto">
           </button>
           <ul class="dropdown-menu">
             <li>
