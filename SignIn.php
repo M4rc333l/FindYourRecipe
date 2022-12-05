@@ -32,8 +32,8 @@ if (isset($_POST["username2"])) {
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
-            echo "Du hast dich erfolgreich angemeldet " . $row["Name"]. "!". "<br>";
             $_SESSION['id'] = $row['UserID'];
+            $_SESSION['name'] = $row['Name'];
             header("Location: HomeSeite.php");
         }
     } else {

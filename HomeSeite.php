@@ -1,4 +1,3 @@
-<!-- Required meta tags -->
 <?php
 session_set_cookie_params(1000000000);
 session_start();
@@ -108,8 +107,6 @@ $stmt->execute();
 while ($row = $stmt->fetch()){
     echo "<li><a target='_blank' href='RezeptSeite.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>
     <embed src='data:".$row['Bildtyp'].";base64,".base64_encode($row['Bilddata'])."'width='100'/></li>";
-
-
 }
 ?>
 </body>

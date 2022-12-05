@@ -1,8 +1,11 @@
 <?php
 $dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
+session_set_cookie_params(10000000);
+session_start();
 $ID = $_GET['id'];
 $stmt = $dbh->prepare("Select * From Rezept where RezeptID = ?");
 $stmt->bindParam(1,$ID);
+$_SESSION['RezeptID'] = $ID;
 $stmt->execute();
 $row = $stmt->fetch();
 ?>
@@ -15,11 +18,12 @@ $row = $stmt->fetch();
     <title> Rezept </title>
 
     <!-- Required meta tags -->
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <style>
         #rezeptbild
         {
@@ -65,7 +69,7 @@ $row = $stmt->fetch();
     <!-- Rezeptname -->
 
     <?php
-    echo "<embed src ='data:".$row['Bildtyp'].";base64,".base64_encode($row['Bilddata'])."'/>";
+        echo "<embed src ='data:".$row['Bildtyp'].";base64,".base64_encode($row['Bilddata'])."'width='100' height='100'/>";
     ?>
 
     <p id="rezeptname">
@@ -112,7 +116,7 @@ $row = $stmt->fetch();
 
 </div>
 
-<a id="favorit">
+<a id="favorit" href="FavoritHinzufuegen.php">
     <img src="https://cdn-icons-png.flaticon.com/512/324/324679.png" alt="Favorit" width="50px" height="50px">
 </a>
 </body>

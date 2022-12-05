@@ -63,7 +63,7 @@ session_start();
 <p id="überschrift">
     <?php
     if(isset($_SESSION['id'])){
-        echo $_SESSION['id'];
+        echo $_SESSION['name'];
     }
     ?>
 </p>
