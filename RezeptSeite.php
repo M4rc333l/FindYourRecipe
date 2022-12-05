@@ -25,20 +25,34 @@ $row = $stmt->fetch();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <style>
-        #rezeptbild
-        {
-            opacity: 0.5;
+
+        body{
+            background: url("https://cdn.discordapp.com/attachments/1023935776163119175/1049339294029971577/hintergrundi.png");
         }
 
         #rezeptname
         {
             font-size: 45px;
             font-weight: bold;
+            box-shadow: 0 4px 8px 0 rgba(0, 150, 255, 0.2), 0 6px 20px 0 rgba(0, 150, 255, 0.19) ;
         }
 
         #einrücken
         {
-            margin-left: 40%;
+            margin-left: 15%;
+            margin-right: 15%;
+            border-style:none solid;
+            border-width: 5px;
+
+            border-color: rgb(177, 234, 255);
+            margin-top: 1%;
+            padding-left: 10%;
+            padding-right: 10%;
+
+            background-color: white;
+
+
+
         }
 
         #favorit
@@ -52,18 +66,24 @@ $row = $stmt->fetch();
         {
             font-size: 30px;
             font-weight: bold;
+            box-shadow: 0 4px 8px 0 rgba(0, 150, 255, 0.2), 0 6px 20px 0 rgba(0, 150, 255, 0.19) ;
+
         }
 
         .rezepttext
         {
             font-size: 18px;
-            margin-left: 30px;
+            width: 100%;
+            border: 1px none;
+            word-wrap: break-word;
+
         }
     </style>
 </head>
 <body>
 <!-- JS Datei für NavBar -->
 <script  src="NavBar.php" > </script>
+
 
 <div id="einrücken">
     <!-- Rezeptname -->
@@ -119,5 +139,7 @@ $row = $stmt->fetch();
 <a id="favorit" href="FavoritHinzufuegen.php">
     <img src="https://cdn-icons-png.flaticon.com/512/324/324679.png" alt="Favorit" width="50px" height="50px">
 </a>
+
+
 </body>
 </html>
