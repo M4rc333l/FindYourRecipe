@@ -87,15 +87,18 @@
 
 <div id="suchen">
     <!-- Suchleiste -->
-    <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Pizza, Burger, ..." aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> Search </button>
+    <form class="form-inline my-2 my-lg-0" method="post">
+        <input class="form-control mr-sm-2" type="search" placeholder="Pizza, Burger, ..." aria-label="Search" name="suchemich" id="suchemich">
     </form>
 </div>
 
 
 <!-- Checkboxen für Kategorien -->
-<form  method="post">
+<form  method="post" >
+    <div id="einrücken">
+        <input class="form-control mr-sm-2" type="search" placeholder="Pizza, Burger, ..." aria-label="Search" name="suchemich" id="suchemich" >
+    </div>
+
     <div>
         <div id="linkeSpalte">
             <input type="checkbox" id="kategorie1" name="Vegan" value="Vegan">
@@ -139,6 +142,12 @@
 <?php
 $dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
 if(isset($_POST['suchen'])){
+    if ($_POST['search'] == ""){
+        $rezeptname = "";
+    }else{
+        $rezeptname = $_POST['search'];
+    }
+
     if (isset($_POST['Vegetarisch'])){
         $Kategorie = $_POST['Vegetarisch'];
     }
@@ -158,11 +167,11 @@ if(isset($_POST['suchen'])){
         $Kategorie = $_POST['Kalorienarm'];
     }
     $stmt = $dbh->prepare("Select * from Rezept as R, RezeptKategorie as RK, Kategorie as K
-        Where R.RezeptID = RK.RezeptKategorie_RezeptID AND K.KategorieID = RK.RezeptKategorie_KategorieID  AND K.Name = '$Kategorie'");
+        Where R.RezeptID = RK.RezeptKategorie_RezeptID AND K.KategorieID = RK.RezeptKategorie_KategorieID  AND K.Name = '$Kategorie' ");
     $stmt->execute();
     while ($row = $stmt->fetch()){
-        echo "<li><a target='_blank' href='RezeptSeite.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>
-                 <embed src='data:".$row['Bildtyp'].";base64,".base64_encode($row['Bilddata'])."'width='200'/></li>";
+        echo "<li><a target='_blank' href='RezeptSeite.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>";
+        echo " <img  src=uploads/".$row["Bildname"]."  style='height:150px;width:150px;' >";
     }
 }
 ?>

@@ -11,8 +11,8 @@ document.write(`
         <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home"  height="30" width="30" title="Home">
     </a>
     
-    <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <form class="d-flex" role="search" method="post" action="RezeptSuchen.php">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
     
@@ -81,4 +81,5 @@ document.write(`
 </nav>
 `);
 ';
+
 ?>
