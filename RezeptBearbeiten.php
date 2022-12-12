@@ -16,7 +16,6 @@
 <!-- JS Datei für NavBar -->
 <script  src="NavBar.php" > </script>
 <?php
-    session_set_cookie_params(1000000000);
     session_start();
     $dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
     $id = $_SESSION['id'];

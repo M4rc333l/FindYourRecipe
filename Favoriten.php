@@ -16,16 +16,25 @@
 <!-- JS Datei für NavBar -->
 <script  src="NavBar.php" > </script>
 <?php
-    session_set_cookie_params(1000000000);
     session_start();
     $dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
     $id = $_SESSION['id'];
-    $stmt = $dbh->prepare("Select * from Rezept as R Where R.Rezept_User_ID =  '$id' AND R.RezeptID IN(SELECT User.FavoritenRezepte FROM User WHERE UserID='$id') ");
+    $stmt = $dbh->prepare("SELECT User.FavoritenRezepte FROM User WHERE UserID='$id'");
     $stmt->execute();
-    while ($row = $stmt->fetch()){
-        echo "<li><a target='_blank' href='RezeptSeite.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>
-              <embed src='data:".$row['Bildtyp'].";base64,".base64_encode($row['Bilddata'])."'width='200'/><br>";
-        $_SESSION['rezept_id'] = $row['RezeptID'];
+    $stmt2 = $dbh->prepare("SELECT RezeptID From Rezept");
+    $stmt2->execute();
+    $stmtString = "";
+    while($row = $stmt->fetch()){
+        $stmtString = $row[0];
+    }
+    $array = preg_split("/\,/", $stmtString);
+    for($i=0;$i<count($array);$i++){
+        $stmt2 = $dbh->prepare("SELECT * FROM Rezept Where RezeptID = '$array[$i]';");
+        $stmt2->execute();
+        while ($row = $stmt2->fetch()) {
+            echo "<li><a target='_blank' href='RezeptSeite.php?id=" . $row['RezeptID'] . "'>" . $row['Bildname'] . "'" . $row['RezeptID'] . "</a><br/>";
+            echo " <img  src=uploads/" . $row["Bildname"] . "  style='height:150px;width:150px;' >";
+        }
     }
 ?>
 </body>

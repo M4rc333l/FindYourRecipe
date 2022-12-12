@@ -1,11 +1,11 @@
 <?php
 $dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
-session_set_cookie_params(10000000);
 session_start();
-$ID = $_GET['id'];
+$RezeptID = $_GET['id'];
 $stmt = $dbh->prepare("Select * From Rezept where RezeptID = ?");
-$stmt->bindParam(1,$ID);
-$_SESSION['RezeptID'] = $ID;
+$stmt->bindParam(1,$RezeptID);
+$_SESSION['RezeptID'] = $RezeptID;
+$User_ID = $_SESSION['id'];
 $stmt->execute();
 $row = $stmt->fetch();
 ?>
@@ -151,10 +151,26 @@ $row = $stmt->fetch();
     </p>
 
 </div>
-
-<a id="favorit" href="FavoritHinzufuegen.php">
-    <img src="https://cdn-icons-png.flaticon.com/512/324/324679.png" alt="Favorit" width="50px" height="50px">
-</a>
+ <?php
+     $RezeptID = $_GET['id'];
+     $stmt = $dbh->prepare("SELECT User.FavoritenRezepte FROM User WHERE UserID='$User_ID'");
+     $stmt->execute();
+     $stmtString = "";
+     while($row = $stmt->fetch()){
+         $stmtString = $row[0];
+     }
+    $array = preg_split("/\,/", $stmtString);
+     if(!in_array($RezeptID, $array)){
+         echo "<a id='favorit' href=FavoritHinzufuegen.php?id='$RezeptID'>
+               <img src='https://cdn-icons-png.flaticon.com/512/324/324679.png' alt='Favorit' width='50px' height='50px'>
+               </a>";
+     }
+     else {
+         echo "<a id='favorit' href=FavoritLoeschen.php?id='$RezeptID'>
+               <img src='https://cdn-icons-png.flaticon.com/512/2107/2107957.png' alt='Favorit' width='50px' height='50px'>
+               </a>";
+     }
+ ?>
 
 
 </body>

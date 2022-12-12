@@ -1,6 +1,6 @@
 
 <?php
-$lifetime=600;
+$lifetime=1000000000;
 session_set_cookie_params($lifetime);
 session_start();
 $dbhost = "34.65.206.124";

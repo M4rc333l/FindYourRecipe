@@ -138,7 +138,6 @@ $dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2V
 $stmt = $dbh->prepare("Select * from Rezept");
 $stmt->execute();
 while ($row = $stmt->fetch()){
-
     echo "<li><a target='_blank' href='RezeptSeite.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>";
     echo " <img  src=uploads/".$row["Bildname"]."  style='height:150px;width:150px;' >";
 }

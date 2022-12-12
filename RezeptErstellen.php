@@ -1,7 +1,4 @@
 <?php
-
-$lifetime=1000000000000;
-session_set_cookie_params($lifetime);
 session_start();
 $Rezept_User_ID = $_SESSION['id'];
 //PHP Skript für alle Rezepte hinzufügen
