@@ -1,7 +1,7 @@
 <?php
 session_start();
 $dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
-$rezept_ID = $_SESSION['rezept_id'];
+$rezept_ID = $_GET['id'];
 $stmt = $dbh->prepare("Select * From Rezept where RezeptID = ?");
 $stmt->bindParam(1,$rezept_ID);
 $stmt->execute();
@@ -63,10 +63,11 @@ $row = $stmt->fetch();
 <!-- JS Datei für NavBar -->
 <script  src="NavBar.php" > </script>
 <div id="einrücken">
+
     <!-- Rezeptbild -->
     <!--   <input type="image" id="rezeptbildUpload" src="https://uxwing.com/wp-content/themes/uxwing/download/video-photography-multimedia/upload-image-icon.png" alt="Rezeptbild hochladen" width="200px" height="190px"> -->
-    <img id="preview" width="300" height="300" src="<?php  echo "data:".$row['Bildtyp'].";base64,".base64_encode($row['Bilddata'])?>">
-    <form action="RezeptErstellen.php" method="post" id="rezepterstellen" enctype="multipart/form-data">
+    <img id="preview" width="300" height="300" src="<?php  echo "uploads/".$row['Bildname']?>">
+    <form action="Update.php?id=<?php echo $row['RezeptID']?>"method="post" id="rezepterstellen" enctype="multipart/form-data">
 
         <input
             type="file" id="bild" name="bild" accept=".jpg, .jpeg, .png, .jfif"
@@ -116,24 +117,59 @@ $row = $stmt->fetch();
 
                 </li>
                 <li>
-                    <input type="checkbox" value="" id="secondCheckbox" name="Vegetarisch">
-                    <label for="secondCheckbox"> Vegetarisch </label>
+                    <?php if($row["Kategorien"] == "Vegetarisch"){
+                        echo    '<input type="checkbox" value="" id="firstCheckbox" name="Vegetarisch" checked>
+                                <label for="firstCheckbox" > Vegetarisch </label>';
+                    }
+                    else{
+                        echo   '<input type="checkbox" value="" id="firstCheckbox" name="Vegetarisch">
+                              <label for="firstCheckbox" > Vegetarisch </label>';
+                    }
+                    ?>
                 </li>
                 <li>
-                    <input type="checkbox" value="" id="thirdCheckbox" name="Fisch">
-                    <label for="thirdCheckbox"> Fisch </label>
+                    <?php if($row["Kategorien"] == "Fisch"){
+                        echo    '<input type="checkbox" value="" id="firstCheckbox" name="Fisch" checked>
+                                <label for="firstCheckbox" > Fisch </label>';
+                    }
+                    else{
+                        echo   '<input type="checkbox" value="" id="firstCheckbox" name="Fisch">
+                              <label for="firstCheckbox" > Fisch </label>';
+                    }
+                    ?>
                 </li>
                 <li>
-                    <input type="checkbox" value="" id="fourthCheckbox" name="Fleisch">
-                    <label for="fourthCheckbox"> Fleisch </label>
+                    <?php if($row["Kategorien"] == "Fleisch"){
+                        echo    '<input type="checkbox" value="" id="firstCheckbox" name="Fleisch" checked>
+                                <label for="firstCheckbox" > Fleisch </label>';
+                    }
+                    else{
+                        echo   '<input type="checkbox" value="" id="firstCheckbox" name="Fleisch">
+                              <label for="firstCheckbox" > Fleisch </label>';
+                    }
+                    ?>
                 </li>
                 <li>
-                    <input type="checkbox" value="" id="fifthCheckbox" name=" Glutenfrei">
-                    <label for="fifthCheckbox"> Glutenfrei </label>
+                    <?php if($row["Kategorien"] == "Glutenfrei"){
+                        echo    '<input type="checkbox" value="" id="firstCheckbox" name="Glutenfrei" checked>
+                                <label for="firstCheckbox" > Glutenfrei </label>';
+                    }
+                    else{
+                        echo   '<input type="checkbox" value="" id="firstCheckbox" name="Glutenfrei">
+                              <label for="firstCheckbox" > Glutenfrei </label>';
+                    }
+                    ?>
                 </li>
                 <li>
-                    <input type="checkbox" value="" id="sixthCheckbox" name="Kalorienarm">
-                    <label for="sixthCheckbox"> Kalorienarm </label>
+                    <?php if($row["Kategorien"] == "Kalorienarm"){
+                        echo    '<input type="checkbox" value="" id="firstCheckbox" name="Kalorienarm" checked>
+                                <label for="firstCheckbox" > Kalorienarm </label>';
+                    }
+                    else{
+                        echo   '<input type="checkbox" value="" id="firstCheckbox" name="Kalorienarm">
+                              <label for="firstCheckbox" > Kalorienarm </label>';
+                    }
+                    ?>
                 </li>
             </ul>
         </div>

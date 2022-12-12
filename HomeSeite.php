@@ -85,6 +85,9 @@ session_start();
 <!-- Flexbox - Rezeptvorschläge -->
 <p class="überschrift1"> Rezeptvorschläge </p>
 
+
+
+
 <div class="flex-rezeptvorschlaege">
     <a class="bild" href="RezeptSeite.html">
         <img class="rahmen"  src="https://images-ext-2.discordapp.net/external/_xK-LeH1rPvEz3sB1mbu86hxYL_8iQA4FGCBarfkWlg/https/png.pngtree.com/png-clipart/20190516/original/pngtree-healthy-food-png-image_3776802.jpg?width=662&height=662" alt="Rezeptbild"  title="Rezeptbild"  width="300" height="400">
@@ -122,16 +125,16 @@ session_start();
 
 
 </div>
-
 <?php
-
 $dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
 $stmt = $dbh->prepare("Select * from Rezept");
 $stmt->execute();
 while ($row = $stmt->fetch()){
-    echo "<li><a target='_blank' href='RezeptSeite.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>
-    <embed src='data:".$row['Bildtyp'].";base64,".base64_encode($row['Bilddata'])."'width='100'/></li>";
+
+    echo "<li><a target='_blank' href='RezeptSeite.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>";
+    echo " <img  src=uploads/".$row["Bildname"]."  style='height:150px;width:150px;' >";
 }
 ?>
+
 </body>
 </html>

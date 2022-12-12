@@ -89,7 +89,7 @@ $row = $stmt->fetch();
     <!-- Rezeptname -->
 
     <?php
-        echo "<embed src ='data:".$row['Bildtyp'].";base64,".base64_encode($row['Bilddata'])."'width='100' height='100'/>";
+        echo "<img src=uploads/".$row["Bildname"]."/>";
     ?>
 
     <p id="rezeptname">

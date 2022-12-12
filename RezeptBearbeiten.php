@@ -16,20 +16,20 @@
 <!-- JS Datei für NavBar -->
 <script  src="NavBar.php" > </script>
 <?php
-session_set_cookie_params(1000000000);
-session_start();
-$dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
-$id = $_SESSION['id'];
-$stmt = $dbh->prepare("Select * from Rezept as R
-    Where R.Rezept_User_ID =  '$id'");
-$stmt->execute();
-while ($row = $stmt->fetch()){
-    echo "<li><a target='_blank' href='RezeptSeite.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>
-          <embed src='data:".$row['Bildtyp'].";base64,".base64_encode($row['Bilddata'])."'width='200'/><br>";
-    $_SESSION['rezept_id'] = $row['RezeptID'];
-    echo "<a id='delete' target='_blank' href='RezeptLoeschen.php'>Rezept löschen</a></li>";
-    echo "<a id='update' target='_blank' href='RezeptUpdate.php'>Rezept bearbeiten</a></li>";
-}
+    session_set_cookie_params(1000000000);
+    session_start();
+    $dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
+    $id = $_SESSION['id'];
+    $stmt = $dbh->prepare("Select * from Rezept as R
+        Where R.Rezept_User_ID =  '$id'");
+    $stmt->execute();
+    while ($row = $stmt->fetch()){
+        echo "<li><a target='_blank' href='RezeptSeite.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>";
+        echo "<img src=uploads/".$row["Bildname"].">";
+     //   $_SESSION['rezept_id'] = $row['RezeptID'];
+        echo "<a id='delete' target='_blank' href='RezeptLoeschen.php?id=".$row['RezeptID']."'>Rezept löschen</a></li>";
+        echo "<a id='update' target='_blank' href='RezeptUpdate.php?id=".$row['RezeptID']."'>Rezept bearbeiten</a></li>";
+    }
 ?>
 </body>
 </html>
