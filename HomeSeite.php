@@ -25,9 +25,9 @@ session_start();
     <!-- Flexboxen -->
     <style>
         body {
-            background: url("https://cdn.discordapp.com/attachments/1023935776163119175/1049339294029971577/hintergrundi.png");
-
-
+            background: url("https://cdn.discordapp.com/attachments/1023935776163119175/1051851552056414228/Hintergrund_Fuenf_Prozent.png");
+        }
+        img{
 
         }
         .flex-rezeptvorschlaege
@@ -42,6 +42,7 @@ session_start();
             max-width: 100%;
             height: auto;
             color: black;
+
 
 
         }
@@ -59,13 +60,13 @@ session_start();
             margin-left: 50px;
             font-size: 50px;
             font-weight: bold;
-            box-shadow: 0 4px 8px 0 rgba(0, 150, 255, 0.2), 0 6px 20px 0 rgba(0, 150, 255, 0.19) ;
-        }
-        img {
-            width: 100%;
+            box-shadow: 0 4px 8px 0 rgba(0, 150, 255, 0.2), 0 6px 20px 0 rgba(0, 150, 255, 0.19);
+            background-color: white;
         }
 
+
         .bild{
+
             object-fit: cover;
 
         }
@@ -73,6 +74,8 @@ session_start();
             border: 10px solid rgb(177, 234, 255);
             box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             border-image: linear-gradient(to right, rgb(177, 234, 255), rgb(156, 206, 241)) 1;
+            width: 100%;
+            height: 300px;
 
         }
     </style>
@@ -90,16 +93,21 @@ session_start();
 
 <div class="flex-rezeptvorschlaege">
     <a class="bild" href="RezeptSeite.html">
-        <img class="rahmen"  src="https://images-ext-2.discordapp.net/external/_xK-LeH1rPvEz3sB1mbu86hxYL_8iQA4FGCBarfkWlg/https/png.pngtree.com/png-clipart/20190516/original/pngtree-healthy-food-png-image_3776802.jpg?width=662&height=662" alt="Rezeptbild"  title="Rezeptbild"  width="300" height="400">
+        <img class="rahmen"  src="https://images-ext-2.discordapp.net/external/_xK-LeH1rPvEz3sB1mbu86hxYL_8iQA4FGCBarfkWlg/https/png.pngtree.com/png-clipart/20190516/original/pngtree-healthy-food-png-image_3776802.jpg?width=662&height=662" alt="Rezeptbild"  title="Rezeptbild">
         <source srcset="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" media="(max-width: 1500px)">
         <p class="rezepttext"> Rezept 1 </p>
     </a>
 
 
     <a class="bild" href="RezeptSeite.html">
-        <img class="rahmen" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild" title="Rezeptbild"  width="300" height="400" >
+        <img class="rahmen" src="uploads/IMG-63973473109ea1.54967421.jpg" alt="Rezeptbild" title="Rezeptbild" >
         <source srcset="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" media="(max-width: 1500px)">
         <p class="rezepttext"> Rezept 2 </p>
+    </a>
+
+    <a class="bild" href="RezeptSeite.html">
+        <img class="rahmen" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild"  title="Rezeptbild" >
+        <p class="rezepttext"> Rezept 3 </p>
     </a>
 
 </div>
@@ -109,22 +117,22 @@ session_start();
 
 <div class="flex-rezeptvorschlaege">
     <a class="bild" href="RezeptSeite.html">
-        <img class="rahmen" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild"  title="Rezeptbild" height="300">
+        <img class="rahmen" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild"  title="Rezeptbild" >
         <p class="rezepttext"> Rezept 1 </p>
     </a>
 
     <a class="bild" href="RezeptSeite.html">
-        <img class="rahmen" src="https://i.pinimg.com/originals/9b/15/22/9b1522c3159b016c1a4751e9ea2cb8eb.jpg" alt="Rezeptbild" title="Rezeptbild" height="300">
+        <img class="rahmen" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild" title="Rezeptbild" >
         <p class="rezepttext"> Rezept 2 </p>
     </a>
 
     <a class="bild" href="RezeptSeite.html">
-        <img class="rahmen" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild" title="Rezeptbild" height="300">
+        <img class="rahmen" src="uploads/IMG-63973473109ea1.54967421.jpg" alt="Rezeptbild" title="Rezeptbild" >
         <p class="rezepttext"> Rezept 3 </p>
     </a>
 
-
 </div>
+
 <?php
 $dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
 $stmt = $dbh->prepare("Select * from Rezept");

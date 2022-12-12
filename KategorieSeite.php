@@ -17,14 +17,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
     <style>
+        body{
+            background: url("https://cdn.discordapp.com/attachments/1023935776163119175/1051851552056414228/Hintergrund_Fuenf_Prozent.png");
+
+        }
         #überschrift
         {
             font-size: 50px;
             font-weight: bold;
             margin: 50px;
+            box-shadow: 0 4px 8px 0 rgba(0, 150, 255, 0.2), 0 6px 20px 0 rgba(0, 150, 255, 0.19);
+            background-color: white;
         }
 
-        #einrücken
+        #suchen
         {
             margin-left: 40%;
         }
@@ -64,6 +70,10 @@
             left: 47%;
             top: 80%;
         }
+        #rahmen{
+            border: 10px solid rgb(177, 234, 255);
+
+        }
     </style>
 </head>
 <body>
@@ -72,7 +82,10 @@
 
 <p id="überschrift"> Kategorien </p>
 
-<div id="einrücken">
+<div  id="rahmen">
+
+
+<div id="suchen">
     <!-- Suchleiste -->
     <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Pizza, Burger, ..." aria-label="Search">
@@ -114,10 +127,14 @@
             <label for="kategorie6"> Kalorienarm </label>
         </div>
     </div>
+
     <div id="suchbutton">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="suchen" id="suchen"> Suchen </button>
     </div>
+
+
 </form>
+</div>
 <!-- Unterer Suchbutton -->
 <?php
 $dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
@@ -149,5 +166,6 @@ if(isset($_POST['suchen'])){
     }
 }
 ?>
+
 </body>
 </html>
