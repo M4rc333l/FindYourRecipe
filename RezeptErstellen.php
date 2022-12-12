@@ -50,7 +50,7 @@ if (in_array($img_ex_lc, $allowed_exs)) {
     $stmt->bindParam(3,$kategorie);
     $stmt->bindParam(4,$zubereitung);
     $stmt->bindParam(5,$rezeptname);
-    $stmt->bindParam(6,$rezeptname);
+    $stmt->bindParam(6,$zutaten);
     $stmt->bindParam(7,$bildtyp);
     $stmt->bindParam(8,$dauer);
     $stmt->execute();

@@ -85,11 +85,14 @@ $row = $stmt->fetch();
 <script  src="NavBar.php" > </script>
 
 
+
+
+
 <div id="einrücken">
     <!-- Rezeptname -->
 
     <?php
-        echo "<img src=uploads/".$row["Bildname"]."/>";
+    echo " <img  src=uploads/".$row["Bildname"]."  style='height:150px;width:150px;' >";
     ?>
 
     <p id="rezeptname">
