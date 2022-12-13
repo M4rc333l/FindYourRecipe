@@ -82,22 +82,17 @@
 
 <p id="überschrift"> Kategorien </p>
 
-<div  id="rahmen">
 
-
-<div id="suchen">
-    <!-- Suchleiste -->
-    <form class="form-inline my-2 my-lg-0" method="post">
-        <input class="form-control mr-sm-2" type="search" placeholder="Pizza, Burger, ..." aria-label="Search" name="suchemich" id="suchemich">
-    </form>
-</div>
 
 
 <!-- Checkboxen für Kategorien -->
 <form  method="post" >
-    <div id="einrücken">
-        <input class="form-control mr-sm-2" type="search" placeholder="Pizza, Burger, ..." aria-label="Search" name="suchemich" id="suchemich" >
-    </div>
+    <div  id="rahmen">
+        <div id="suchen">
+            <div class="form-inline my-2 my-lg-0" method="post">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pizza, Burger, ..." aria-label="Search" name="suchemich" id="suchemich">
+            </div>
+        </div>
 
     <div>
         <div id="linkeSpalte">
@@ -141,37 +136,55 @@
 <!-- Unterer Suchbutton -->
 <?php
 $dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
+$RezeptIdMerken = array();
+$kategorielist = array();
 if(isset($_POST['suchen'])){
-    if ($_POST['search'] == ""){
-        $rezeptname = "";
-    }else{
-        $rezeptname = $_POST['search'];
-    }
-
+    $rezeptname = $_POST['suchemich'];
     if (isset($_POST['Vegetarisch'])){
         $Kategorie = $_POST['Vegetarisch'];
+        array_push($kategorielist, $Kategorie);
     }
     if (isset($_POST['Vegan'])){
         $Kategorie = $_POST['Vegan'];
+        array_push($kategorielist, $Kategorie);
     }
     if (isset($_POST['Fisch'])){
         $Kategorie = $_POST['Fisch'];
+        array_push($kategorielist, $Kategorie);
     }
     if (isset($_POST['Fleisch'])){
         $Kategorie = $_POST['Fleisch'];
+        array_push($kategorielist, $Kategorie);
     }
     if (isset($_POST['Glutenfrei'])){
         $Kategorie = $_POST['Glutenfrei'];
+        array_push($kategorielist, $Kategorie);
     }
     if (isset($_POST['Kalorienarm'])){
         $Kategorie = $_POST['Kalorienarm'];
+        array_push($kategorielist, $Kategorie);
     }
-    $stmt = $dbh->prepare("Select * from Rezept as R, RezeptKategorie as RK, Kategorie as K
-        Where R.RezeptID = RK.RezeptKategorie_RezeptID AND K.KategorieID = RK.RezeptKategorie_KategorieID  AND K.Name = '$Kategorie' ");
-    $stmt->execute();
-    while ($row = $stmt->fetch()){
-        echo "<li><a target='_blank' href='RezeptSeite.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>";
-        echo " <img  src=uploads/".$row["Bildname"]."  style='height:150px;width:150px;' >";
+    for ($i = 0; $i <= count($kategorielist)-1;$i++){
+        $stmt = $dbh->prepare("Select * from Rezept as R, RezeptKategorie as RK, Kategorie as K
+        Where R.RezeptID = RK.RezeptKategorie_RezeptID AND K.KategorieID = RK.RezeptKategorie_KategorieID  AND K.Name = '$kategorielist[$i]' AND  R.Name LIKE '%$rezeptname%'");
+        $stmt->execute();
+        while ($row = $stmt->fetch()){
+            $doppelt = FALSE;
+            array_push($RezeptIdMerken, $row['RezeptID']);
+            for ($j = 0; $j <= count($RezeptIdMerken)-1;$j++){
+                if ($i > 0 && $RezeptIdMerken[$j] ==$row['RezeptID'] ){
+                    $doppelt = TRUE;
+                }
+            }
+            if (!$doppelt && $i > 0){
+                echo "<li><a target='_blank' href='RezeptSeite.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>";
+                echo " <img  src=uploads/".$row["Bildname"]."  style='height:150px;width:150px;' >";
+            }
+            if ($i == 0){
+                echo "<li><a target='_blank' href='RezeptSeite.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>";
+                echo " <img  src=uploads/".$row["Bildname"]."  style='height:150px;width:150px;' >";
+            }
+        }
     }
 }
 ?>
