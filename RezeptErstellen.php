@@ -1,4 +1,5 @@
 <?php
+//
 session_start();
 $Rezept_User_ID = $_SESSION['id'];
 //PHP Skript für alle Rezepte hinzufügen

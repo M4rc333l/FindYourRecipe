@@ -1,4 +1,4 @@
-<!-- Required meta tags -->
+<!-- Required metas tags -->
 
 <!DOCTYPE html>
 <html>
