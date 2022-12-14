@@ -146,7 +146,19 @@ $row = $stmt->fetch();
     <p class="überschrift"> Kategorien </p>
     <p class="rezepttext">
         <?php
-        echo  $row['Kategorien']
+        $RezeptKategorie = array();
+        $RezeptID = $_GET['id'];
+        $stmt = $dbh->prepare("select K.Name from Kategorie as K, RezeptKategorie as RK where RK.RezeptKategorie_RezeptID = '$RezeptID' AND RK.RezeptKategorie_KategorieID = K.KategorieID");
+        $stmt->execute();
+        $count = $stmt->rowCount();
+        while($row = $stmt->fetch()){
+            if ($count > 1){
+                echo $row['Name'].", ";
+                $count--;
+            }else{
+                echo $row['Name'];
+            }
+        }
         ?>
     </p>
 
