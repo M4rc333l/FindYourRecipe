@@ -15,8 +15,6 @@ session_start();
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
@@ -92,20 +90,20 @@ session_start();
 
 
 <div class="flex-rezeptvorschlaege">
-    <a class="bild" href="RezeptSeite.html">
+    <a class="bild" href="RezeptSeite.php">
         <img class="rahmen"  src="https://images-ext-2.discordapp.net/external/_xK-LeH1rPvEz3sB1mbu86hxYL_8iQA4FGCBarfkWlg/https/png.pngtree.com/png-clipart/20190516/original/pngtree-healthy-food-png-image_3776802.jpg?width=662&height=662" alt="Rezeptbild"  title="Rezeptbild">
         <source srcset="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" media="(max-width: 1500px)">
         <p class="rezepttext"> Rezept 1 </p>
     </a>
 
 
-    <a class="bild" href="RezeptSeite.html">
+    <a class="bild" href="RezeptSeite.php">
         <img class="rahmen" src="uploads/IMG-63973473109ea1.54967421.jpg" alt="Rezeptbild" title="Rezeptbild" >
         <source srcset="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" media="(max-width: 1500px)">
         <p class="rezepttext"> Rezept 2 </p>
     </a>
 
-    <a class="bild" href="RezeptSeite.html">
+    <a class="bild" href="RezeptSeite.php">
         <img class="rahmen" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild"  title="Rezeptbild" >
         <p class="rezepttext"> Rezept 3 </p>
     </a>
@@ -116,17 +114,17 @@ session_start();
 <p class="überschrift1"> Die beliebtesten Rezepte </p>
 
 <div class="flex-rezeptvorschlaege">
-    <a class="bild" href="RezeptSeite.html">
+    <a class="bild" href="RezeptSeite.php">
         <img class="rahmen" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild"  title="Rezeptbild" >
         <p class="rezepttext"> Rezept 1 </p>
     </a>
 
-    <a class="bild" href="RezeptSeite.html">
+    <a class="bild" href="RezeptSeite.php">
         <img class="rahmen" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png" alt="Rezeptbild" title="Rezeptbild" >
         <p class="rezepttext"> Rezept 2 </p>
     </a>
 
-    <a class="bild" href="RezeptSeite.html">
+    <a class="bild" href="RezeptSeite.php">
         <img class="rahmen" src="uploads/IMG-63973473109ea1.54967421.jpg" alt="Rezeptbild" title="Rezeptbild" >
         <p class="rezepttext"> Rezept 3 </p>
     </a>
