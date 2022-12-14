@@ -19,4 +19,6 @@ for($i=0;$i<count($array);$i++){
 $newString = implode(",", $array);
 $stmt = $dbh->prepare("UPDATE User SET FavoritenRezepte = '$newString' WHERE UserID = '$User_ID';");
 $stmt->execute();
+$stmt = $dbh->prepare("UPDATE Rezept SET Beliebtheit = Beliebtheit-1 WHERE RezeptID = '$RezeptID';");
+$stmt->execute();
 header('Location: ' . $_SERVER['HTTP_REFERER']);

@@ -7,4 +7,6 @@ $stmt = $dbh->prepare("UPDATE User SET FavoritenRezepte = CONCAT(FavoritenRezept
 $stmt->execute();
 $stmt = $dbh->prepare("UPDATE User SET FavoritenRezepte = $RezeptID WHERE UserID = '$User_ID' AND FavoritenRezepte IS NULL OR FavoritenRezepte = '' ;");
 $stmt->execute();
+$stmt = $dbh->prepare("UPDATE Rezept SET Beliebtheit = Beliebtheit+1 WHERE RezeptID = $RezeptID;");
+$stmt->execute();
 header('Location: ' . $_SERVER['HTTP_REFERER']);
