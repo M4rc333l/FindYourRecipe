@@ -1,9 +1,9 @@
 <?php
 session_start();
 $dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
-$rezept_ID = $_GET['id'];
+$RezeptID = $_GET['id'];
 $stmt = $dbh->prepare("Select * From Rezept where RezeptID = ?");
-$stmt->bindParam(1,$rezept_ID);
+$stmt->bindParam(1,$RezeptID);
 $stmt->execute();
 $row = $stmt->fetch();
 ?>
@@ -19,11 +19,9 @@ $row = $stmt->fetch();
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-
 
     <style>
         #rezeptbildUpload
@@ -65,13 +63,12 @@ $row = $stmt->fetch();
     <!-- Rezeptbild -->
     <!--   <input type="image" id="rezeptbildUpload" src="https://uxwing.com/wp-content/themes/uxwing/download/video-photography-multimedia/upload-image-icon.png" alt="Rezeptbild hochladen" width="200px" height="190px"> -->
     <img id="preview" width="300" height="300" src="<?php  echo "uploads/".$row['Bildname']?>">
-    <form action="Update.php?id=<?php echo $row['RezeptID']?>"method="post" id="rezepterstellen" enctype="multipart/form-data">
+    <form action="Update.php?id=<?php echo $row['RezeptID']?>" method="post" id="rezepterstellen" enctype="multipart/form-data">
 
         <input
             type="file" id="bild" name="bild" accept=".jpg, .jpeg, .png, .jfif"
             onchange="prieviewImage();"
         />
-
 
         <!-- Rezeptname -->
         <div class="überschrift">
@@ -110,7 +107,7 @@ $row = $stmt->fetch();
                 $stmt->execute();
                 $count2 = $stmt->rowCount();
                 while($row = $stmt->fetch()){
-                    array_push($Kategorie, $row['Name']);
+                    $Kategorie[] = $row['Name'];
                 }
                 $stmt = $dbh->prepare("Select * from Kategorie");
                 $stmt->execute();
@@ -140,21 +137,17 @@ $row = $stmt->fetch();
         </div>
     </form>
 </div>
-</div>
-
-
 </body>
 <script>
     function prieviewImage(){
-        var file = document.getElementById("bild").files;
+        let file = document.getElementById("bild").files;
         if(file.length > 0){
-            var fileReader = new FileReader();
+            let fileReader = new FileReader();
             fileReader.onload = function (event){
                 document.getElementById("preview").setAttribute("src", event.target.result);
             };
             fileReader.readAsDataURL(file[0]);
         }
-
     }
 </script>
 </html>

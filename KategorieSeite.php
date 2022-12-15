@@ -11,7 +11,6 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
@@ -19,7 +18,6 @@
     <style>
         body{
             background: url("https://cdn.discordapp.com/attachments/1023935776163119175/1051851552056414228/Hintergrund_Fuenf_Prozent.png");
-
         }
         #überschrift
         {
@@ -72,7 +70,6 @@
         }
         #rahmen{
             border: 10px solid rgb(177, 234, 255);
-
         }
     </style>
 </head>
@@ -81,9 +78,6 @@
 <script  src="NavBar.php" > </script>
 
 <p id="überschrift"> Kategorien </p>
-
-
-
 
 <!-- Checkboxen für Kategorien -->
 <form  method="post" >
@@ -129,10 +123,7 @@
     <div id="suchbutton">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="suchen" id="suchen"> Suchen </button>
     </div>
-
-
 </form>
-</div>
 <!-- Unterer Suchbutton -->
 <?php
 $dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
@@ -142,27 +133,27 @@ if(isset($_POST['suchen'])){
     $rezeptname = $_POST['suchemich'];
     if (isset($_POST['Vegetarisch'])){
         $Kategorie = $_POST['Vegetarisch'];
-        array_push($kategorielist, $Kategorie);
+        $kategorielist[] = $Kategorie;
     }
     if (isset($_POST['Vegan'])){
         $Kategorie = $_POST['Vegan'];
-        array_push($kategorielist, $Kategorie);
+        $kategorielist[] = $Kategorie;
     }
     if (isset($_POST['Fisch'])){
         $Kategorie = $_POST['Fisch'];
-        array_push($kategorielist, $Kategorie);
+        $kategorielist[] = $Kategorie;
     }
     if (isset($_POST['Fleisch'])){
         $Kategorie = $_POST['Fleisch'];
-        array_push($kategorielist, $Kategorie);
+        $kategorielist[] = $Kategorie;
     }
     if (isset($_POST['Glutenfrei'])){
         $Kategorie = $_POST['Glutenfrei'];
-        array_push($kategorielist, $Kategorie);
+        $kategorielist[] = $Kategorie;
     }
     if (isset($_POST['Kalorienarm'])){
         $Kategorie = $_POST['Kalorienarm'];
-        array_push($kategorielist, $Kategorie);
+        $kategorielist[] = $Kategorie;
     }
     for ($i = 0; $i <= count($kategorielist)-1;$i++){
         $stmt = $dbh->prepare("Select * from Rezept as R, RezeptKategorie as RK, Kategorie as K
@@ -170,7 +161,7 @@ if(isset($_POST['suchen'])){
         $stmt->execute();
         while ($row = $stmt->fetch()){
             $doppelt = FALSE;
-            array_push($RezeptIdMerken, $row['RezeptID']);
+            $RezeptIdMerken[] = $row['RezeptID'];
             for ($j = 0; $j <= count($RezeptIdMerken)-1;$j++){
                 if ($i > 0 && $RezeptIdMerken[$j] ==$row['RezeptID'] ){
                     $doppelt = TRUE;
@@ -188,6 +179,5 @@ if(isset($_POST['suchen'])){
     }
 }
 ?>
-
 </body>
 </html>

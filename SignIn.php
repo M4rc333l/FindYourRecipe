@@ -1,4 +1,3 @@
-
 <?php
 $lifetime=1000000000;
 session_set_cookie_params($lifetime);
