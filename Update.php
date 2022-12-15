@@ -14,24 +14,54 @@
     $rezeptname = $_POST['rezeptname'];
     $bildname = $_FILES['bild']['name'];
     $bildtyp = $_FILES['bild']['type'];
+    $kategorielist = array();
     if (isset($_POST["Vegan"])){
         $kategorie = 'Vegan';
+        array_push($kategorielist, $kategorie);
     }
     if (isset($_POST["Vegetarisch"])){
         $kategorie = 'Vegetarisch';
+        array_push($kategorielist, $kategorie);
     }
     if (isset($_POST["Fisch"])){
         $kategorie = 'Fisch';
+        array_push($kategorielist, $kategorie);
     }
     if (isset($_POST["Fleisch"])){
         $kategorie = 'Fleisch';
-    }
-    if (isset($_POST["Glutenfrei"])){
-        $kategorie = 'Glutenfrei';
+        array_push($kategorielist, $kategorie);
     }
     if (isset($_POST["Kalorienarm"])){
         $kategorie = 'Kalorienarm';
+        array_push($kategorielist, $kategorie);
     }
+
+    if (isset($_POST["Glutenfrei"])){
+        $kategorie = 'Glutenfrei';
+        array_push($kategorielist, $kategorie);
+    }
+
+
+    $stmt = $dbh->prepare("DELETE FROM RezeptKategorie WHERE RezeptKategorie_RezeptID = '$rezept_ID'");
+    $stmt->execute();
+
+    for ($i = 0; $i < count($kategorielist);$i++){
+        echo $kategorielist[$i];
+
+        $stmt = $dbh->prepare("Select KategorieID FROM Kategorie  Where Name = '$kategorielist[$i]' ");
+        $stmt->execute();
+        while ($row = $stmt->fetch()){
+            $KategorieID = $row['KategorieID'];
+        }
+        $stmt = $dbh->prepare("insert into RezeptKategorie(RezeptKategorie_KategorieID, RezeptKategorie_RezeptID) values ('$KategorieID','$rezept_ID')");
+        $stmt->execute();
+
+    }
+
+
+
+
+
 
     $stmt = $dbh->prepare("Select * from Rezept as R Where R.RezeptID =  '$rezept_ID'");
     $stmt->execute();

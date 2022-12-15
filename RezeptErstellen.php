@@ -29,12 +29,13 @@ if (isset($_POST["Fleisch"])){
     $kategorie = 'Fleisch';
     array_push($kategorielist, $kategorie);
 }
-if (isset($_POST["Glutenfrei"])){
-    $kategorie = 'Glutenfrei';
-    array_push($kategorielist, $kategorie);
-}
 if (isset($_POST["Kalorienarm"])){
     $kategorie = 'Kalorienarm';
+    array_push($kategorielist, $kategorie);
+}
+
+if (isset($_POST["Glutenfrei"])){
+    $kategorie = 'Glutenfrei';
     array_push($kategorielist, $kategorie);
 }
 
@@ -45,7 +46,7 @@ $stmt = $dbh->prepare("insert into Rezept(Rezept_User_ID,Bildname,Kategorien,Bel
 $img_ex = pathinfo($bildname, PATHINFO_EXTENSION);
 $img_ex_lc = strtolower($img_ex);
 
-$allowed_exs = array("jpg", "jpeg", "png");
+$allowed_exs = array("jpg", "jpeg", "png", "jfif");
 if (in_array($img_ex_lc, $allowed_exs)) {
     $new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
     $img_upload_path = 'uploads/'.$new_img_name;
