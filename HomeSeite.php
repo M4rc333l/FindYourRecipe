@@ -74,12 +74,10 @@ session_start();
 
 
 <?php
-$zaehler = 0;
 $dbh = new PDO('mysql:host=34.89.179.34;dbname=findyourrecipe',"root","nT0~dY&jhe%6>|BX");
-$stmt = $dbh->prepare("Select * from Rezept");
+$stmt = $dbh->prepare("Select * from Rezept ORDER BY RAND()");
 $stmt->execute();
 while ($row = $stmt->fetch()){
-    if ($zaehler < 3){
         echo  "<div class='flex-rezeptvorschlaege'>
             <a class='bild' href='RezeptSeite.php?id=".$row['RezeptID']."'>
                 <img class='rahmen'  src='uploads/".$row['Bildname']."?width=662&height=662' alt='Rezeptbild'  title='Rezeptbild'>
@@ -87,8 +85,7 @@ while ($row = $stmt->fetch()){
                 <p class='rezepttext'> ".$row['Rezeptname']."  </p>
             </a>
         </div>";
-        $zaehler++;
-    }
+
 }
 ?>
 
