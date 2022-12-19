@@ -138,6 +138,23 @@
         else {
             document.querySelector('#button').disabled = true;
         }
+
+        if(document.getElementById("firstCheckbox").checked || document.getElementById("secondCheckbox").checked){
+            document.getElementById("thirdCheckbox").disabled = true;
+            document.getElementById("fourthCheckbox").disabled = true;
+        }
+        else {
+            document.getElementById("thirdCheckbox").disabled = false;
+            document.getElementById("fourthCheckbox").disabled = false;
+        }
+        if(document.getElementById("thirdCheckbox").checked || document.getElementById("fourthCheckbox").checked){
+            document.getElementById("firstCheckbox").disabled = true;
+            document.getElementById("secondCheckbox").disabled = true;
+        }
+        else {
+            document.getElementById("firstCheckbox").disabled = false;
+            document.getElementById("secondCheckbox").disabled = false;
+        }
     }
 </script>
 </html>
