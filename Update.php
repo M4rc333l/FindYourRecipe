@@ -7,7 +7,9 @@ $dbh = new PDO('mysql:host=34.89.179.34;dbname=findyourrecipe',"root","nT0~dY&jh
 $data = $_FILES["bild"]['tmp_name'];
 $rezeptname = $_POST['rezeptname'];
 $zubereitung = $_POST['zubereitung'];
+$zubereitung = nl2br($zubereitung);
 $zutaten = $_POST['zutaten'];
+$zutaten = nl2br($zutaten);
 $dauer= $_POST['dauer'];
 $rezeptname = $_POST['rezeptname'];
 $bildname = $_FILES['bild']['name'];
