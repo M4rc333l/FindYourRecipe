@@ -21,12 +21,10 @@ session_start();
         body {
             background: url("https://cdn.discordapp.com/attachments/1023935776163119175/1051851552056414228/Hintergrund_Fuenf_Prozent.png");
         }
-
         .flex-rezeptvorschlaege
         {
             display: inline-flex;
         }
-
         .bild, .bild:hover
         {
             margin:50px;
@@ -34,14 +32,11 @@ session_start();
             height: auto;
             color: black;
         }
-
         .rezepttext
         {
             font-size: 20px;
             font-weight: bold;
-
         }
-
         .überschrift1
         {
             margin: 20px;
@@ -51,16 +46,8 @@ session_start();
             box-shadow: 0 4px 8px 0 rgba(0, 150, 255, 0.2), 0 6px 20px 0 rgba(0, 150, 255, 0.19);
             background-color: white;
         }
-
         .bild{
             object-fit: cover;
-        }
-        .rahmen{
-            border: 10px solid rgb(177, 234, 255);
-            box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            border-image: linear-gradient(to right, rgb(177, 234, 255), rgb(156, 206, 241)) 1;
-            width: 100%;
-            height: 300px;
         }
     </style>
 </head>
@@ -135,6 +122,5 @@ if(isset($_POST['suchen'])){
     }
 }
 ?>
-
 </body>
 </html>

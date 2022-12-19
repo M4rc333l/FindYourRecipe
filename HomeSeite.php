@@ -111,15 +111,6 @@ while ($row = $stmt->fetch()){
         $zaehler++;
     }
 }
-?>
-
-
-
-
-
-
-<?php
-$dbh = new PDO('mysql:host=34.89.179.34;dbname=findyourrecipe',"root","nT0~dY&jhe%6>|BX");
 $stmt = $dbh->prepare("Select * from Rezept");
 $stmt->execute();
 while ($row = $stmt->fetch()){

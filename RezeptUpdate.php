@@ -24,30 +24,20 @@ $row = $stmt->fetch();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
     <style>
-        #rezeptbildUpload
-        {
-            opacity: 0.5;
-            margin-left: 20px;
-            margin-top: 1%;
-        }
-
         #einrücken
         {
             margin-left: 38%;
         }
-
         .überschrift
         {
             font-size: 20px;
             font-weight: bold;
             margin-top: 2%;
         }
-
         .unten
         {
             display: flex;
         }
-
         #button
         {
             margin-left: 15%;

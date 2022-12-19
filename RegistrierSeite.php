@@ -15,7 +15,6 @@
             font-size: 16px;
             background-color: white;
         }
-
         form
         {
             border: 2px solid rgb(0, 0, 0);
@@ -27,7 +26,6 @@
             width: 60%;
             background-image: linear-gradient(to bottom right, #5d7ad0, #90acc7);
         }
-
         input
         {
             border-style: solid;
@@ -39,7 +37,6 @@
             display: flex;
             width: 100%;
         }
-
         label
         {
             font-size: 180%;
@@ -47,7 +44,6 @@
             padding-bottom: 3%;
             font-family: Verdana;
         }
-
         .send-button
         {
             background-color: rgb(19, 19, 115);
@@ -63,30 +59,25 @@
             display: inline-block;
             text-align: center;
         }
-
         .send-button:hover
         {
             box-shadow: 1px 1px 3px 1px rgba(169, 169, 169, 0.6);
             background-color: rgba(11, 11, 117, 0.62);
             cursor: pointer;
         }
-
         #box
         {
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
         /*TODO: Scrollbar entfernen*/
-
         #überschrift
         {
             text-align: center;
             color: black;
             margin-top: 1%;
         }
-
     </style>
 </head>
 <body>

@@ -22,20 +22,17 @@ session_start();
         body{
             background: url("https://cdn.discordapp.com/attachments/1023935776163119175/1051851552056414228/Hintergrund_Fuenf_Prozent.png");
         }
-
         .flexbox1
         {
             display: flex;
             flex-direction: row;
         }
-
         .flexbox2
         {
             display: flex;
             flex-direction: row;
             margin-left: 150px;
         }
-
         .bild2
         {
             margin: 50px;
@@ -43,7 +40,6 @@ session_start();
             width: 100px;
             height: 100px;
         }
-
         #überschrift
         {
             font-size: 50px;
@@ -52,7 +48,6 @@ session_start();
             box-shadow: 0 4px 8px 0 rgba(0, 150, 255, 0.2), 0 6px 20px 0 rgba(0, 150, 255, 0.19);
             background-color: white;
         }
-
         #einrücken
         {
             margin-left: 30%;

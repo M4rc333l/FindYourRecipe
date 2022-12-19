@@ -25,7 +25,6 @@ session_start();
         {
             display: inline-flex;
         }
-
         .bild, .bild:hover
         {
             margin:50px;
@@ -33,32 +32,16 @@ session_start();
             height: auto;
             color: black;
         }
-
         .rezepttext
         {
             font-size: 20px;
             font-weight: bold;
         }
-
-        .überschrift1
-        {
-            margin: 20px;
-            margin-left: 50px;
-            font-size: 50px;
-            font-weight: bold;
-            box-shadow: 0 4px 8px 0 rgba(0, 150, 255, 0.2), 0 6px 20px 0 rgba(0, 150, 255, 0.19) ;
-        }
         img {
             width: 100%;
         }
-
         .bild{
             object-fit: cover;
-        }
-        .rahmen{
-            border: 10px solid rgb(177, 234, 255);
-            box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            border-image: linear-gradient(to right, rgb(177, 234, 255), rgb(156, 206, 241)) 1;
         }
     </style>
 </head>

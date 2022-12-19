@@ -21,7 +21,7 @@
 <script  src="NavBar.php" > </script>
 <?php
     session_start();
-$dbh = new PDO('mysql:host=34.89.179.34;dbname=findyourrecipe',"root","nT0~dY&jhe%6>|BX");
+    $dbh = new PDO('mysql:host=34.89.179.34;dbname=findyourrecipe',"root","nT0~dY&jhe%6>|BX");
     $UserID = $_SESSION['id'];
     $stmt = $dbh->prepare("SELECT User.FavoritenRezepte FROM User WHERE UserID='$UserID'");
     $stmt->execute();

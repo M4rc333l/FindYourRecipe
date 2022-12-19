@@ -35,24 +35,12 @@ $row = $stmt->fetch();
         body{
             background: url("https://cdn.discordapp.com/attachments/1023935776163119175/1051851552056414228/Hintergrund_Fuenf_Prozent.png");
         }
-
-        #bild{
-            width: 50%;
-            height: 50%;
-            object-fit:cover;
-            border: 10px solid white;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
         #rezeptname
         {
             font-size: 45px;
             font-weight: bold;
             box-shadow: 0 4px 8px 0 rgba(0, 150, 255, 0.2), 0 6px 20px 0 rgba(0, 150, 255, 0.19) ;
         }
-
         #einrücken
         {
             margin-left: 15%;
@@ -67,21 +55,18 @@ $row = $stmt->fetch();
 
             background-color: white;
         }
-
         #favorit
         {
             position: absolute;
             left: 70%;
             top: 14%;
         }
-
         .überschrift
         {
             font-size: 30px;
             font-weight: bold;
             box-shadow: 0 4px 8px 0 rgba(0, 150, 255, 0.2), 0 6px 20px 0 rgba(0, 150, 255, 0.19) ;
         }
-
         .rezepttext
         {
             font-size: 18px;
@@ -152,10 +137,8 @@ $row = $stmt->fetch();
         }
         ?>
     </p>
-
 </div>
  <?php
-     $RezeptID = $_GET['id'];
      $stmt = $dbh->prepare("SELECT User.FavoritenRezepte FROM User WHERE UserID='$UserID'");
      $stmt->execute();
      $stmtString = "";
