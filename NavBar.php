@@ -12,8 +12,8 @@ document.write(`
     </a>
     
     <form class="d-flex" role="search" method="post" action="RezeptSuchen.php">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
+      <input class="form-control me-2" type="search" placeholder="Pizza, Burger, ..." aria-label="search" name="search">
+      <button class="btn btn-outline-success" type="submit">Suchen</button>
     </form>
     
     <a class="btn btn-outline-success me-2" href="KategorieSeite.php"> 
