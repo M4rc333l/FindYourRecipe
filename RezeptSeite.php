@@ -162,12 +162,12 @@ $row = $stmt->fetch();
     $array = preg_split("/\,/", $stmtString);
      if(!in_array($RezeptID, $array)){
          echo "<a id='favorit' href=FavoritHinzufuegen.php?id='$RezeptID'>
-               <img src='https://cdn-icons-png.flaticon.com/512/324/324679.png' alt='Favorit' width='50px' height='50px'>
+               <img src='https://cdn.discordapp.com/attachments/900294647514017862/1054126448576839750/Favorit_-_Rahmen_-_neu.png' alt='Favorit' width='50px' height='50px'>
                </a>";
      }
      else {
          echo "<a id='favorit' href=FavoritLoeschen.php?id='$RezeptID'>
-               <img src='https://cdn-icons-png.flaticon.com/512/2107/2107957.png' alt='Favorit' width='50px' height='50px'>
+               <img src='https://cdn.discordapp.com/attachments/900294647514017862/1054126759244734564/Favorit_-_ausgemalt.png' alt='Favorit' width='50px' height='50px'>
                </a>";
      }
  ?>
