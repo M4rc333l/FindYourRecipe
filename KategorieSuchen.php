@@ -103,7 +103,7 @@ if(isset($_POST['suchen'])){
     }
     for ($i = 0; $i <= count($kategorielist)-1;$i++){
         $stmt = $dbh->prepare("Select * from Rezept as R, RezeptKategorie as RK, Kategorie as K
-        Where R.RezeptID = RK.RezeptKategorie_RezeptID AND K.KategorieID = RK.RezeptKategorie_KategorieID  AND K.Name = '$kategorielist[$i]' AND  R.Name LIKE '%$rezeptname%'");
+        Where R.RezeptID = RK.RezeptKategorie_RezeptID AND K.KategorieID = RK.RezeptKategorie_KategorieID  AND K.Name = '$kategorielist[$i]' AND  R.Rezeptname LIKE '%$rezeptname%'");
         $stmt->execute();
         while ($row = $stmt->fetch()){
             $doppelt = FALSE;
