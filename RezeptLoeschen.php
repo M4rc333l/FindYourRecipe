@@ -18,6 +18,7 @@ while($row = $stmt->fetch()){
     $UserID = $row['UserID'];
     $stmtString = $row['FavoritenRezepte'];
     $array = preg_split("/\,/", $stmtString);
+    require "FavoritLoeschen.php";
     $stmt2 = updateFavorit($array, $RezeptID, $dbh, $UserID);
 }
 header("Location: RezeptBearbeiten.php");

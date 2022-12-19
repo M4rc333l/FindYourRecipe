@@ -35,6 +35,15 @@ $row = $stmt->fetch();
         body{
             background: url("https://cdn.discordapp.com/attachments/1023935776163119175/1051851552056414228/Hintergrund_Fuenf_Prozent.png");
         }
+        #bild{
+            width: 50%;
+            height: 50%;
+            object-fit:cover;
+            border: 10px solid white;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
         #rezeptname
         {
             font-size: 45px;
