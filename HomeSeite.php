@@ -84,7 +84,7 @@ while ($row = $stmt->fetch()){
             <a class='bild' href='RezeptSeite.php?id=".$row['RezeptID']."'>
                 <img class='rahmen'  src='uploads/".$row['Bildname']."?width=662&height=662' alt='Rezeptbild'  title='Rezeptbild'>
                 <source srcset='https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png' media='(max-width: 1500px'>
-                <p class='rezepttext'> ".$row['Name']."  </p>
+                <p class='rezepttext'> ".$row['Rezeptname']."  </p>
             </a>
         </div>";
         $zaehler++;
@@ -105,7 +105,7 @@ while ($row = $stmt->fetch()){
             <a class='bild' href='RezeptSeite.php?id=".$row['RezeptID']."'>
                 <img class='rahmen'  src='uploads/".$row['Bildname']."?width=662&height=662' alt='Rezeptbild'  title='Rezeptbild'>
                 <source srcset='https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png' media='(max-width: 1500px'>
-                <p class='rezepttext'> ".$row['Name']."  </p>
+                <p class='rezepttext'> ".$row['Rezeptname']."  </p>
             </a>
         </div>";
         $zaehler++;

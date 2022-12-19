@@ -105,7 +105,7 @@ $row = $stmt->fetch();
 
     <p id="rezeptname">
         <?php
-        echo  $row['Name']
+        echo  $row['Rezeptname']
         ?>
     </p>
 

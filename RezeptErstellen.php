@@ -40,7 +40,7 @@ if (isset($_POST["Glutenfrei"])){
     $kategorielist[] = $kategorie;
 }
 
-$stmt = $dbh->prepare("insert into Rezept(Rezept_User_ID,Bildname,Kategorien,Beliebtheit,Zubereitung,Name,Zutaten,Bildtyp,Dauer) values (?,?,?,0,?,?,?,?,?)");
+$stmt = $dbh->prepare("insert into Rezept(Rezept_User_ID,Bildname,Kategorien,Beliebtheit,Zubereitung,Rezeptname,Zutaten,Bildtyp,Dauer) values (?,?,?,0,?,?,?,?,?)");
 $img_ex = pathinfo($bildname, PATHINFO_EXTENSION);
 $img_ex_lc = strtolower($img_ex);
 $allowed_exs = array("jpg", "jpeg", "png", "jfif", "gif");

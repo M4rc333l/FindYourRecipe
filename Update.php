@@ -71,7 +71,7 @@ if (in_array($img_ex_lc, $allowed_exs)) {
     $img_upload_path = 'uploads/' . $new_img_name;
     move_uploaded_file($data, $img_upload_path);
     $stmt = $dbh->prepare("UPDATE Rezept
-                                    SET Bildname = '$new_img_name', Kategorien = '$kategorie', Zubereitung = '$zubereitung', Name = '$rezeptname', Zutaten = '$zutaten', Bildtyp = '$bildtyp', Dauer = '$dauer'
+                                    SET Bildname = '$new_img_name', Kategorien = '$kategorie', Zubereitung = '$zubereitung', Rezeptname = '$rezeptname', Zutaten = '$zutaten', Bildtyp = '$bildtyp', Dauer = '$dauer'
                                     WHERE RezeptID = '$RezeptID' AND Rezept_User_ID = '$Rezept_User_ID';");
     $stmt->execute();
 }

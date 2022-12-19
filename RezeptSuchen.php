@@ -69,7 +69,7 @@ session_start();
 <?php
 $rezeptname = $_POST['search'];
 $dbh = new PDO('mysql:host=34.89.179.34;dbname=findyourrecipe',"root","nT0~dY&jhe%6>|BX");
-$stmt = $dbh->prepare("Select * from Rezept WHERE Name LIKE '%$rezeptname%'");
+$stmt = $dbh->prepare("Select * from Rezept WHERE Rezeptname LIKE '%$rezeptname%'");
 $stmt->execute();
 while ($row = $stmt->fetch()){
 

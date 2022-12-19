@@ -73,7 +73,7 @@ $row = $stmt->fetch();
         <!-- Rezeptname -->
         <div class="überschrift">
             <label> Rezeptname </label>
-            <input type="text" class="unten" name="rezeptname" size="30%" value=<?php echo $row["Name"] ?>>
+            <input type="text" class="unten" name="rezeptname" size="30%" value=<?php echo $row["Rezeptname"] ?>>
         </div>
 
         <!-- Dauer -->
