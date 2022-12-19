@@ -92,7 +92,7 @@ session_start();
     <div class="flexbox2">
         <!-- Favoriten -->
         <a href="Favoriten.php">
-            <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034093652483510282/unknown.png" alt="Favoriten"  title="Favoriten" >
+            <img class="bild2" src="https://cdn.discordapp.com/attachments/900294647514017862/1054126759244734564/Favorit_-_ausgemalt.png" alt="Favoriten"  title="Favoriten" >
         </a>
         <!-- Abmelden -->
         <a href="SignOut.php">

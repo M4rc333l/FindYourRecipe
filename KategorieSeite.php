@@ -16,9 +16,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
     <style>
-        body{
+        body
+        {
             background: url("https://cdn.discordapp.com/attachments/1023935776163119175/1051851552056414228/Hintergrund_Fuenf_Prozent.png");
         }
+
         #überschrift
         {
             font-size: 50px;
@@ -48,28 +50,33 @@
             font-size: 25px;
         }
 
-        #linkeSpalte
-        {
-            position: absolute;
-            left: 35%;
-            top: 45%;
+        fieldset{
+            border: 5px solid rgb(177, 234, 255, 0.5);
+            background-color: white;
+            margin-left: 15%;
+            margin-right: 15%;
+            margin-top: 7%;
         }
 
-        #rechteSpalte
+        ul
         {
-            position: absolute;
-            left: 55%;
-            top: 45%;
+            list-style: none;
         }
 
-        #suchbutton
+        #links
         {
-            position: absolute;
-            left: 47%;
-            top: 80%;
+            padding-left: 20%;
         }
-        #rahmen{
-            border: 10px solid rgb(177, 234, 255);
+
+        #rechts
+        {
+            padding-left: 30%;
+        }
+
+        #suchleiste
+        {
+            padding-left: 36.5%;
+            padding-top: 2%;
         }
     </style>
 </head>
@@ -80,49 +87,50 @@
 <p id="überschrift"> Kategorien </p>
 
 <!-- Checkboxen für Kategorien -->
-<form  method="post" >
-    <div  id="rahmen">
-        <div id="suchen">
-            <div class="form-inline my-2 my-lg-0" method="post">
-                <input class="form-control mr-sm-2" type="search" placeholder="Pizza, Burger, ..." aria-label="Search" name="suchemich" id="suchemich">
-            </div>
-        </div>
+<form  method="post">
+    <fieldset>
+        <ul>
+            <li>
+                <div class="form-inline my-2 my-lg-0" method="post" id="suchleiste">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Pizza, Burger, ..." aria-label="Search" name="suchemich" id="suchemich">
+                </div>
+            </li>
 
-    <div>
-        <div id="linkeSpalte">
-            <input type="checkbox" id="kategorie1" name="Vegan" value="Vegan">
-            <label for="kategorie1"> Vegan </label>
+            <li style="float: left;" id="links">
+                <input type="checkbox" id="kategorie1" name="Vegan" value="Vegan">
+                <label for="kategorie1"> Vegan </label>
 
-            <br>
+                <br>
 
-            <input type="checkbox" id="kategorie2" name="Vegetarisch" value="Vegetarisch">
-            <label for="kategorie2"> Vegetarisch </label>
+                <input type="checkbox" id="kategorie2" name="Vegetarisch" value="Vegetarisch">
+                <label for="kategorie2"> Vegetarisch </label>
 
-            <br>
+                <br>
 
-            <input type="checkbox" id="kategorie3" name="Fisch" value="Fisch">
-            <label for="kategorie3"> Fisch </label>
-        </div>
+                <input type="checkbox" id="kategorie3" name="Fisch" value="Fisch">
+                <label for="kategorie3"> Fisch </label>
+            </li>
 
-        <div id="rechteSpalte">
-            <input type="checkbox" id="kategorie4" name="Fleisch" value="Fleisch">
-            <label for="kategorie4"> Fleisch </label>
+            <li style="float: left;" id="rechts">
+                <input type="checkbox" id="kategorie4" name="Fleisch" value="Fleisch">
+                <label for="kategorie4"> Fleisch </label>
 
-            <br>
+                <br>
 
-            <input type="checkbox" id="kategorie5" name="Glutenfrei" value="Glutenfrei">
-            <label for="kategorie5"> Glutenfrei </label>
+                <input type="checkbox" id="kategorie5" name="Glutenfrei" value="Glutenfrei">
+                <label for="kategorie5"> Glutenfrei </label>
 
-            <br>
+                <br>
 
-            <input type="checkbox" id="kategorie6" name="Kalorienarm" value="Kalorienarm">
-            <label for="kategorie6"> Kalorienarm </label>
-        </div>
-    </div>
+                <input type="checkbox" id="kategorie6" name="Kalorienarm" value="Kalorienarm">
+                <label for="kategorie6"> Kalorienarm </label>
+            </li>
 
-    <div id="suchbutton">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="suchen" id="suchen"> Suchen </button>
-    </div>
+            <li>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="suchen" id="suchen"> Suchen </button>
+            </li>
+        </ul>
+    </fieldset>
 </form>
 <!-- Unterer Suchbutton -->
 <?php

@@ -77,7 +77,6 @@ $row = $stmt->fetch();
             font-size: 30px;
             font-weight: bold;
             box-shadow: 0 4px 8px 0 rgba(0, 150, 255, 0.2), 0 6px 20px 0 rgba(0, 150, 255, 0.19) ;
-
         }
 
         .rezepttext
@@ -86,6 +85,7 @@ $row = $stmt->fetch();
             width: 100%;
             border: 1px none;
             word-wrap: break-word;
+            border: 2px solid rgb(177, 234, 255, 0.5);
         }
     </style>
 </head>
