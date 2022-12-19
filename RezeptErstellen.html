@@ -57,7 +57,7 @@
 
         <input
                 type="file" id="bild" name="bild" accept=".jpg, .jpeg, .png, .jfif"
-                onchange="prieviewImage();"
+                onchange=" buttonReady();"
         />
         <!-- Rezeptname -->
         <div class="überschrift">
@@ -89,27 +89,27 @@
             <label class="überschrift"> Kategorien </label>
             <ul style="list-style-type:none;">
                 <li>
-                    <input type="checkbox" value="" id="firstCheckbox" name="Vegan">
+                    <input type="checkbox" value="" id="firstCheckbox" name="Vegan" onchange="buttonReady()">
                     <label for="firstCheckbox" > Vegan </label>
                 </li>
                 <li>
-                    <input type="checkbox" value="" id="secondCheckbox" name="Vegetarisch">
+                    <input type="checkbox" value="" id="secondCheckbox" name="Vegetarisch" onchange="buttonReady()">
                     <label for="secondCheckbox"> Vegetarisch </label>
                 </li>
                 <li>
-                    <input type="checkbox" value="" id="thirdCheckbox" name="Fisch">
+                    <input type="checkbox" value="" id="thirdCheckbox" name="Fisch" onchange="buttonReady()">
                     <label for="thirdCheckbox"> Fisch </label>
                 </li>
                 <li>
-                    <input type="checkbox" value="" id="fourthCheckbox" name="Fleisch">
+                    <input type="checkbox" value="" id="fourthCheckbox" name="Fleisch" onchange="buttonReady()">
                     <label for="fourthCheckbox"> Fleisch </label>
                 </li>
                 <li>
-                    <input type="checkbox" value="" id="fifthCheckbox" name=" Glutenfrei">
+                    <input type="checkbox" value="" id="fifthCheckbox" name=" Glutenfrei" onchange="buttonReady()">
                     <label for="fifthCheckbox"> Glutenfrei </label>
                 </li>
                 <li>
-                    <input type="checkbox" value="" id="sixthCheckbox" name="Kalorienarm">
+                    <input type="checkbox" value="" id="sixthCheckbox" name="Kalorienarm" onchange="buttonReady()">
                     <label for="sixthCheckbox"> Kalorienarm </label>
                 </li>
             </ul>
@@ -117,12 +117,13 @@
 
         <!-- Fertig-Button -->
         <div>
-            <input type="submit" id="button" name="button" value="Fertig">
+            <input type="submit" id="button" name="button" value="Fertig" onchange="buttonReady(); ">
         </div>
     </form>
     </div>
 </body>
 <script>
+    document.querySelector('#button').disabled = true;
     function prieviewImage(){
         let file = document.getElementById("bild").files;
         if(file.length > 0){
@@ -131,6 +132,25 @@
                 document.getElementById("preview").setAttribute("src", event.target.result);
             };
             fileReader.readAsDataURL(file[0]);
+        }
+    }
+    function buttonReady(){
+        let file = document.getElementById("bild").files;
+        if(file.length > 0){
+            let fileReader = new FileReader();
+            fileReader.onload = function (event){
+                document.getElementById("preview").setAttribute("src", event.target.result);
+            };
+            fileReader.readAsDataURL(file[0]);
+        }
+
+        if ((document.getElementById('firstCheckbox').checked || document.getElementById('secondCheckbox').checked || document.getElementById('thirdCheckbox').checked
+            || document.getElementById('fourthCheckbox').checked || document.getElementById('fifthCheckbox').checked|| document.getElementById('sixthCheckbox').checked) && file.length > 0)
+        {
+                document.querySelector('#button').disabled = false;
+        }
+        else {
+            document.querySelector('#button').disabled = true;
         }
     }
 </script>

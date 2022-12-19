@@ -70,62 +70,71 @@ session_start();
 <script  src="NavBar.php" > </script>
 
 <!-- Flexbox - Rezeptvorschläge -->
-<p class="überschrift1"> Rezeptvorschläge </p>
-
-
+<p class="überschrift1"> Rezepte </p>
 <?php
-$zaehler = 0;
 $dbh = new PDO('mysql:host=34.89.179.34;dbname=findyourrecipe',"root","nT0~dY&jhe%6>|BX");
-$stmt = $dbh->prepare("Select * from Rezept");
-$stmt->execute();
-while ($row = $stmt->fetch()){
-    if ($zaehler < 3){
-        echo  "<div class='flex-rezeptvorschlaege'>
+$RezeptIdMerken = array();
+$kategorielist = array();
+if(isset($_POST['suchen'])){
+    $rezeptname = $_POST['suchemich'];
+    if (isset($_POST['Vegetarisch'])){
+        $Kategorie = $_POST['Vegetarisch'];
+        $kategorielist[] = $Kategorie;
+    }
+    if (isset($_POST['Vegan'])){
+        $Kategorie = $_POST['Vegan'];
+        $kategorielist[] = $Kategorie;
+    }
+    if (isset($_POST['Fisch'])){
+        $Kategorie = $_POST['Fisch'];
+        $kategorielist[] = $Kategorie;
+    }
+    if (isset($_POST['Fleisch'])){
+        $Kategorie = $_POST['Fleisch'];
+        $kategorielist[] = $Kategorie;
+    }
+    if (isset($_POST['Glutenfrei'])){
+        $Kategorie = $_POST['Glutenfrei'];
+        $kategorielist[] = $Kategorie;
+    }
+    if (isset($_POST['Kalorienarm'])){
+        $Kategorie = $_POST['Kalorienarm'];
+        $kategorielist[] = $Kategorie;
+    }
+    for ($i = 0; $i <= count($kategorielist)-1;$i++){
+        $stmt = $dbh->prepare("Select * from Rezept as R, RezeptKategorie as RK, Kategorie as K
+        Where R.RezeptID = RK.RezeptKategorie_RezeptID AND K.KategorieID = RK.RezeptKategorie_KategorieID  AND K.Name = '$kategorielist[$i]' AND  R.Name LIKE '%$rezeptname%'");
+        $stmt->execute();
+        while ($row = $stmt->fetch()){
+            $doppelt = FALSE;
+            $RezeptIdMerken[] = $row['RezeptID'];
+            for ($j = 0; $j <= count($RezeptIdMerken)-1;$j++){
+                if ($i > 0 && $RezeptIdMerken[$j] ==$row['RezeptID'] ){
+                    $doppelt = TRUE;
+                }
+            }
+            if (!$doppelt && $i > 0){
+                echo  "<div class='flex-rezeptvorschlaege'>
             <a class='bild' href='RezeptSeite.php?id=".$row['RezeptID']."'>
                 <img class='rahmen'  src='uploads/".$row['Bildname']."?width=662&height=662' alt='Rezeptbild'  title='Rezeptbild'>
                 <source srcset='https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png' media='(max-width: 1500px'>
                 <p class='rezepttext'> ".$row['Name']."  </p>
             </a>
         </div>";
-        $zaehler++;
-    }
-}
-?>
-
-<!-- Flexbox - Die beliebtesten Rezepte -->
-<p class="überschrift1"> Die beliebtesten Rezepte </p>
-<?php
-$zaehler = 0;
-$dbh = new PDO('mysql:host=34.89.179.34;dbname=findyourrecipe',"root","nT0~dY&jhe%6>|BX");
-$stmt = $dbh->prepare("Select * from Rezept order by(Beliebtheit) desc");
-$stmt->execute();
-while ($row = $stmt->fetch()){
-    if ($zaehler < 3){
-        echo  "<div class='flex-rezeptvorschlaege'>
+            }
+            if ($i == 0){
+                echo  "<div class='flex-rezeptvorschlaege'>
             <a class='bild' href='RezeptSeite.php?id=".$row['RezeptID']."'>
                 <img class='rahmen'  src='uploads/".$row['Bildname']."?width=662&height=662' alt='Rezeptbild'  title='Rezeptbild'>
                 <source srcset='https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png' media='(max-width: 1500px'>
                 <p class='rezepttext'> ".$row['Name']."  </p>
             </a>
         </div>";
-        $zaehler++;
+            }
+        }
     }
 }
 ?>
 
-
-
-
-
-
-<?php
-$dbh = new PDO('mysql:host=34.89.179.34;dbname=findyourrecipe',"root","nT0~dY&jhe%6>|BX");
-$stmt = $dbh->prepare("Select * from Rezept");
-$stmt->execute();
-while ($row = $stmt->fetch()){
-    echo "<li><a target='_blank' href='RezeptSeite.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>";
-    echo " <img  src=uploads/".$row["Bildname"]."  style='height:150px;width:150px;' >";
-}
-?>
 </body>
 </html>

@@ -87,7 +87,7 @@
 <p id="überschrift"> Kategorien </p>
 
 <!-- Checkboxen für Kategorien -->
-<form  method="post">
+<form  method="post" action="KategorieSuchen.php">
     <fieldset>
         <ul>
             <li>
@@ -133,59 +133,5 @@
     </fieldset>
 </form>
 <!-- Unterer Suchbutton -->
-<?php
-$dbh = new PDO('mysql:host=34.89.179.34;dbname=findyourrecipe',"root","nT0~dY&jhe%6>|BX");
-$RezeptIdMerken = array();
-$kategorielist = array();
-if(isset($_POST['suchen'])){
-    $rezeptname = $_POST['suchemich'];
-    if (isset($_POST['Vegetarisch'])){
-        $Kategorie = $_POST['Vegetarisch'];
-        $kategorielist[] = $Kategorie;
-    }
-    if (isset($_POST['Vegan'])){
-        $Kategorie = $_POST['Vegan'];
-        $kategorielist[] = $Kategorie;
-    }
-    if (isset($_POST['Fisch'])){
-        $Kategorie = $_POST['Fisch'];
-        $kategorielist[] = $Kategorie;
-    }
-    if (isset($_POST['Fleisch'])){
-        $Kategorie = $_POST['Fleisch'];
-        $kategorielist[] = $Kategorie;
-    }
-    if (isset($_POST['Glutenfrei'])){
-        $Kategorie = $_POST['Glutenfrei'];
-        $kategorielist[] = $Kategorie;
-    }
-    if (isset($_POST['Kalorienarm'])){
-        $Kategorie = $_POST['Kalorienarm'];
-        $kategorielist[] = $Kategorie;
-    }
-    for ($i = 0; $i <= count($kategorielist)-1;$i++){
-        $stmt = $dbh->prepare("Select * from Rezept as R, RezeptKategorie as RK, Kategorie as K
-        Where R.RezeptID = RK.RezeptKategorie_RezeptID AND K.KategorieID = RK.RezeptKategorie_KategorieID  AND K.Name = '$kategorielist[$i]' AND  R.Name LIKE '%$rezeptname%'");
-        $stmt->execute();
-        while ($row = $stmt->fetch()){
-            $doppelt = FALSE;
-            $RezeptIdMerken[] = $row['RezeptID'];
-            for ($j = 0; $j <= count($RezeptIdMerken)-1;$j++){
-                if ($i > 0 && $RezeptIdMerken[$j] ==$row['RezeptID'] ){
-                    $doppelt = TRUE;
-                }
-            }
-            if (!$doppelt && $i > 0){
-                echo "<li><a target='_blank' href='RezeptSeite.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>";
-                echo " <img  src=uploads/".$row["Bildname"]."  style='height:150px;width:150px;' >";
-            }
-            if ($i == 0){
-                echo "<li><a target='_blank' href='RezeptSeite.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>";
-                echo " <img  src=uploads/".$row["Bildname"]."  style='height:150px;width:150px;' >";
-            }
-        }
-    }
-}
-?>
 </body>
 </html>

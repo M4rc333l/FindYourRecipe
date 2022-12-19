@@ -1,11 +1,14 @@
 <?php
+error_reporting(0);
 $dbh = new PDO('mysql:host=34.89.179.34;dbname=findyourrecipe',"root","nT0~dY&jhe%6>|BX");
 session_start();
 $RezeptID = $_GET['id'];
 $stmt = $dbh->prepare("Select * From Rezept where RezeptID = ?");
 $stmt->bindParam(1,$RezeptID);
 $_SESSION['RezeptID'] = $RezeptID;
-$UserID = $_SESSION['id'];
+if ($_SESSION['id'] != null){
+    $UserID = $_SESSION['id'];
+}
 $stmt->execute();
 $row = $stmt->fetch();
 ?>
@@ -160,15 +163,17 @@ $row = $stmt->fetch();
          $stmtString = $row[0];
      }
     $array = preg_split("/\,/", $stmtString);
-     if(!in_array($RezeptID, $array)){
-         echo "<a id='favorit' href=FavoritHinzufuegen.php?id='$RezeptID'>
+     if ($_SESSION['id'] != null){
+         if(!in_array($RezeptID, $array)){
+             echo "<a id='favorit' href=FavoritHinzufuegen.php?id='$RezeptID'>
                <img src='https://cdn.discordapp.com/attachments/900294647514017862/1054126448576839750/Favorit_-_Rahmen_-_neu.png' alt='Favorit' width='50px' height='50px'>
                </a>";
-     }
-     else {
-         echo "<a id='favorit' href=FavoritLoeschen.php?id='$RezeptID'>
+         }
+         else {
+             echo "<a id='favorit' href=FavoritLoeschen.php?id='$RezeptID'>
                <img src='https://cdn.discordapp.com/attachments/900294647514017862/1054126759244734564/Favorit_-_ausgemalt.png' alt='Favorit' width='50px' height='50px'>
                </a>";
+         }
      }
  ?>
 </body>

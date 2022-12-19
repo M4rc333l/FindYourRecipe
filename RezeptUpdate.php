@@ -79,20 +79,29 @@ $row = $stmt->fetch();
         <!-- Dauer -->
         <div class="überschrift">
             <label> Dauer </label>
-            <input type="text" class="unten" name="dauer" size="30%" value=<?php echo $row["Dauer"] ?>>
+            <input type="text" class="unten" name="dauer" size="30%"
+                   value=<?php echo $row["Dauer"]; ?>>
         </div>
 
         <!-- Zutaten -->
         <!-- TODO: Schöneres Feld (bei Enter => neues Eingabefeld) -->
         <div class="überschrift">
             <label> Zutaten </label>
-            <textarea name="zutaten" class="unten" rows="5" cols="40"> <?php echo $row["Zutaten"] ?></textarea>
+            <textarea name="zutaten" class="unten" rows="5" cols="40"> <?php
+                $text = $row["Zutaten"];
+                $text = str_replace("<br />", "", $text);
+                echo $text;
+                ?></textarea>
         </div>
 
         <!-- Zubereitung -->
         <div class="überschrift">
             <label> Zubereitung </label>
-            <textarea name="zubereitung" class="unten" rows="5" cols="40" > <?php echo $row["Zubereitung"] ?></textarea>
+            <textarea name="zubereitung" class="unten" rows="5" cols="40" > <?php
+                $text = $row["Zubereitung"];
+                $text = str_replace("<br />", "", $text);
+                echo $text;
+                ?></textarea>
         </div>
 
         <!-- Kategorien -->

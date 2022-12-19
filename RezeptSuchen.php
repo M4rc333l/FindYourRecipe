@@ -73,8 +73,13 @@ $stmt = $dbh->prepare("Select * from Rezept WHERE Name LIKE '%$rezeptname%'");
 $stmt->execute();
 while ($row = $stmt->fetch()){
 
-    echo "<li><a target='_blank' href='RezeptSeite.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>";
-    echo " <img  src=uploads/".$row["Bildname"]."  style='height:150px;width:150px;' >";
+    echo  "<div class='flex-rezeptvorschlaege'>
+            <a class='bild' href='RezeptSeite.php?id=".$row['RezeptID']."'>
+                <img class='rahmen'  src='uploads/".$row['Bildname']."?width=662&height=662' alt='Rezeptbild'  title='Rezeptbild'>
+                <source srcset='https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png' media='(max-width: 1500px'>
+                <p class='rezepttext'> ".$row['Name']."  </p>
+            </a>
+        </div>";
 }
 ?>
 </body>
