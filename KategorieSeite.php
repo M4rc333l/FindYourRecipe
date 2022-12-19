@@ -126,7 +126,7 @@
 </form>
 <!-- Unterer Suchbutton -->
 <?php
-$dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
+$dbh = new PDO('mysql:host=34.89.179.34;dbname=findyourrecipe',"root","nT0~dY&jhe%6>|BX");
 $RezeptIdMerken = array();
 $kategorielist = array();
 if(isset($_POST['suchen'])){

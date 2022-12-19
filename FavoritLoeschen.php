@@ -1,6 +1,6 @@
 <?php
 session_start();
-$dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
+$dbh = new PDO('mysql:host=34.89.179.34;dbname=findyourrecipe',"root","nT0~dY&jhe%6>|BX");
 $UserID = $_SESSION['id'];
 $RezeptID = substr($_GET['id'],1,strlen($_GET['id'])-2);
 $stmt = $dbh->prepare("SELECT User.FavoritenRezepte FROM User WHERE UserID='$UserID';");

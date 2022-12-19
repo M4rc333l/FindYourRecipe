@@ -2,10 +2,10 @@
 $lifetime=1000000000;
 session_set_cookie_params($lifetime);
 session_start();
-$dbhost = "34.65.206.124";
+$dbhost = "34.89.179.34";
 $dbuser = "root";
-$dbpass = "RI7lnd2VfajM";
-$db = "FindYourRecipe";
+$dbpass = "nT0~dY&jhe%6>|BX";
+$db = "findyourrecipe";
 $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
 if (isset($_POST["username"])) {
     $benutzername = $_POST["username"];

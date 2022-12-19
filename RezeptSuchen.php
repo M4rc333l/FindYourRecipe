@@ -68,7 +68,7 @@ session_start();
 <script  src="NavBar.php" > </script>
 <?php
 $rezeptname = $_POST['search'];
-$dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
+$dbh = new PDO('mysql:host=34.89.179.34;dbname=findyourrecipe',"root","nT0~dY&jhe%6>|BX");
 $stmt = $dbh->prepare("Select * from Rezept WHERE Name LIKE '%$rezeptname%'");
 $stmt->execute();
 while ($row = $stmt->fetch()){

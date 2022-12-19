@@ -2,7 +2,7 @@
 session_start();
 $Rezept_User_ID = $_SESSION['id'];
 //PHP Skript für alle Rezepte hinzufügen
-$dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
+$dbh = new PDO('mysql:host=34.89.179.34;dbname=findyourrecipe',"root","nT0~dY&jhe%6>|BX");
 $data = $_FILES["bild"]['tmp_name'];
 $rezeptname = $_POST['rezeptname'];
 $zubereitung = $_POST['zubereitung'];
@@ -41,7 +41,7 @@ if (isset($_POST["Glutenfrei"])){
 $stmt = $dbh->prepare("insert into Rezept(Rezept_User_ID,Bildname,Kategorien,Beliebtheit,Zubereitung,Name,Zutaten,Bildtyp,Dauer) values (?,?,?,0,?,?,?,?,?)");
 $img_ex = pathinfo($bildname, PATHINFO_EXTENSION);
 $img_ex_lc = strtolower($img_ex);
-$allowed_exs = array("jpg", "jpeg", "png", "jfif");
+$allowed_exs = array("jpg", "jpeg", "png", "jfif", "gif");
 if (in_array($img_ex_lc, $allowed_exs)) {
     $new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
     $img_upload_path = 'uploads/'.$new_img_name;

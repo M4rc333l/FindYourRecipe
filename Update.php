@@ -3,7 +3,7 @@ session_start();
 $Rezept_User_ID = $_SESSION['id'];
 $RezeptID = $_GET['id'];
 //PHP Skript für alle Rezepte hinzufügen
-$dbh = new PDO('mysql:host=34.65.206.124;dbname=FindYourRecipe',"root","RI7lnd2VfajM");
+$dbh = new PDO('mysql:host=34.89.179.34;dbname=findyourrecipe',"root","nT0~dY&jhe%6>|BX");
 $data = $_FILES["bild"]['tmp_name'];
 $rezeptname = $_POST['rezeptname'];
 $zubereitung = $_POST['zubereitung'];
