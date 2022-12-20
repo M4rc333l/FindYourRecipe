@@ -40,7 +40,7 @@ if (isset($_POST["Glutenfrei"])){
     $kategorielist[] = $kategorie;
 }
 
-$stmt = $dbh->prepare("insert into Rezept(Rezept_User_ID,Bildname,Kategorien,Beliebtheit,Zubereitung,Rezeptname,Zutaten,Bildtyp,Dauer) values (?,?,?,0,?,?,?,?,?)");
+$stmt = $dbh->prepare("insert into Rezept(Rezept_User_ID,Bildname,Beliebtheit,Zubereitung,Rezeptname,Zutaten,Bildtyp,Dauer) values (?,?,0,?,?,?,?,?)");
 $img_ex = pathinfo($bildname, PATHINFO_EXTENSION);
 $img_ex_lc = strtolower($img_ex);
 $allowed_exs = array("jpg", "jpeg", "png", "jfif", "gif");
@@ -52,12 +52,11 @@ if (in_array($img_ex_lc, $allowed_exs)) {
     // Insert into Database
     $stmt->bindParam(1,$Rezept_User_ID);
     $stmt->bindParam(2,$new_img_name);
-    $stmt->bindParam(3,$kategorie);
-    $stmt->bindParam(4,$zubereitung);
-    $stmt->bindParam(5,$rezeptname);
-    $stmt->bindParam(6,$zutaten);
-    $stmt->bindParam(7,$bildtyp);
-    $stmt->bindParam(8,$dauer);
+    $stmt->bindParam(3,$zubereitung);
+    $stmt->bindParam(4,$rezeptname);
+    $stmt->bindParam(5,$zutaten);
+    $stmt->bindParam(6,$bildtyp);
+    $stmt->bindParam(7,$dauer);
     $stmt->execute();
 }else {
     $em = "You can't upload files of this type";

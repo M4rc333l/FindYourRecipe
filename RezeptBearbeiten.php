@@ -25,11 +25,16 @@
     $UserID = $_SESSION['id'];
     $stmt = $dbh->prepare("Select * from Rezept as R Where R.Rezept_User_ID =  '$UserID'");
     $stmt->execute();
-    while ($row = $stmt->fetch()){
+    $stmtString = "";
+    while($row = $stmt->fetch()){
+        $stmtString = $row[0];
         echo "<li><a target='_blank' href='RezeptSeite.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>";
         echo "<img src=uploads/".$row["Bildname"].">";
         echo "<a id='delete' target='_blank' href='RezeptLoeschen.php?id=".$row['RezeptID']."'>Rezept löschen</a></li>";
         echo "<a id='update' target='_blank' href='RezeptUpdate.php?id=".$row['RezeptID']."'>Rezept bearbeiten</a></li>";
+    }
+    if(strlen($stmtString)==0){
+        echo "Sie haben noch keine Rezepte erstellt!";
     }
 ?>
 </body>

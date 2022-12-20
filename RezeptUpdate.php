@@ -69,13 +69,13 @@ $row = $stmt->fetch();
         <!-- Rezeptname -->
         <div class="überschrift">
             <label> Rezeptname </label>
-            <input type="text" class="unten" name="rezeptname" size="30%" value=<?php echo $row["Rezeptname"] ?>>
+            <input type="text" class="unten" name="rezeptname" size="30%" onKeyUp="buttonReady()" value=<?php echo $row["Rezeptname"] ?>>
         </div>
 
         <!-- Dauer -->
         <div class="überschrift">
             <label> Dauer </label>
-            <input type="text" class="unten" name="dauer" size="30%"
+            <input type="text" class="unten" name="dauer" size="30%" onKeyUp="buttonReady()"
                    value=<?php echo $row["Dauer"]; ?>>
         </div>
 
@@ -83,7 +83,7 @@ $row = $stmt->fetch();
         <!-- TODO: Schöneres Feld (bei Enter => neues Eingabefeld) -->
         <div class="überschrift">
             <label> Zutaten </label>
-            <textarea name="zutaten" class="unten" rows="5" cols="40"> <?php
+            <textarea name="zutaten" class="unten" rows="5" cols="40" onKeyUp="buttonReady()"> <?php
                 $text = $row["Zutaten"];
                 $text = str_replace("<br />", "", $text);
                 echo $text;
@@ -93,7 +93,7 @@ $row = $stmt->fetch();
         <!-- Zubereitung -->
         <div class="überschrift">
             <label> Zubereitung </label>
-            <textarea name="zubereitung" class="unten" rows="5" cols="40" > <?php
+            <textarea name="zubereitung" class="unten" rows="5" cols="40" onKeyUp="buttonReady()"> <?php
                 $text = $row["Zubereitung"];
                 $text = str_replace("<br />", "", $text);
                 echo $text;
@@ -105,10 +105,10 @@ $row = $stmt->fetch();
             <label class="überschrift"> Kategorien </label>
             <ul style="list-style-type:none;">
                 <?php
-                $zaehler = 0;
+                $ids = ["first", "second", "third", "fourth", "fifth", "sixth"];
                 $RezeptID = $_GET['id'];
                 $Kategorie = array();
-                $stmt = $dbh->prepare("select K.Name from Kategorie as K, RezeptKategorie as RK where RK.RezeptKategorie_RezeptID = '$RezeptID' AND RK.RezeptKategorie_KategorieID = K.KategorieID");
+                $stmt = $dbh->prepare("Select K.Name from Kategorie as K, RezeptKategorie as RK where RK.RezeptKategorie_RezeptID = '$RezeptID' AND RK.RezeptKategorie_KategorieID = K.KategorieID");
                 $stmt->execute();
                 $count2 = $stmt->rowCount();
                 while($row = $stmt->fetch()){
@@ -117,21 +117,24 @@ $row = $stmt->fetch();
                 $stmt = $dbh->prepare("Select * from Kategorie");
                 $stmt->execute();
                 $count = $stmt->rowCount();
+                $zaehler = 0;
                 while ($row = $stmt->fetch()) {
 
                     if (in_array($row['Name'], $Kategorie)) {
                         echo '<li>
-                                <input type="checkbox" value="" id="firstCheckbox' . $row['Name'] . '" name="' . $row['Name'] . '" checked>
-                                <label for="firstCheckbox' . $row['Name'] . '" > ' . $row['Name'] . ' </label>
+                                <input type="checkbox" value="" id="'.$ids[$zaehler].'Checkbox" name="' . $row['Name'] . '" onchange="buttonReady()" checked>
+                                <label for="'.$ids[$zaehler].'Checkbox" > ' . $row['Name'] . ' </label>
                                 </li>';
 
                     } else {
                         echo '<li>
-                               <input type="checkbox" value="" id="firstCheckbox' . $row['Name'] . '" name="' . $row['Name'] . '">
-                              <label for="firstCheckbox' . $row['Name'] . '" > ' . $row['Name'] . ' </label>
+                               <input type="checkbox" value="" id="'.$ids[$zaehler].'Checkbox" name="' . $row['Name'] . '" onchange="buttonReady()">
+                              <label for="'.$ids[$zaehler].'Checkbox" > ' . $row['Name'] . ' </label>
                                 </li>';
                     }
+                    $zaehler++;
                 }
+                echo '';
                 ?>
             </ul>
         </div>
@@ -144,7 +147,8 @@ $row = $stmt->fetch();
 </div>
 </body>
 <script>
-    function prieviewImage(){
+    document.querySelector('#button').disabled = true;
+    function buttonReady(){
         let file = document.getElementById("bild").files;
         if(file.length > 0){
             let fileReader = new FileReader();
@@ -152,6 +156,28 @@ $row = $stmt->fetch();
                 document.getElementById("preview").setAttribute("src", event.target.result);
             };
             fileReader.readAsDataURL(file[0]);
+        }
+
+        document.querySelector('#button').disabled = !((document.getElementById('firstCheckbox').checked || document.getElementById('secondCheckbox').checked || document.getElementById('thirdCheckbox').checked
+                || document.getElementById('fourthCheckbox').checked || document.getElementById('fifthCheckbox').checked || document.getElementById('sixthCheckbox').checked)
+            && document.getElementsByName("rezeptname")[0].value.trim().length>0 && document.getElementsByName("dauer")[0].value.trim().length>0
+            && document.getElementsByName("zutaten")[0].value.trim().length>0 && document.getElementsByName("zubereitung")[0].value.trim().length>0);
+
+        if(document.getElementById("firstCheckbox").checked || document.getElementById("secondCheckbox").checked){
+            document.getElementById("thirdCheckbox").disabled = true;
+            document.getElementById("fourthCheckbox").disabled = true;
+        }
+        else {
+            document.getElementById("thirdCheckbox").disabled = false;
+            document.getElementById("fourthCheckbox").disabled = false;
+        }
+        if(document.getElementById("thirdCheckbox").checked || document.getElementById("fourthCheckbox").checked){
+            document.getElementById("firstCheckbox").disabled = true;
+            document.getElementById("secondCheckbox").disabled = true;
+        }
+        else {
+            document.getElementById("firstCheckbox").disabled = false;
+            document.getElementById("secondCheckbox").disabled = false;
         }
     }
 </script>

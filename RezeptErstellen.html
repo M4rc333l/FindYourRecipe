@@ -53,31 +53,31 @@
 
         <input
                 type="file" id="bild" name="bild" accept=".jpg, .jpeg, .png, .jfif"
-                onchange=" buttonReady();"
+                onchange="buttonReady();"
         />
         <!-- Rezeptname -->
         <div class="überschrift">
             <label> Rezeptname </label>
-            <input type="text" class="unten" name="rezeptname" size="30%">
+            <input type="text" class="unten" name="rezeptname" size="30%" onKeyUp = "buttonReady();">
         </div>
 
         <!-- Dauer -->
         <div class="überschrift">
             <label> Dauer </label>
-            <input type="text" class="unten" name="dauer" size="30%">
+            <input type="text" class="unten" name="dauer" size="30%" onKeyUp = "buttonReady()";>
         </div>
 
         <!-- Zutaten -->
         <!-- TODO: Schöneres Feld (bei Enter => neues Eingabefeld) -->
         <div class="überschrift">
             <label> Zutaten </label>
-            <textarea name="zutaten" class="unten" rows="5" cols="40"> </textarea>
+            <textarea name="zutaten" class="unten" rows="5" cols="40" onKeyUp = "buttonReady();"> </textarea>
         </div>
 
         <!-- Zubereitung -->
         <div class="überschrift">
             <label> Zubereitung </label>
-            <textarea name="zubereitung" class="unten" rows="5" cols="40"> </textarea>
+            <textarea name="zubereitung" class="unten" rows="5" cols="40" onKeyUp = "buttonReady();"> </textarea>
         </div>
 
         <!-- Kategorien -->
@@ -113,7 +113,7 @@
 
         <!-- Fertig-Button -->
         <div>
-            <input type="submit" id="button" name="button" value="Fertig" onchange="buttonReady(); ">
+            <input type="submit" id="button" name="button" value="Fertig" onchange="buttonReady();">
         </div>
     </form>
     </div>
@@ -130,14 +130,10 @@
             fileReader.readAsDataURL(file[0]);
         }
 
-        if ((document.getElementById('firstCheckbox').checked || document.getElementById('secondCheckbox').checked || document.getElementById('thirdCheckbox').checked
-            || document.getElementById('fourthCheckbox').checked || document.getElementById('fifthCheckbox').checked|| document.getElementById('sixthCheckbox').checked) && file.length > 0)
-        {
-                document.querySelector('#button').disabled = false;
-        }
-        else {
-            document.querySelector('#button').disabled = true;
-        }
+        document.querySelector('#button').disabled = !((document.getElementById('firstCheckbox').checked || document.getElementById('secondCheckbox').checked || document.getElementById('thirdCheckbox').checked
+            || document.getElementById('fourthCheckbox').checked || document.getElementById('fifthCheckbox').checked || document.getElementById('sixthCheckbox').checked) && file.length > 0
+            && document.getElementsByName("rezeptname")[0].value.trim().length>0 && document.getElementsByName("dauer")[0].value.trim().length>0
+            && document.getElementsByName("zutaten")[0].value.trim().length>0 && document.getElementsByName("zubereitung")[0].value.trim().length>0);
 
         if(document.getElementById("firstCheckbox").checked || document.getElementById("secondCheckbox").checked){
             document.getElementById("thirdCheckbox").disabled = true;

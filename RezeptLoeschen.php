@@ -14,11 +14,19 @@ $stmt->execute();
 
 $stmt = $dbh->prepare("SELECT UserID, FavoritenRezepte FROM User;");
 $stmt->execute();
+
 while($row = $stmt->fetch()){
     $UserID = $row['UserID'];
     $stmtString = $row['FavoritenRezepte'];
     $array = preg_split("/\,/", $stmtString);
-    require "FavoritLoeschen.php";
-    $stmt2 = updateFavorit($array, $RezeptID, $dbh, $UserID);
+    for ($i=0;$i<count($array);$i++) {
+        if ($array[$i] == $RezeptID) {
+            unset($array[$i]);
+            break;
+        }
+    }
+    $newString = implode(",", $array);
+    $stmt2 = $dbh->prepare("UPDATE User SET FavoritenRezepte = '$newString' WHERE UserID = '$UserID';");
+    $stmt2->execute();
 }
 header("Location: RezeptBearbeiten.php");

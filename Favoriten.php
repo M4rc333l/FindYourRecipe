@@ -32,7 +32,7 @@
         $stmtString = $row[0];
     }
     if(strlen($stmtString)>0){
-        echo "strlen($stmtString)";
+        echo $stmtString;
         $array = preg_split("/\,/", $stmtString);
         for($i=0;$i<count($array);$i++){
             $stmt2 = $dbh->prepare("SELECT * FROM Rezept Where RezeptID = '$array[$i]';");
