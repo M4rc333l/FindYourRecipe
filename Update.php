@@ -77,7 +77,7 @@ if (in_array($img_ex_lc, $allowed_exs)) {
 }
 if ($bildname == null){
     $stmt = $dbh->prepare("UPDATE Rezept
-                                    SET   Kategorien = '$kategorie', Zubereitung = '$zubereitung', Name = '$rezeptname', Zutaten = '$zutaten', Bildtyp = '$bildtyp', Dauer = '$dauer'
+                                    SET   Kategorien = '$kategorie', Zubereitung = '$zubereitung', Rezeptname = '$rezeptname', Zutaten = '$zutaten', Bildtyp = '$bildtyp', Dauer = '$dauer'
                                     WHERE RezeptID = '$RezeptID' AND Rezept_User_ID = '$Rezept_User_ID';");
     $stmt->execute();
     header("Location: ProfilSeite.php");
