@@ -68,7 +68,7 @@ session_start();
 
 <?php
 $dbh = new PDO('mysql:host=34.89.179.34;dbname=findyourrecipe',"root","nT0~dY&jhe%6>|BX");
-$stmt = $dbh->prepare("Select * from Rezept ORDER BY RAND()");
+$stmt = $dbh->prepare("Select * from Rezept ORDER BY RAND()  LIMIT  3");
 $stmt->execute();
 while ($row = $stmt->fetch()){
         echo  "<div class='flex-rezeptvorschlaege'>
