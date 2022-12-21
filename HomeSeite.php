@@ -78,7 +78,6 @@ while ($row = $stmt->fetch()){
                 <p class='rezepttext'> ".$row['Rezeptname']."  </p>
             </a>
         </div>";
-
 }
 ?>
 

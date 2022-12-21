@@ -44,6 +44,7 @@ session_start();
             font-size: 50px;
             font-weight: bold;
             box-shadow: 0 4px 8px 0 rgba(0, 150, 255, 0.2), 0 6px 20px 0 rgba(0, 150, 255, 0.19) ;
+            background-color: white;
         }
         img {
             width: 100%;
@@ -55,6 +56,8 @@ session_start();
             border: 10px solid rgb(177, 234, 255);
             box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             border-image: linear-gradient(to right, rgb(177, 234, 255), rgb(156, 206, 241)) 1;
+            width: 100%;
+            height: 300px;
         }
     </style>
 </head>
@@ -62,6 +65,7 @@ session_start();
 
 <!-- JS Datei für NavBar -->
 <script  src="NavBar.php" > </script>
+<p class="überschrift1"> Rezepte </p>
 <?php
 $rezeptname = $_POST['search'];
 $dbh = new PDO('mysql:host=34.89.179.34;dbname=findyourrecipe',"root","nT0~dY&jhe%6>|BX");
@@ -73,7 +77,7 @@ while ($row = $stmt->fetch()){
             <a class='bild' href='RezeptSeite.php?id=".$row['RezeptID']."'>
                 <img class='rahmen'  src='uploads/".$row['Bildname']."?width=662&height=662' alt='Rezeptbild'  title='Rezeptbild'>
                 <source srcset='https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png' media='(max-width: 1500px'>
-                <p class='rezepttext'> ".$row['Name']."  </p>
+                <p class='rezepttext'> ".$row['Rezeptname']."  </p>
             </a>
         </div>";
 }

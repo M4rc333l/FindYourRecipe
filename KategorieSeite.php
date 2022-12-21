@@ -73,6 +73,7 @@
 <body>
 <!-- JS Datei für NavBar -->
 <script  src="NavBar.php" > </script>
+<script src = "Kategorien.js"> </script>
 
 <p id="überschrift"> Kategorien </p>
 
@@ -87,33 +88,33 @@
             </li>
 
             <li style="float: left;" id="links">
-                <input type="checkbox" id="kategorie1" name="Vegan" value="Vegan">
-                <label for="kategorie1"> Vegan </label>
+                <input type="checkbox" id="firstCheckbox" name="Vegan" value="Vegan" onchange="buttonReady(null,'suchen')">
+                <label for="firstCheckbox"> Vegan </label>
 
                 <br>
 
-                <input type="checkbox" id="kategorie2" name="Vegetarisch" value="Vegetarisch">
-                <label for="kategorie2"> Vegetarisch </label>
+                <input type="checkbox" id="secondCheckbox" name="Vegetarisch" value="Vegetarisch" onchange="buttonReady(null,'suchen')">
+                <label for="secondCheckbox"> Vegetarisch </label>
 
                 <br>
 
-                <input type="checkbox" id="kategorie3" name="Fisch" value="Fisch">
-                <label for="kategorie3"> Fisch </label>
+                <input type="checkbox" id="thirdCheckbox" name="Fisch" value="Fisch" onchange="buttonReady(null,'suchen')">
+                <label for="thirdCheckbox"> Fisch </label>
             </li>
 
             <li style="float: left;" id="rechts">
-                <input type="checkbox" id="kategorie4" name="Fleisch" value="Fleisch">
-                <label for="kategorie4"> Fleisch </label>
+                <input type="checkbox" id="fourthCheckbox" name="Fleisch" value="Fleisch" onchange="buttonReady(null,'suchen')">
+                <label for="fourthCheckbox"> Fleisch </label>
 
                 <br>
 
-                <input type="checkbox" id="kategorie5" name="Glutenfrei" value="Glutenfrei">
-                <label for="kategorie5"> Glutenfrei </label>
+                <input type="checkbox" id="fifthCheckbox" name="Glutenfrei" value="Glutenfrei" onchange="buttonReady(null,'suchen')">
+                <label for="fifthCheckbox"> Glutenfrei </label>
 
                 <br>
 
-                <input type="checkbox" id="kategorie6" name="Kalorienarm" value="Kalorienarm">
-                <label for="kategorie6"> Kalorienarm </label>
+                <input type="checkbox" id="sixthCheckbox" name="Kalorienarm" value="Kalorienarm" onchange="buttonReady(null,'suchen')">
+                <label for="sixthCheckbox"> Kalorienarm </label>
             </li>
 
             <li>
@@ -122,6 +123,6 @@
         </ul>
     </fieldset>
 </form>
-<!-- Unterer Suchbutton -->
+<script>document.querySelector('#suchen').disabled = true;</script>
 </body>
 </html>
