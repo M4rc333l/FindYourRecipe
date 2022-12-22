@@ -74,12 +74,12 @@ $RezeptIdMerken = array();
 $kategorielist = array();
 if(isset($_POST['suchen'])){
     $rezeptname = $_POST['suchemich'];
-    if (isset($_POST['Vegetarisch'])){
-        $Kategorie = $_POST['Vegetarisch'];
-        $kategorielist[] = $Kategorie;
-    }
     if (isset($_POST['Vegan'])){
         $Kategorie = $_POST['Vegan'];
+        $kategorielist[] = $Kategorie;
+    }
+    if (isset($_POST['Vegetarisch'])){
+        $Kategorie = $_POST['Vegetarisch'];
         $kategorielist[] = $Kategorie;
     }
     if (isset($_POST['Fisch'])){
@@ -104,22 +104,18 @@ if(isset($_POST['suchen'])){
         $stmt->execute();
         while ($row = $stmt->fetch()){
             $doppelt = FALSE;
-            $RezeptIdMerken[] = $row['RezeptID'];
-            for ($j = 0; $j <= count($RezeptIdMerken)-1;$j++){
-                if ($i > 0 && $RezeptIdMerken[$j] ==$row['RezeptID'] ){
-                    $doppelt = TRUE;
-                }
-            }
-            if (!$doppelt && $i > 0){
+            if ($i==0){
+                array_push($RezeptIdMerken, $row['RezeptID']);
                 echo  "<div class='flex-rezeptvorschlaege'>
             <a class='bild' href='RezeptSeite.php?id=".$row['RezeptID']."'>
                 <img class='rahmen'  src='uploads/".$row['Bildname']."?width=662&height=662' alt='Rezeptbild'  title='Rezeptbild'>
                 <source srcset='https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png' media='(max-width: 1500px'>
-                <p class='rezepttext'> ".$row['Rezeptname']."  </p>
+                <p class='rezepttext'> ".$row['Rezeptname']."</p>
             </a>
         </div>";
             }
-            if ($i == 0){
+            elseif ($i > 0 && !(in_array($row['RezeptID'], $RezeptIdMerken))){
+                array_push($RezeptIdMerken, $row['RezeptID']);
                 echo  "<div class='flex-rezeptvorschlaege'>
             <a class='bild' href='RezeptSeite.php?id=".$row['RezeptID']."'>
                 <img class='rahmen'  src='uploads/".$row['Bildname']."?width=662&height=662' alt='Rezeptbild'  title='Rezeptbild'>
