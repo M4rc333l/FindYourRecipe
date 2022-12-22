@@ -29,7 +29,7 @@ session_start();
 
         .bild, .bild:hover
         {
-            margin:50px;
+            margin: 50px;
             max-width: 100%;
             height: auto;
             color: black;

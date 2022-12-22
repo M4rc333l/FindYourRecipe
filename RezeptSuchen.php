@@ -19,7 +19,7 @@ session_start();
     <!-- Flexboxen -->
     <style>
         body {
-            background: url("https://cdn.discordapp.com/attachments/1023935776163119175/1049339294029971577/hintergrundi.png");
+            background: url("https://cdn.discordapp.com/attachments/1023935776163119175/1051851552056414228/Hintergrund_Fuenf_Prozent.png");
         }
         .flex-rezeptvorschlaege
         {
@@ -46,9 +46,7 @@ session_start();
             box-shadow: 0 4px 8px 0 rgba(0, 150, 255, 0.2), 0 6px 20px 0 rgba(0, 150, 255, 0.19) ;
             background-color: white;
         }
-        img {
-            width: 100%;
-        }
+
         .bild{
             object-fit: cover;
         }
