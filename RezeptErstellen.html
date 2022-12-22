@@ -42,10 +42,10 @@
         }
     </style>
 </head>
-<body>
+<script src = "Kategorien.js"> </script>
+<body onload = "buttonReady()">
 <!-- JS Datei für NavBar -->
 <script  src="NavBar.php" > </script>
-<script src = "Kategorien.js"> </script>
     <div id="einrücken">
         <!-- Rezeptbild -->
         <!--   <input type="image" id="rezeptbildUpload" src="https://uxwing.com/wp-content/themes/uxwing/download/video-photography-multimedia/upload-image-icon.png" alt="Rezeptbild hochladen" width="200px" height="190px"> -->
@@ -54,31 +54,31 @@
 
         <input
                 type="file" id="bild" name="bild" accept=".jpg, .jpeg, .png, .jfif"
-                onchange="previewImage();"
+                onchange="buttonReady();"
         />
         <!-- Rezeptname -->
         <div class="überschrift">
             <label> Rezeptname </label>
-            <input type="text" class="unten" name="rezeptname" size="30%" required>
+            <input type="text" class="unten" name="rezeptname" size="30%" required pattern="\S(.*\S)?">
         </div>
 
         <!-- Dauer -->
         <div class="überschrift">
             <label> Dauer </label>
-            <input type="text" class="unten" name="dauer" size="30%" required>
+            <input type="text" class="unten" name="dauer" size="30%" required pattern="\S(.*\S)?">
         </div>
 
         <!-- Zutaten -->
         <!-- TODO: Schöneres Feld (bei Enter => neues Eingabefeld) -->
         <div class="überschrift">
             <label> Zutaten </label>
-            <textarea name="zutaten" class="unten" rows="5" cols="40" required></textarea>
+            <textarea name="zutaten" class="unten" rows="5" cols="40" required onKeyUp = "buttonReady();"></textarea>
         </div>
 
         <!-- Zubereitung -->
         <div class="überschrift">
             <label> Zubereitung </label>
-            <textarea name="zubereitung" class="unten" rows="5" cols="40" required></textarea>
+            <textarea name="zubereitung" class="unten" rows="5" cols="40" required onKeyUp = "buttonReady();"></textarea>
         </div>
 
         <!-- Kategorien -->

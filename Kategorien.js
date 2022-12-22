@@ -7,12 +7,14 @@ function buttonReady(bildRequired, idName){
     }
     if(bildRequired==null){
         document.querySelector('#'+idName).disabled = !((document.getElementById('firstCheckbox').checked || document.getElementById('secondCheckbox').checked || document.getElementById('thirdCheckbox').checked
-            || document.getElementById('fourthCheckbox').checked || document.getElementById('fifthCheckbox').checked || document.getElementById('sixthCheckbox').checked));
+            || document.getElementById('fourthCheckbox').checked || document.getElementById('fifthCheckbox').checked || document.getElementById('sixthCheckbox').checked)
+            && document.getElementsByName("zutaten")[0].value.trim().length>0 && document.getElementsByName("zubereitung")[0].value.trim().length>0);
     }
     else {
         let file = document.getElementById("bild").files;
         document.querySelector('#'+idName).disabled = !((document.getElementById('firstCheckbox').checked || document.getElementById('secondCheckbox').checked || document.getElementById('thirdCheckbox').checked
-            || document.getElementById('fourthCheckbox').checked || document.getElementById('fifthCheckbox').checked || document.getElementById('sixthCheckbox').checked) && file.length>0);
+            || document.getElementById('fourthCheckbox').checked || document.getElementById('fifthCheckbox').checked || document.getElementById('sixthCheckbox').checked) && file.length>0
+            && document.getElementsByName("zutaten")[0].value.trim().length>0 && document.getElementsByName("zubereitung")[0].value.trim().length>0);
     }
     if(document.getElementById("firstCheckbox").checked || document.getElementById("secondCheckbox").checked){
         document.getElementById("thirdCheckbox").disabled = true;
@@ -30,6 +32,7 @@ function buttonReady(bildRequired, idName){
         document.getElementById("firstCheckbox").disabled = false;
         document.getElementById("secondCheckbox").disabled = false;
     }
+    previewImage();
 }
 function previewImage(){
     let file = document.getElementById("bild").files;

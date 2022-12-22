@@ -51,10 +51,10 @@ $row = $stmt->fetch();
         }
     </style>
 </head>
-<body>
+<script src = "Kategorien.js"> </script>
+<body onload = "buttonReady()">
 <!-- JS Datei für NavBar -->
 <script  src="NavBar.php" > </script>
-<script src = "Kategorien.js"> </script>
 <div id="einrücken">
 
     <!-- Rezeptbild -->
@@ -64,19 +64,19 @@ $row = $stmt->fetch();
 
         <input
             type="file" id="bild" name="bild" accept=".jpg, .jpeg, .png, .jfif"
-            onchange="previewImage();"
+            onchange="buttonReady();"
         />
 
         <!-- Rezeptname -->
         <div class="überschrift">
             <label> Rezeptname </label>
-            <input type="text" class="unten" name="rezeptname" size="30%" required onKeyUp="buttonReady()" value=<?php echo $row["Rezeptname"] ?>>
+            <input type="text" class="unten" name="rezeptname" size="30%" required pattern="\S(.*\S)?" value=<?php echo $row["Rezeptname"] ?>>
         </div>
 
         <!-- Dauer -->
         <div class="überschrift">
             <label> Dauer </label>
-            <input type="text" class="unten" name="dauer" size="30%" required onKeyUp="buttonReady()"
+            <input type="text" class="unten" name="dauer" size="30%" required pattern="\S(.*\S)?"
                    value=<?php echo $row["Dauer"]; ?>>
         </div>
 
@@ -84,7 +84,8 @@ $row = $stmt->fetch();
         <!-- TODO: Schöneres Feld (bei Enter => neues Eingabefeld) -->
         <div class="überschrift">
             <label> Zutaten </label>
-            <textarea name="zutaten" class="unten" rows="5" cols="40" required onKeyUp="buttonReady()"> <?php
+            <textarea name="zutaten" class="unten" rows="5" cols="40" required onKeyUp="buttonReady()">
+                <?php
                 $text = $row["Zutaten"];
                 $text = str_replace("<br />", "", $text);
                 echo $text;
@@ -94,7 +95,8 @@ $row = $stmt->fetch();
         <!-- Zubereitung -->
         <div class="überschrift">
             <label> Zubereitung </label>
-            <textarea name="zubereitung" class="unten" rows="5" cols="40" required onKeyUp="buttonReady()"> <?php
+            <textarea name="zubereitung" class="unten" rows="5" cols="40" required onKeyUp="buttonReady()">
+                <?php
                 $text = $row["Zubereitung"];
                 $text = str_replace("<br />", "", $text);
                 echo $text;
@@ -149,5 +151,6 @@ $row = $stmt->fetch();
 </div>
 </body>
 <script>document.querySelector('#button').disabled = true;
+        window.document.onload = buttonReady();
 </script>
 </html>
