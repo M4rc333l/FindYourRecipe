@@ -78,11 +78,11 @@
 <p id="überschrift"> Kategorien </p>
 
 <!-- Checkboxen für Kategorien -->
-<form  method="post" action="KategorieSuchen.php">
+<form method="post" action="KategorieSuchen.php">
     <fieldset>
         <ul>
             <li>
-                <div class="form-inline my-2 my-lg-0" method="post" id="suchleiste">
+                <div class="form-inline my-2 my-lg-0" id="suchleiste">
                     <input class="form-control mr-sm-2" type="search" placeholder="Pizza, Burger, ..." aria-label="Search" name="suchemich" id="suchemich">
                 </div>
             </li>

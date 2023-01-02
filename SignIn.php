@@ -17,7 +17,6 @@ if (isset($_POST["username"])) {
     else {
         $sql2 = "INSERT INTO User (Name, Passwort) VALUES ('$benutzername', '$passwort')";
         if ($conn->query($sql2) === TRUE) {
-            echo "Benutzerkonto erfolgreich angelegt";
             header("Location: HomeSeite.php");
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
@@ -36,7 +35,10 @@ if (isset($_POST["username2"])) {
             header("Location: HomeSeite.php");
         }
     } else {
-        echo "Fehler bei der Anmeldung";
+        echo '<script type="text/javascript">
+        alert("Fehler bei der Anmeldung");
+        window.location = "HomeSeite.php";
+        </script>';
     }
 }
 $conn->close();

@@ -60,7 +60,7 @@
     </style>
 </head>
 <script src = "Kategorien.js"> </script>
-<body onload = "buttonReady()">
+<body onload = "buttonReady('0')">
 <!-- JS Datei für NavBar -->
 <script  src="NavBar.php" > </script>
     <div id="einrücken">
@@ -71,7 +71,7 @@
 
         <input
                 type="file" id="bild" name="bild" accept=".jpg, .jpeg, .png, .jfif"
-                onchange="buttonReady();"
+                onchange="buttonReady('0');"
         />
         <!-- Rezeptname -->
         <div class="überschrift">
@@ -89,13 +89,13 @@
         <!-- TODO: Schöneres Feld (bei Enter => neues Eingabefeld) -->
         <div class="überschrift">
             <label> Zutaten </label>
-            <textarea name="zutaten" class="unten" rows="5" cols="33" required onKeyUp = "buttonReady();"></textarea>
+            <textarea name="zutaten" class="unten" rows="5" cols="33" required onKeyUp = "buttonReady('0')"></textarea>
         </div>
 
         <!-- Zubereitung -->
         <div class="überschrift">
             <label> Zubereitung </label>
-            <textarea name="zubereitung" class="unten" rows="5" cols="33" required onKeyUp = "buttonReady();"></textarea>
+            <textarea name="zubereitung" class="unten" rows="5" cols="33" required onKeyUp = "buttonReady('0')"></textarea>
         </div>
 
         <!-- Kategorien -->

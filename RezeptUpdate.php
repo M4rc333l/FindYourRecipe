@@ -78,7 +78,7 @@ $row = $stmt->fetch();
 
         <input
             type="file" id="bild" name="bild" accept=".jpg, .jpeg, .png, .jfif"
-            onchange="buttonReady();"
+            onchange="buttonReady()"
         />
 
         <!-- Rezeptname -->
@@ -98,10 +98,9 @@ $row = $stmt->fetch();
         <!-- TODO: Schöneres Feld (bei Enter => neues Eingabefeld) -->
         <div class="überschrift">
             <label> Zutaten </label>
-            <textarea name="zutaten" class="unten" rows="5" cols="40" required onKeyUp="buttonReady()">
-                <?php
+            <textarea name="zutaten" class="unten" rows="5" cols="40" required onKeyUp="buttonReady()"><?php
                 $text = $row["Zutaten"];
-                $text = str_replace("<br />", "", $text);
+                $text = str_replace("<br/>", "", $text);
                 echo $text;
                 ?></textarea>
         </div>
@@ -109,10 +108,8 @@ $row = $stmt->fetch();
         <!-- Zubereitung -->
         <div class="überschrift">
             <label> Zubereitung </label>
-            <textarea name="zubereitung" class="unten" rows="5" cols="40" required onKeyUp="buttonReady()">
-                <?php
-                $text = $row["Zubereitung"];
-                $text = str_replace("<br />", "", $text);
+            <textarea name="zubereitung" class="unten" rows="5" cols="40" required onKeyUp="buttonReady()"><?php
+                $text = str_replace("<br/>", "", $text);
                 echo $text;
                 ?></textarea>
         </div>
@@ -165,6 +162,5 @@ $row = $stmt->fetch();
 </div>
 </body>
 <script>document.querySelector('#button').disabled = true;
-        window.document.onload = buttonReady();
 </script>
 </html>

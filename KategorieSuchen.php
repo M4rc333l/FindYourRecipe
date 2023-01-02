@@ -76,55 +76,59 @@ if(isset($_POST['suchen'])){
     $rezeptname = $_POST['suchemich'];
     if (isset($_POST['Vegan'])){
         $Kategorie = $_POST['Vegan'];
-        $kategorielist[] = $Kategorie;
+        $kategorielist[] = 1;
     }
     if (isset($_POST['Vegetarisch'])){
         $Kategorie = $_POST['Vegetarisch'];
-        $kategorielist[] = $Kategorie;
+        $kategorielist[] = 2;
     }
     if (isset($_POST['Fisch'])){
         $Kategorie = $_POST['Fisch'];
-        $kategorielist[] = $Kategorie;
+        $kategorielist[] = 3;
     }
     if (isset($_POST['Fleisch'])){
         $Kategorie = $_POST['Fleisch'];
-        $kategorielist[] = $Kategorie;
-    }
-    if (isset($_POST['Glutenfrei'])){
-        $Kategorie = $_POST['Glutenfrei'];
-        $kategorielist[] = $Kategorie;
+        $kategorielist[] = 4;
     }
     if (isset($_POST['Kalorienarm'])){
         $Kategorie = $_POST['Kalorienarm'];
-        $kategorielist[] = $Kategorie;
+        $kategorielist[] = 5;
     }
-    for ($i = 0; $i <= count($kategorielist)-1;$i++){
-        $stmt = $dbh->prepare("Select * from Rezept as R, RezeptKategorie as RK, Kategorie as K
-        Where R.RezeptID = RK.RezeptKategorie_RezeptID AND K.KategorieID = RK.RezeptKategorie_KategorieID  AND K.Name = '$kategorielist[$i]' AND  R.Rezeptname LIKE '%$rezeptname%'");
-        $stmt->execute();
-        while ($row = $stmt->fetch()){
-            $doppelt = FALSE;
-            if ($i==0){
-                array_push($RezeptIdMerken, $row['RezeptID']);
-                echo  "<div class='flex-rezeptvorschlaege'>
+    if (isset($_POST['Glutenfrei'])){
+        $Kategorie = $_POST['Glutenfrei'];
+        $kategorielist[] = 6;
+    }
+    $count = count($kategorielist);
+    $stmt = "";
+    if($count == 1){
+        $stmt = $dbh->prepare("Select * From Rezept Where RezeptID in (Select Distinct(RezeptKategorie_RezeptID) from RezeptKategorie Where RezeptKategorie_RezeptID  in (Select RezeptKategorie_RezeptID From RezeptKategorie 
+        WHERE RezeptKategorie_KategorieID = $kategorielist[0]
+        group by RezeptKategorie_RezeptID having count(RezeptKategorie_RezeptID)=$count)) AND  Rezeptname LIKE '%$rezeptname%'");
+    }
+    else if($count == 2){
+        $stmt = $dbh->prepare("Select * From Rezept Where RezeptID in (Select Distinct(RezeptKategorie_RezeptID) from RezeptKategorie Where RezeptKategorie_RezeptID  in (Select RezeptKategorie_RezeptID From RezeptKategorie 
+        WHERE RezeptKategorie_KategorieID = $kategorielist[0] OR RezeptKategorie_KategorieID = $kategorielist[1]
+        group by RezeptKategorie_RezeptID having count(RezeptKategorie_RezeptID)=$count)) AND  Rezeptname LIKE '%$rezeptname%'");
+    }
+    else if($count == 3){
+        $stmt = $dbh->prepare("Select * From Rezept Where RezeptID in (Select Distinct(RezeptKategorie_RezeptID) from RezeptKategorie Where RezeptKategorie_RezeptID  in (Select RezeptKategorie_RezeptID From RezeptKategorie 
+        WHERE RezeptKategorie_KategorieID = $kategorielist[0] OR RezeptKategorie_KategorieID = $kategorielist[1] OR RezeptKategorie_KategorieID = $kategorielist[2]
+        group by RezeptKategorie_RezeptID having count(RezeptKategorie_RezeptID)=$count)) AND  Rezeptname LIKE '%$rezeptname%'");
+    }
+    else if($count == 4){
+        $stmt = $dbh->prepare("Select * From Rezept Where RezeptID in (Select Distinct(RezeptKategorie_RezeptID) from RezeptKategorie Where RezeptKategorie_RezeptID  in (Select RezeptKategorie_RezeptID From RezeptKategorie 
+        WHERE RezeptKategorie_KategorieID = $kategorielist[0] OR RezeptKategorie_KategorieID = $kategorielist[1] OR RezeptKategorie_KategorieID = $kategorielist[2] OR RezeptKategorie_KategorieID = $kategorielist[3]
+        group by RezeptKategorie_RezeptID having count(RezeptKategorie_RezeptID)=$count)) AND  Rezeptname LIKE '%$rezeptname%'");
+    }
+    $stmt->execute();
+    while ($row = $stmt->fetch()){
+        echo  "<div class='flex-rezeptvorschlaege'>
             <a class='bild' href='RezeptSeite.php?id=".$row['RezeptID']."'>
                 <img class='rahmen'  src='uploads/".$row['Bildname']."?width=662&height=662' alt='Rezeptbild'  title='Rezeptbild'>
                 <source srcset='https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png' media='(max-width: 1500px'>
                 <p class='rezepttext'> ".$row['Rezeptname']."</p>
             </a>
         </div>";
-            }
-            elseif ($i > 0 && !(in_array($row['RezeptID'], $RezeptIdMerken))){
-                array_push($RezeptIdMerken, $row['RezeptID']);
-                echo  "<div class='flex-rezeptvorschlaege'>
-            <a class='bild' href='RezeptSeite.php?id=".$row['RezeptID']."'>
-                <img class='rahmen'  src='uploads/".$row['Bildname']."?width=662&height=662' alt='Rezeptbild'  title='Rezeptbild'>
-                <source srcset='https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png' media='(max-width: 1500px'>
-                <p class='rezepttext'> ".$row['Rezeptname']."  </p>
-            </a>
-        </div>";
-            }
-        }
     }
 }
 ?>

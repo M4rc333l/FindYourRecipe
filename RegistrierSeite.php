@@ -95,35 +95,41 @@
             <label>Passwort: </label>
             <input type="password"  name="password" id="formPassword" >
         </div>
-
-        <input class="send-button" type="button" value="Senden" onclick=getInputValue() id="RegisterButton">
-        <script>
-            function getInputValue(){
-                let b = document.getElementById("formUsername").value.toString().toLowerCase();
-                let p = document.getElementById("formPassword").value.toString();
-                let bLetters = b.replace(/[^a-z]/g,"").length;
-                if(b.length>5 && b.length<17 && bLetters+b.replace(/[^0-9]/g,"").length===b.length && bLetters>4 && p.length>5){
-                    document.getElementById("RegisterForm").action="SignIn.php";
-                    document.getElementById("RegisterButton").type="submit";
-                }
-                else if(bLetters+b.replace(/[^0-9]/g,"").length!==b.length){
-                    window.alert("Der Benutzername darf nur Buchstaben und Zahlen enthalten");
-                }
-                else if(b.length>=17){
-                    window.alert("Der Benutzername darf nur aus maximal 16 Zeichen bestehen");
-                }
-                else if(b.length<6){
-                    window.alert("Der Benutzername muss aus mindestens 6 Zeichen bestehen");
-                }
-                else if(bLetters<5){
-                    window.alert("Der Benutzername muss mindestens 5 Buchstaben enthalten");
-                }
-                else if(p.length<=5){
-                    window.alert("Das Passwort muss aus mindestens 6 Zeichen bestehen");
-                }
-            }
-        </script>
+        <label>Passwort bestätigen: </label>
+        <input type="password"  name="passwordBesteatigen" id="formPasswordBesteatigen" >
     </form>
 </div>
+
+<input class="send-button" type="button" value="Senden" onclick=getInputValue() id="RegisterButton">
+<script>
+    function getInputValue(){
+        let b = document.getElementById("formUsername").value.toString().toLowerCase();
+        let p = document.getElementById("formPassword").value.toString();
+        let pBesteatigung = document.getElementById("formPasswordBesteatigen").value.toString();
+        let bLetters = b.replace(/[^a-z]/g,"").length;
+        if(b.length>5 && b.length<17 && bLetters+b.replace(/[^0-9]/g,"").length===b.length && bLetters>4 && p.length>5 && (p === pBesteatigung)){
+            document.getElementById("RegisterForm").action="SignIn.php";
+            document.getElementById("RegisterButton").type="submit";
+        }
+        else if(bLetters+b.replace(/[^0-9]/g,"").length!==b.length){
+            window.alert("Der Benutzername darf nur Buchstaben und Zahlen enthalten");
+        }
+        else if(b.length>=17){
+            window.alert("Der Benutzername darf nur aus maximal 16 Zeichen bestehen");
+        }
+        else if(b.length<6){
+            window.alert("Der Benutzername muss aus mindestens 6 Zeichen bestehen");
+        }
+        else if(bLetters<5){
+            window.alert("Der Benutzername muss mindestens 5 Buchstaben enthalten");
+        }
+        else if(p.length<=5){
+            window.alert("Das Passwort muss aus mindestens 6 Zeichen bestehen");
+        }
+        else if (p !== pBesteatigung){
+            window.alert("Das Passwort und Passwort bestätigen ist nicht identisch");
+        }
+    }
+</script>
 </body>
 </html>

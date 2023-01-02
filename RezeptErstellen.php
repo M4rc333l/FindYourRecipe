@@ -10,7 +10,6 @@ $zubereitung = nl2br($zubereitung);
 $zutaten = $_POST['zutaten'];
 $zutaten = nl2br($zutaten);
 $dauer= $_POST['dauer'];
-$rezeptname = $_POST['rezeptname'];
 $bildname = $_FILES['bild']['name'];
 $bildtyp = $_FILES['bild']['type'];
 $kategorielist = array();
@@ -34,7 +33,6 @@ if (isset($_POST["Kalorienarm"])){
     $kategorie = 'Kalorienarm';
     $kategorielist[] = $kategorie;
 }
-
 if (isset($_POST["Glutenfrei"])){
     $kategorie = 'Glutenfrei';
     $kategorielist[] = $kategorie;

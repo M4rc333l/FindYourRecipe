@@ -100,12 +100,6 @@ while ($row = $stmt->fetch()){
         $zaehler++;
     }
 }
-$stmt = $dbh->prepare("Select * from Rezept");
-$stmt->execute();
-while ($row = $stmt->fetch()){
-    echo "<li><a target='_blank' href='RezeptSeite.php?id=".$row['RezeptID']."'>".$row['Bildname']."'".$row['RezeptID']."</a><br/>";
-    echo " <img  src=uploads/".$row["Bildname"]."  style='height:150px;width:150px;' >";
-}
 ?>
 </body>
 </html>

@@ -80,7 +80,6 @@ $row = $stmt->fetch();
         {
             font-size: 18px;
             width: 100%;
-            border: 1px none;
             word-wrap: break-word;
             border: 2px solid rgb(177, 234, 255, 0.5);
         }
