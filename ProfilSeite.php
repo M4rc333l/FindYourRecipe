@@ -22,23 +22,16 @@ session_start();
         body{
             background: url("https://cdn.discordapp.com/attachments/1023935776163119175/1051851552056414228/Hintergrund_Fuenf_Prozent.png");
         }
-        .flexbox1
+        .flexbox
         {
             display: flex;
             flex-direction: row;
         }
-        .flexbox2
+        .button
         {
-            display: flex;
-            flex-direction: row;
-            margin-left: 150px;
-        }
-        .bild2
-        {
-            margin: 50px;
-            margin-left: 50px;
-            width: 100px;
-            height: 100px;
+            max-height: 100%;
+            max-width: 60%;
+            width: auto;
         }
         #überschrift
         {
@@ -50,7 +43,20 @@ session_start();
         }
         #einrücken
         {
-            margin-left: 30%;
+            border: 5px solid rgb(177, 234, 255, 0.5);
+            background-color: white;
+
+            margin-left: 15%;
+            margin-right: 15%;
+            margin-top: 10%;
+            padding-left: 6%;
+            padding-top: 1%;
+        }
+        a, a :hover, a:visited{
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -68,30 +74,26 @@ session_start();
 
 <div id="einrücken">
     <!-- Profil - Flexbox 1 -->
-    <div class="flexbox1">
+    <div class="flexbox">
         <!-- Rezept erstellen -->
         <a href="RezeptErstellen.html">
-            <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034091044679196732/unknown.png" alt="Rezept hinzufügen"  title="Rezept hinzufügen" >
+            <img class="button" src="https://cdn.discordapp.com/attachments/1023935776163119175/1059480367352008747/ja4.png" alt="Rezept hinzufügen"  title="Rezept hinzufügen">
+            <p>Rezept erstellen</p>
         </a>
         <!-- Rezept bearbeiten -->
         <a href="RezeptBearbeiten.php">
-            <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034093377169391707/unknown.png" alt="Rezept bearbeiten" title="Rezept bearbeiten" >
+            <img class="button" src="https://cdn.discordapp.com/attachments/1023935776163119175/1059479846683693148/ja2.png" alt="Rezept bearbeiten" title="Rezept bearbeiten">
+            <p>Rezept bearbeiten</p>
         </a>
-        <!-- Rezept löschen -->
-        <a href="RezeptLoeschen.php">
-            <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034091190917804052/unknown.png" alt="Rezept löschen" title="Rezept löschen" width="50px" height="50px" >
-        </a>
-    </div>
-
-    <!-- Profil - Flexbox 2 -->
-    <div class="flexbox2">
         <!-- Favoriten -->
         <a href="Favoriten.php">
-            <img class="bild2" src="https://cdn.discordapp.com/attachments/900294647514017862/1054126759244734564/Favorit_-_ausgemalt.png" alt="Favoriten"  title="Favoriten" >
+            <img class="button" src="https://cdn.discordapp.com/attachments/900294647514017862/1054126759244734564/Favorit_-_ausgemalt.png" alt="Favoriten"  title="Favoriten">
+            <p>Favoriten-Liste</p>
         </a>
         <!-- Abmelden -->
         <a href="SignOut.php">
-            <img class="bild2" src="https://cdn.discordapp.com/attachments/1023935776163119175/1034093822227005491/unknown.png" alt="Abmelden" title="Abmelden" >
+            <img class="button" src="https://cdn.discordapp.com/attachments/1023935776163119175/1059481613798494268/ja6.png" alt="Abmelden" title="Abmelden">
+            <p>Abmelden</p>
         </a>
     </div>
 </div>

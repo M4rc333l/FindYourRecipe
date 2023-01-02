@@ -53,6 +53,31 @@
             width: 100%;
             height: 300px;
         }
+
+        #delete, #update
+        {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 1%;
+            border: 5px solid rgb(177, 234, 255, 0.5);
+            background-color: white;
+            color: black;
+            text-decoration: underline;
+
+        }
+
+        #update{
+            position: absolute;
+            margin-left: 50%;
+            margin-top: -18%;
+        }
+
+        #delete{
+            position: absolute;
+            margin-left: 30%;
+            margin-top: -18%;
+        }
+
     </style>
 </head>
 <body>
@@ -70,18 +95,19 @@
         echo  "<div class='flex-rezeptvorschlaege'>
             <a class='bild' href='RezeptSeite.php?id=".$row['RezeptID']."'>
                 <img class='rahmen'  src='uploads/".$row['Bildname']."?width=662&height=662' alt='Rezeptbild'  title='Rezeptbild'>
-                <source srcset='https://cdn.discordapp.com/attachments/1023935776163119175/1034068564040241202/unknown.png' media='(max-width: 1500px'>
                 <p class='rezepttext'> ".$row['Rezeptname']."  </p>
             </a>
         </div>";
         echo "<br>";
-        echo "<a id='delete' target='_blank' href='RezeptLoeschen.php?id=".$row['RezeptID']."'>Rezept löschen</a></li>";
-        echo "<a id='update' target='_blank' href='RezeptUpdate.php?id=".$row['RezeptID']."'>Rezept bearbeiten</a></li>";
+        echo "<a id='delete' href='RezeptLoeschen.php?id=".$row['RezeptID']."'> Rezept löschen </a>";
+        echo "<a id='update' href='RezeptUpdate.php?id=".$row['RezeptID']."'> Rezept bearbeiten </a>";
         echo "<br>";
     }
     if(strlen($stmtString)==0){
         echo "Sie haben noch keine Rezepte erstellt!";
     }
+
 ?>
+
 </body>
 </html>

@@ -24,6 +24,9 @@ $row = $stmt->fetch();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
     <style>
+        body{
+            background: url("https://cdn.discordapp.com/attachments/1023935776163119175/1051851552056414228/Hintergrund_Fuenf_Prozent.png");
+        }
         #rezeptbildUpload
         {
             opacity: 0.5;
@@ -32,7 +35,18 @@ $row = $stmt->fetch();
         }
         #einrücken
         {
-            margin-left: 38%;
+            margin-left: 15%;
+            margin-right: 15%;
+            border-style:none solid;
+            border-width: 5px;
+
+            border-color: rgb(177, 234, 255);
+            margin-top: 1%;
+            padding-left: 25%;
+            padding-right: 25%;
+
+            background-color: white;
+
         }
         .überschrift
         {
