@@ -60,8 +60,10 @@ $row = $stmt->fetch();
         }
         #button
         {
-            margin-left: 15%;
             margin-bottom: 1%;
+            padding-left: 15%;
+            padding-right: 15%;
+            background-color: rgb(177, 234, 255, 0.5);
         }
     </style>
 </head>
@@ -95,12 +97,11 @@ $row = $stmt->fetch();
         </div>
 
         <!-- Zutaten -->
-        <!-- TODO: Schöneres Feld (bei Enter => neues Eingabefeld) -->
         <div class="überschrift">
             <label> Zutaten </label>
             <textarea name="zutaten" class="unten" rows="5" cols="40" required onKeyUp="buttonReady()"><?php
                 $text = $row["Zutaten"];
-                $text = str_replace("<br/>", "", $text);
+                $text = str_replace("<br />", "", $text);
                 echo $text;
                 ?></textarea>
         </div>
@@ -109,7 +110,8 @@ $row = $stmt->fetch();
         <div class="überschrift">
             <label> Zubereitung </label>
             <textarea name="zubereitung" class="unten" rows="5" cols="40" required onKeyUp="buttonReady()"><?php
-                $text = str_replace("<br/>", "", $text);
+                $text = $row["Zubereitung"];
+                $text = str_replace("<br />", "", $text);
                 echo $text;
                 ?></textarea>
         </div>
