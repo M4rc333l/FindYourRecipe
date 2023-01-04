@@ -1,4 +1,3 @@
-<!-- Required meta tags -->
 <?php
 session_start();
 ?>
@@ -17,9 +16,9 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
-    <!-- Flexboxen -->
     <style>
-        body{
+        body
+        {
             background: url("https://cdn.discordapp.com/attachments/1023935776163119175/1051851552056414228/Hintergrund_Fuenf_Prozent.png");
         }
         .flexbox
@@ -45,14 +44,14 @@ session_start();
         {
             border: 5px solid rgb(177, 234, 255, 0.5);
             background-color: white;
-
             margin-left: 15%;
             margin-right: 15%;
             margin-top: 10%;
             padding-left: 6%;
             padding-top: 1%;
         }
-        a, a :hover, a:visited{
+        a, a :hover, a:visited
+        {
             font-size: 18px;
             font-weight: bold;
             color: black;
@@ -73,7 +72,7 @@ session_start();
 </p>
 
 <div id="einrücken">
-    <!-- Profil - Flexbox 1 -->
+    <!-- Profil - Flexbox  -->
     <div class="flexbox">
         <!-- Rezept erstellen -->
         <a href="RezeptErstellen.html">

@@ -1,5 +1,3 @@
-<!-- Required metas tags -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,19 +30,12 @@
         {
             margin-left: 40%;
         }
-        #kategorie1, #kategorie2, #kategorie3
-        {
-            margin-top: 40px;
-        }
-        #kategorie4, #kategorie5, #kategorie6
-        {
-            margin-top: 40px;
-        }
         label
         {
             font-size: 25px;
         }
-        fieldset{
+        fieldset
+        {
             border: 5px solid rgb(177, 234, 255, 0.5);
             background-color: white;
             margin-left: 15%;
@@ -86,7 +77,6 @@
                     <input class="form-control mr-sm-2" type="search" placeholder="Pizza, Burger, ..." aria-label="Search" name="suchemich" id="suchemich">
                 </div>
             </li>
-
             <li style="float: left;" id="links">
                 <input type="checkbox" id="firstCheckbox" name="Vegan" value="Vegan" onchange="buttonReady(null,'suchen')">
                 <label for="firstCheckbox"> Vegan </label>
@@ -101,7 +91,6 @@
                 <input type="checkbox" id="thirdCheckbox" name="Fisch" value="Fisch" onchange="buttonReady(null,'suchen')">
                 <label for="thirdCheckbox"> Fisch </label>
             </li>
-
             <li style="float: left;" id="rechts">
                 <input type="checkbox" id="fourthCheckbox" name="Fleisch" value="Fleisch" onchange="buttonReady(null,'suchen')">
                 <label for="fourthCheckbox"> Fleisch </label>
@@ -116,7 +105,6 @@
                 <input type="checkbox" id="sixthCheckbox" name="Kalorienarm" value="Kalorienarm" onchange="buttonReady(null,'suchen')">
                 <label for="sixthCheckbox"> Kalorienarm </label>
             </li>
-
             <li>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="suchen" id="suchen"> Suchen </button>
             </li>

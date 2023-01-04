@@ -13,8 +13,6 @@ $stmt->execute();
 $row = $stmt->fetch();
 ?>
 
-<!-- Required meta tags -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,11 +29,12 @@ $row = $stmt->fetch();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
     <style>
-
-        body{
+        body
+        {
             background: url("https://cdn.discordapp.com/attachments/1023935776163119175/1051851552056414228/Hintergrund_Fuenf_Prozent.png");
         }
-        #bild{
+        #bild
+        {
             width: 50%;
             height: 50%;
             object-fit:cover;
@@ -91,17 +90,14 @@ $row = $stmt->fetch();
 
 <div id="einrücken">
     <!-- Rezeptname -->
-
     <?php
     echo " <img id=bild src=uploads/".$row["Bildname"]." style='height:300px;width:300px;' >";
     ?>
-
     <p id="rezeptname">
         <?php
         echo  $row['Rezeptname']
         ?>
     </p>
-
     <!-- Dauer -->
     <p class="überschrift"> </p>
     <p class="rezepttext">
@@ -109,7 +105,6 @@ $row = $stmt->fetch();
         echo  $row['Dauer']
         ?>
     </p>
-
     <!-- Zutaten -->
     <p class="überschrift"> Zutaten </p>
     <p class="rezepttext">
@@ -117,7 +112,6 @@ $row = $stmt->fetch();
         echo  $row['Zutaten']
         ?>
     </p>
-
     <!-- Zubereitung -->
     <p class="überschrift"> Zubereitung </p>
     <p class="rezepttext">
@@ -125,7 +119,6 @@ $row = $stmt->fetch();
         echo  $row['Zubereitung']
         ?>
     </p>
-
     <!-- Kategorien -->
     <p class="überschrift"> Kategorien </p>
     <p class="rezepttext">

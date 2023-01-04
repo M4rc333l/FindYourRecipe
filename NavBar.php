@@ -4,23 +4,25 @@ echo '
 document.write(`
 <nav class="navbar" style="background-color: rgba(204,242,255,255);">
   <div class="container-fluid">
+  <!--Projektlogo-->
     <span class="navbar-brand mb-0 h1"> FindYourRecipe </span>
-    
+    <!--Homebutton-->
     <a class="btn btn-outline-success me-2" href="HomeSeite.php"> 
         <img src="https://cdn.discordapp.com/attachments/900294647514017862/1054102455740284948/Hausi-neu.png" alt="Home"  height="30" width="30" title="Home">
     </a>
-    
+    <!--Suchleiste mit Button-->
     <form class="d-flex" role="search" method="post" action="RezeptSuchen.php">
       <input class="form-control me-2" type="search" placeholder="Pizza, Burger, ..." aria-label="search" name="search">
       <button class="btn btn-outline-success" type="submit">Suchen</button>
     </form>
-    
+    <!--Kategorie Button-->
     <a class="btn btn-outline-success me-2" href="KategorieSeite.php"> 
         <img src="https://cdn.discordapp.com/attachments/900294647514017862/1054099268836790272/Kategorie_ausgemalt4.png" alt="Kategorien"  height="30" width="30" title="Kategorien">
     </a>
     ';
     if(!isset($_SESSION['id'])){
         echo '
+        <!--Dropdown-Menü ohne Anmeldung-->
         <div class="btn-group dropstart" >
         <form class="d-flex" action ="SignIn.php" method ="post">
           <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -53,6 +55,7 @@ document.write(`
     }
     else {
         echo '
+        <!--Dropdown-Menü mit Anmeldung-->
         <div class="btn-group dropstart">
         <form class="d-flex" action = "SignOut.php" method = "post">
           <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">

@@ -1,6 +1,5 @@
-<!-- Required meta tags -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,9 +29,9 @@
         {
             border-style: solid;
             border-width: 1px;
-            font-size: 180%; /* Schriftgröße in Box */
-            padding-top: 2%; /* Höhe der Box + Text weiter unten */
-            padding-bottom: 3%; /* Auch Höhe der Box + Text weiter oben */
+            font-size: 180%;
+            padding-top: 2%;
+            padding-bottom: 3%;
             font-family: Verdana;
             display: flex;
             width: 100%;
@@ -71,7 +70,6 @@
             justify-content: center;
             align-items: center;
         }
-        /*TODO: Scrollbar entfernen*/
         #überschrift
         {
             text-align: center;
@@ -81,12 +79,12 @@
     </style>
 </head>
 <body>
-<!-- TODO: oben Zeile 26! -->
 
 <h1 id="überschrift"> Registrierformular </h1>
+
+<!--Registrierformular-Komponenten-->
 <div id="box">
     <form action ="" method="post" id="RegisterForm">
-
         <div>
             <label>Benutzername: </label>
             <input type="text"  name="username" id="formUsername">

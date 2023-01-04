@@ -1,5 +1,3 @@
-<!-- Required meta tags -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +13,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     <style>
-        body {
+        body
+        {
             background: url("https://cdn.discordapp.com/attachments/1023935776163119175/1051851552056414228/Hintergrund_Fuenf_Prozent.png");
         }
         .flex-rezeptvorschlaege
@@ -43,17 +42,18 @@
             box-shadow: 0 4px 8px 0 rgba(0, 150, 255, 0.2), 0 6px 20px 0 rgba(0, 150, 255, 0.19);
             background-color: white;
         }
-        .bild{
+        .bild
+        {
             object-fit: cover;
         }
-        .rahmen{
+        .rahmen
+        {
             border: 10px solid rgb(177, 234, 255);
             box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             border-image: linear-gradient(to right, rgb(177, 234, 255), rgb(156, 206, 241)) 1;
             width: 100%;
             height: 300px;
         }
-
         #delete, #update
         {
             font-size: 18px;
@@ -63,21 +63,19 @@
             background-color: white;
             color: black;
             text-decoration: underline;
-
         }
-
-        #update{
+        #update
+        {
             position: absolute;
             margin-left: 50%;
             margin-top: -18%;
         }
-
-        #delete{
+        #delete
+        {
             position: absolute;
             margin-left: 30%;
             margin-top: -18%;
         }
-
     </style>
 </head>
 <body>

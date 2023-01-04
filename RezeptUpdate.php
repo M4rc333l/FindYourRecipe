@@ -7,7 +7,7 @@ $stmt->bindParam(1,$RezeptID);
 $stmt->execute();
 $row = $stmt->fetch();
 ?>
-<!-- Required meta tags -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +24,8 @@ $row = $stmt->fetch();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
     <style>
-        body{
+        body
+        {
             background: url("https://cdn.discordapp.com/attachments/1023935776163119175/1051851552056414228/Hintergrund_Fuenf_Prozent.png");
         }
         #rezeptbildUpload
@@ -69,33 +70,29 @@ $row = $stmt->fetch();
 </head>
 <script src = "Kategorien.js"> </script>
 <body onload = "buttonReady()">
+
 <!-- JS Datei für NavBar -->
 <script  src="NavBar.php" > </script>
-<div id="einrücken">
 
-    <!-- Rezeptbild -->
-    <!--   <input type="image" id="rezeptbildUpload" src="https://uxwing.com/wp-content/themes/uxwing/download/video-photography-multimedia/upload-image-icon.png" alt="Rezeptbild hochladen" width="200px" height="190px"> -->
+<div id="einrücken">
     <img id="preview" width="300" height="300" src="<?php  echo "uploads/".$row['Bildname']?>">
     <form action="Update.php?id=<?php echo $row['RezeptID']?>" method="post" id="rezepterstellen" enctype="multipart/form-data">
-
+        <!-- Rezeptbild -->
         <input
             type="file" id="bild" name="bild" accept=".jpg, .jpeg, .png, .jfif"
             onchange="buttonReady()"
         />
-
         <!-- Rezeptname -->
         <div class="überschrift">
             <label> Rezeptname </label>
             <input type="text" class="unten" name="rezeptname" size="30%" required pattern="\S(.*\S)?" value="<?php echo $row["Rezeptname"];?>"
         </div>
-
         <!-- Dauer -->
         <div class="überschrift">
             <label> Dauer </label>
             <input type="text" class="unten" name="dauer" size="30%" required pattern="\S(.*\S)?"
                    value="<?php echo $row["Dauer"];?>"
         </div>
-
         <!-- Zutaten -->
         <div class="überschrift">
             <label> Zutaten </label>
@@ -105,7 +102,6 @@ $row = $stmt->fetch();
                 echo $text;
                 ?></textarea>
         </div>
-
         <!-- Zubereitung -->
         <div class="überschrift">
             <label> Zubereitung </label>
@@ -115,7 +111,6 @@ $row = $stmt->fetch();
                 echo $text;
                 ?></textarea>
         </div>
-
         <!-- Kategorien -->
         <div>
             <label class="überschrift"> Kategorien </label>
@@ -155,7 +150,6 @@ $row = $stmt->fetch();
                 ?>
             </ul>
         </div>
-
         <!-- Fertig-Button -->
         <div>
             <input type="submit" id="button" name="button" value="Fertig">
