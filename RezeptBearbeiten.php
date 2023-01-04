@@ -53,7 +53,6 @@
             width: 100%;
             height: 300px;
         }
-
         #delete, #update
         {
             font-size: 18px;
@@ -63,21 +62,17 @@
             background-color: white;
             color: black;
             text-decoration: underline;
-
         }
-
         #update{
             position: absolute;
             margin-left: 65%;
             margin-top: -18%;
         }
-
         #delete{
             position: absolute;
             margin-left: 45%;
             margin-top: -18%;
         }
-
     </style>
 </head>
 <body>
@@ -106,8 +101,6 @@
     if(strlen($stmtString)==0){
         echo "Sie haben noch keine Rezepte erstellt!";
     }
-
 ?>
-
 </body>
 </html>
