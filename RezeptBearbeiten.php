@@ -68,13 +68,13 @@
 
         #update{
             position: absolute;
-            margin-left: 80%;
+            margin-left: 65%;
             margin-top: -18%;
         }
 
         #delete{
             position: absolute;
-            margin-left: 60%;
+            margin-left: 45%;
             margin-top: -18%;
         }
 
