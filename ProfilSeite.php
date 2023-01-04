@@ -81,7 +81,7 @@ session_start();
         </a>
         <!-- Rezept bearbeiten -->
         <a href="RezeptBearbeiten.php">
-            <img class="button" src="https://cdn.discordapp.com/attachments/1023935776163119175/1059479846683693148/ja2.png" alt="Rezept bearbeiten" title="Rezept bearbeiten">
+            <img class="button" src="https://cdn.discordapp.com/attachments/900294647514017862/1060185038827819088/ja8.png" alt="Rezept bearbeiten" title="Rezept bearbeiten">
             <p>Rezept bearbeiten</p>
         </a>
         <!-- Favoriten -->
