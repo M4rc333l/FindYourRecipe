@@ -85,13 +85,13 @@ $row = $stmt->fetch();
         <!-- Rezeptname -->
         <div class="überschrift">
             <label> Rezeptname </label>
-            <input type="text" class="unten" name="rezeptname" size="30%" required pattern="\S(.*\S)?" value="<?php echo $row["Rezeptname"];?>"
+            <input type="text" class="unten" name="rezeptname" size="30%" required pattern="\S(.*\S)?" value="<?php echo $row["Rezeptname"];?>">
         </div>
         <!-- Dauer -->
         <div class="überschrift">
             <label> Dauer </label>
             <input type="text" class="unten" name="dauer" size="30%" required pattern="\S(.*\S)?"
-                   value="<?php echo $row["Dauer"];?>"
+                   value="<?php echo $row["Dauer"];?>">
         </div>
         <!-- Zutaten -->
         <div class="überschrift">
