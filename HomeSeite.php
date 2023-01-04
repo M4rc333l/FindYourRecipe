@@ -65,7 +65,7 @@ session_start();
 <!-- JS Datei für NavBar -->
 <script  src="NavBar.php" > </script>
 
-<!-- Flexbox - Rezeptvorschläge -->
+<!-- Flexbox-Rezeptvorschläge -->
 <p class="überschrift1"> Rezeptvorschläge </p>
 
 <?php
