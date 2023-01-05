@@ -95,10 +95,11 @@
         </div>
         <label>Passwort bestätigen: </label>
         <input type="password"  name="passwordBesteatigen" id="formPasswordBesteatigen" >
+
+        <input class="send-button" type="button" value="Senden" onclick=getInputValue() id="RegisterButton">
     </form>
 </div>
 
-<input class="send-button" type="button" value="Senden" onclick=getInputValue() id="RegisterButton">
 <script>
     function getInputValue(){
         let b = document.getElementById("formUsername").value.toString().toLowerCase();
