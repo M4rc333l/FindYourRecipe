@@ -11,25 +11,22 @@
     <style>
         body
         {
-            font-size: 16px;
-            background-color: white;
+            background: url("https://cdn.discordapp.com/attachments/1023935776163119175/1051851552056414228/Hintergrund_Fuenf_Prozent.png");
         }
         form
         {
-            border: 2px solid rgb(0, 0, 0);
-            box-shadow: 1px 1px 1px rgb(114, 114, 114), 2px 2px 3px rgba(0, 0, 128, 0.52);
-            border-radius: 5px;
-            margin: 3em;
+            border: 10px solid rgb(177, 234, 255);
+            box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-image: linear-gradient(to right, rgb(177, 234, 255), rgb(156, 206, 241)) 1;
             padding: 2em;
-            background-color: rgb(135, 206, 235, 0.5);
-            width: 60%;
-            background-image: linear-gradient(to bottom right, #5d7ad0, #90acc7);
+            width: 50%;
+            background-color: white;
         }
         input
         {
             border-style: solid;
             border-width: 1px;
-            font-size: 180%;
+            font-size: 90%;
             padding-top: 2%;
             padding-bottom: 3%;
             font-family: Verdana;
@@ -38,43 +35,47 @@
         }
         label
         {
-            font-size: 180%;
+            font-size: 105%;
+            font-weight: bold;
             padding-top: 2%;
-            padding-bottom: 3%;
             font-family: Verdana;
         }
         .send-button
         {
-            background-color: rgb(19, 19, 115);
-            color: rgb(255, 250, 240);
-            font-family: Tahoma, sans-serif;
-            border-radius: 3%;
-            margin-top: 1%;
-            margin-left: 40%;
-            font-size: 170%;
+            background-color: rgb(177, 234, 255, 0.5);
             border: 2px inset rgba(128, 128, 128, 0.4);
-            width: 16%;
+            color: lightgray;
+            font-family: Tahoma, sans-serif;
+            font-size: 100%;
+            width: 5%;
             padding: 1% 2%;
-            display: inline-block;
-            text-align: center;
+            margin-bottom: 1%;
+            margin-top: 2%;
+            margin-left: 38%;
+            padding-right: 13%;
+            padding-left: 5%;
         }
         .send-button:hover
         {
             box-shadow: 1px 1px 3px 1px rgba(169, 169, 169, 0.6);
-            background-color: rgba(11, 11, 117, 0.62);
+            background-color: rgb(177, 234, 255);
+            color: black;
             cursor: pointer;
         }
         #box
         {
             display: flex;
             justify-content: center;
-            align-items: center;
+            margin-top: 5%;
         }
         #überschrift
         {
-            text-align: center;
-            color: black;
-            margin-top: 1%;
+            margin: 20px;
+            margin-left: 50px;
+            font-size: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px 0 rgba(0, 150, 255, 0.2), 0 6px 20px 0 rgba(0, 150, 255, 0.19);
+            background-color: white;
         }
     </style>
 </head>
