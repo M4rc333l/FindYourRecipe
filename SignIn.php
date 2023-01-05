@@ -12,7 +12,10 @@ if (isset($_POST["username"])) {
     $passwort = $_POST["password"];
     $sql = "SELECT Name, Passwort FROM User WHERE Name='$benutzername'";
     $result = $conn->query($sql);    if ($result->num_rows > 0) {
-        echo "Dieser Benutzername existiert bereits";
+        echo '<script type="text/javascript">
+        alert("Dieser Benutzername existiert bereits");
+        window.location = "RegistrierSeite.php";
+        </script>';
     }
     else {
         $sql2 = "INSERT INTO User (Name, Passwort) VALUES ('$benutzername', '$passwort')";

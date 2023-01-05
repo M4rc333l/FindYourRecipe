@@ -106,7 +106,8 @@
         let p = document.getElementById("formPassword").value.toString();
         let pBesteatigung = document.getElementById("formPasswordBesteatigen").value.toString();
         let bLetters = b.replace(/[^a-z]/g,"").length;
-        if(b.length>5 && b.length<17 && bLetters+b.replace(/[^0-9]/g,"").length===b.length && bLetters>4 && p.length>5 && (p === pBesteatigung)){
+        if(b.length>5 && b.length<17 && bLetters+b.replace(/[^0-9]/g,"").length===b.length
+            && bLetters>4 && p.length>5 && (p === pBesteatigung)){
             document.getElementById("RegisterForm").action="SignIn.php";
             document.getElementById("RegisterButton").type="submit";
         }
