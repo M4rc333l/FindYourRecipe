@@ -20,7 +20,10 @@ if (isset($_POST["username"])) {
     else {
         $sql2 = "INSERT INTO User (Name, Passwort) VALUES ('$benutzername', '$passwort')";
         if ($conn->query($sql2) === TRUE) {
-            header("Location: HomeSeite.php");
+            echo '<script type="text/javascript">
+            alert("Benutzerkonto erfolgreich angelegt! Sie können sich jetzt anmelden");
+            window.location = "HomeSeite.php";
+            </script>';
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
